@@ -32,7 +32,7 @@ struct LocationlistView: View {
                                 Button(action: {
                                     // Your button action here
                                 }) {
-                                    Text("22Km").foregroundColor(.green).background(RoundedRectangle(cornerRadius: 2).stroke(Color.green, lineWidth: 1)).padding(.vertical, 3)
+                                    Text("222Km").foregroundColor(.green).background(RoundedRectangle(cornerRadius: 2).stroke(Color.green, lineWidth: 1)).padding(.vertical, 3)
                                     
                                         
                                 }
