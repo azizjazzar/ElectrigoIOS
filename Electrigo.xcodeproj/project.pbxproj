@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		F930538E2AF6B1140066CF9E /* ElectrigoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F930538D2AF6B1140066CF9E /* ElectrigoApp.swift */; };
-		F93053902AF6B1140066CF9E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F930538F2AF6B1140066CF9E /* ContentView.swift */; };
 		F93053922AF6B1150066CF9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F93053912AF6B1150066CF9E /* Assets.xcassets */; };
 		F93053952AF6B1150066CF9E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F93053942AF6B1150066CF9E /* Preview Assets.xcassets */; };
 		F93053972AF6B1150066CF9E /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93053962AF6B1150066CF9E /* Persistence.swift */; };
@@ -16,6 +15,9 @@
 		F93053A42AF6B1150066CF9E /* ElectrigoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93053A32AF6B1150066CF9E /* ElectrigoTests.swift */; };
 		F93053AE2AF6B1150066CF9E /* ElectrigoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93053AD2AF6B1150066CF9E /* ElectrigoUITests.swift */; };
 		F93053B02AF6B1150066CF9E /* ElectrigoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93053AF2AF6B1150066CF9E /* ElectrigoUITestsLaunchTests.swift */; };
+		F9B34E4D2AF6DEB700035AAD /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B34E4C2AF6DEB700035AAD /* UserViewModel.swift */; };
+		F9B34E4F2AF6DEDA00035AAD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B34E4E2AF6DEDA00035AAD /* User.swift */; };
+		F9B34E532AF6DF5700035AAD /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B34E522AF6DF5700035AAD /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +40,6 @@
 /* Begin PBXFileReference section */
 		F930538A2AF6B1140066CF9E /* Electrigo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Electrigo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F930538D2AF6B1140066CF9E /* ElectrigoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectrigoApp.swift; sourceTree = "<group>"; };
-		F930538F2AF6B1140066CF9E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F93053912AF6B1150066CF9E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F93053942AF6B1150066CF9E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F93053962AF6B1150066CF9E /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -48,6 +49,9 @@
 		F93053A92AF6B1150066CF9E /* ElectrigoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ElectrigoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F93053AD2AF6B1150066CF9E /* ElectrigoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectrigoUITests.swift; sourceTree = "<group>"; };
 		F93053AF2AF6B1150066CF9E /* ElectrigoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectrigoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F9B34E4C2AF6DEB700035AAD /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		F9B34E4E2AF6DEDA00035AAD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		F9B34E522AF6DF5700035AAD /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +103,9 @@
 			isa = PBXGroup;
 			children = (
 				F930538D2AF6B1140066CF9E /* ElectrigoApp.swift */,
-				F930538F2AF6B1140066CF9E /* ContentView.swift */,
+				F9B34E4B2AF6DE3500035AAD /* ViewModel */,
+				F9B34E4A2AF6DE2700035AAD /* View */,
+				F9B34E492AF6DE1900035AAD /* Model */,
 				F93053912AF6B1150066CF9E /* Assets.xcassets */,
 				F93053962AF6B1150066CF9E /* Persistence.swift */,
 				F93053982AF6B1150066CF9E /* Electrigo.xcdatamodeld */,
@@ -131,6 +137,30 @@
 				F93053AF2AF6B1150066CF9E /* ElectrigoUITestsLaunchTests.swift */,
 			);
 			path = ElectrigoUITests;
+			sourceTree = "<group>";
+		};
+		F9B34E492AF6DE1900035AAD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F9B34E4E2AF6DEDA00035AAD /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F9B34E4A2AF6DE2700035AAD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F9B34E522AF6DF5700035AAD /* LoginView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F9B34E4B2AF6DE3500035AAD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F9B34E4C2AF6DEB700035AAD /* UserViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,8 +294,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F930539A2AF6B1150066CF9E /* Electrigo.xcdatamodeld in Sources */,
+				F9B34E532AF6DF5700035AAD /* LoginView.swift in Sources */,
 				F93053972AF6B1150066CF9E /* Persistence.swift in Sources */,
-				F93053902AF6B1140066CF9E /* ContentView.swift in Sources */,
+				F9B34E4F2AF6DEDA00035AAD /* User.swift in Sources */,
+				F9B34E4D2AF6DEB700035AAD /* UserViewModel.swift in Sources */,
 				F930538E2AF6B1140066CF9E /* ElectrigoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
