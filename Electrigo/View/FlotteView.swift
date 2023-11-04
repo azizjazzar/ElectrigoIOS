@@ -22,7 +22,7 @@ struct FlotteView: View {
                 Button("E-mailing") {
                     // TODO: Implement login logic here
                 }
-                .frame(width: 200, height: 50)
+                .frame(width: 201, height: 50)
                 .background(Color.blue)
                 .cornerRadius(15)
                 .foregroundColor(.white)
