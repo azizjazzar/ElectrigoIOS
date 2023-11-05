@@ -1,0 +1,631 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		24951A1D2AF7E0B500DFD1BD /* ElectrigoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24951A1C2AF7E0B500DFD1BD /* ElectrigoApp.swift */; };
+		24951A212AF7E0B700DFD1BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24951A202AF7E0B700DFD1BD /* Assets.xcassets */; };
+		24951A242AF7E0B700DFD1BD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24951A232AF7E0B700DFD1BD /* Preview Assets.xcassets */; };
+		24951A262AF7E0B700DFD1BD /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24951A252AF7E0B700DFD1BD /* Persistence.swift */; };
+		24951A292AF7E0B700DFD1BD /* Electrigo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 24951A272AF7E0B700DFD1BD /* Electrigo.xcdatamodeld */; };
+		24951A332AF7E0B800DFD1BD /* ElectrigoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24951A322AF7E0B800DFD1BD /* ElectrigoTests.swift */; };
+		24951A3D2AF7E0B800DFD1BD /* ElectrigoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24951A3C2AF7E0B800DFD1BD /* ElectrigoUITests.swift */; };
+		24951A3F2AF7E0B800DFD1BD /* ElectrigoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24951A3E2AF7E0B800DFD1BD /* ElectrigoUITestsLaunchTests.swift */; };
+		24951A502AF7E1DC00DFD1BD /* Forum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24951A4F2AF7E1DC00DFD1BD /* Forum.swift */; };
+		24951A522AF7E25400DFD1BD /* ForumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24951A512AF7E25400DFD1BD /* ForumView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		24951A2F2AF7E0B700DFD1BD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 24951A112AF7E0B400DFD1BD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 24951A182AF7E0B500DFD1BD;
+			remoteInfo = Electrigo;
+		};
+		24951A392AF7E0B800DFD1BD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 24951A112AF7E0B400DFD1BD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 24951A182AF7E0B500DFD1BD;
+			remoteInfo = Electrigo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		24951A192AF7E0B500DFD1BD /* Electrigo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Electrigo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		24951A1C2AF7E0B500DFD1BD /* ElectrigoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectrigoApp.swift; sourceTree = "<group>"; };
+		24951A202AF7E0B700DFD1BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		24951A232AF7E0B700DFD1BD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		24951A252AF7E0B700DFD1BD /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		24951A282AF7E0B700DFD1BD /* Electrigo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Electrigo.xcdatamodel; sourceTree = "<group>"; };
+		24951A2E2AF7E0B700DFD1BD /* ElectrigoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ElectrigoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		24951A322AF7E0B800DFD1BD /* ElectrigoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectrigoTests.swift; sourceTree = "<group>"; };
+		24951A382AF7E0B800DFD1BD /* ElectrigoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ElectrigoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		24951A3C2AF7E0B800DFD1BD /* ElectrigoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectrigoUITests.swift; sourceTree = "<group>"; };
+		24951A3E2AF7E0B800DFD1BD /* ElectrigoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectrigoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		24951A4F2AF7E1DC00DFD1BD /* Forum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forum.swift; sourceTree = "<group>"; };
+		24951A512AF7E25400DFD1BD /* ForumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForumView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		24951A162AF7E0B500DFD1BD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24951A2B2AF7E0B700DFD1BD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24951A352AF7E0B800DFD1BD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		24951A102AF7E0B400DFD1BD = {
+			isa = PBXGroup;
+			children = (
+				24951A1B2AF7E0B500DFD1BD /* Electrigo */,
+				24951A312AF7E0B800DFD1BD /* ElectrigoTests */,
+				24951A3B2AF7E0B800DFD1BD /* ElectrigoUITests */,
+				24951A1A2AF7E0B500DFD1BD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		24951A1A2AF7E0B500DFD1BD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				24951A192AF7E0B500DFD1BD /* Electrigo.app */,
+				24951A2E2AF7E0B700DFD1BD /* ElectrigoTests.xctest */,
+				24951A382AF7E0B800DFD1BD /* ElectrigoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		24951A1B2AF7E0B500DFD1BD /* Electrigo */ = {
+			isa = PBXGroup;
+			children = (
+				24951A1C2AF7E0B500DFD1BD /* ElectrigoApp.swift */,
+				24951A4E2AF7E0F800DFD1BD /* ViewModel */,
+				24951A4D2AF7E0E900DFD1BD /* Model */,
+				24951A4C2AF7E0E200DFD1BD /* View */,
+				24951A202AF7E0B700DFD1BD /* Assets.xcassets */,
+				24951A252AF7E0B700DFD1BD /* Persistence.swift */,
+				24951A272AF7E0B700DFD1BD /* Electrigo.xcdatamodeld */,
+				24951A222AF7E0B700DFD1BD /* Preview Content */,
+			);
+			path = Electrigo;
+			sourceTree = "<group>";
+		};
+		24951A222AF7E0B700DFD1BD /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				24951A232AF7E0B700DFD1BD /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		24951A312AF7E0B800DFD1BD /* ElectrigoTests */ = {
+			isa = PBXGroup;
+			children = (
+				24951A322AF7E0B800DFD1BD /* ElectrigoTests.swift */,
+			);
+			path = ElectrigoTests;
+			sourceTree = "<group>";
+		};
+		24951A3B2AF7E0B800DFD1BD /* ElectrigoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				24951A3C2AF7E0B800DFD1BD /* ElectrigoUITests.swift */,
+				24951A3E2AF7E0B800DFD1BD /* ElectrigoUITestsLaunchTests.swift */,
+			);
+			path = ElectrigoUITests;
+			sourceTree = "<group>";
+		};
+		24951A4C2AF7E0E200DFD1BD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				24951A512AF7E25400DFD1BD /* ForumView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		24951A4D2AF7E0E900DFD1BD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				24951A4F2AF7E1DC00DFD1BD /* Forum.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		24951A4E2AF7E0F800DFD1BD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		24951A182AF7E0B500DFD1BD /* Electrigo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 24951A422AF7E0B800DFD1BD /* Build configuration list for PBXNativeTarget "Electrigo" */;
+			buildPhases = (
+				24951A152AF7E0B500DFD1BD /* Sources */,
+				24951A162AF7E0B500DFD1BD /* Frameworks */,
+				24951A172AF7E0B500DFD1BD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Electrigo;
+			productName = Electrigo;
+			productReference = 24951A192AF7E0B500DFD1BD /* Electrigo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		24951A2D2AF7E0B700DFD1BD /* ElectrigoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 24951A452AF7E0B800DFD1BD /* Build configuration list for PBXNativeTarget "ElectrigoTests" */;
+			buildPhases = (
+				24951A2A2AF7E0B700DFD1BD /* Sources */,
+				24951A2B2AF7E0B700DFD1BD /* Frameworks */,
+				24951A2C2AF7E0B700DFD1BD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				24951A302AF7E0B700DFD1BD /* PBXTargetDependency */,
+			);
+			name = ElectrigoTests;
+			productName = ElectrigoTests;
+			productReference = 24951A2E2AF7E0B700DFD1BD /* ElectrigoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		24951A372AF7E0B800DFD1BD /* ElectrigoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 24951A482AF7E0B800DFD1BD /* Build configuration list for PBXNativeTarget "ElectrigoUITests" */;
+			buildPhases = (
+				24951A342AF7E0B800DFD1BD /* Sources */,
+				24951A352AF7E0B800DFD1BD /* Frameworks */,
+				24951A362AF7E0B800DFD1BD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				24951A3A2AF7E0B800DFD1BD /* PBXTargetDependency */,
+			);
+			name = ElectrigoUITests;
+			productName = ElectrigoUITests;
+			productReference = 24951A382AF7E0B800DFD1BD /* ElectrigoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		24951A112AF7E0B400DFD1BD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1410;
+				LastUpgradeCheck = 1410;
+				TargetAttributes = {
+					24951A182AF7E0B500DFD1BD = {
+						CreatedOnToolsVersion = 14.1;
+					};
+					24951A2D2AF7E0B700DFD1BD = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = 24951A182AF7E0B500DFD1BD;
+					};
+					24951A372AF7E0B800DFD1BD = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = 24951A182AF7E0B500DFD1BD;
+					};
+				};
+			};
+			buildConfigurationList = 24951A142AF7E0B400DFD1BD /* Build configuration list for PBXProject "Electrigo" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 24951A102AF7E0B400DFD1BD;
+			productRefGroup = 24951A1A2AF7E0B500DFD1BD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				24951A182AF7E0B500DFD1BD /* Electrigo */,
+				24951A2D2AF7E0B700DFD1BD /* ElectrigoTests */,
+				24951A372AF7E0B800DFD1BD /* ElectrigoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		24951A172AF7E0B500DFD1BD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24951A242AF7E0B700DFD1BD /* Preview Assets.xcassets in Resources */,
+				24951A212AF7E0B700DFD1BD /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24951A2C2AF7E0B700DFD1BD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24951A362AF7E0B800DFD1BD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		24951A152AF7E0B500DFD1BD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24951A292AF7E0B700DFD1BD /* Electrigo.xcdatamodeld in Sources */,
+				24951A262AF7E0B700DFD1BD /* Persistence.swift in Sources */,
+				24951A522AF7E25400DFD1BD /* ForumView.swift in Sources */,
+				24951A1D2AF7E0B500DFD1BD /* ElectrigoApp.swift in Sources */,
+				24951A502AF7E1DC00DFD1BD /* Forum.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24951A2A2AF7E0B700DFD1BD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24951A332AF7E0B800DFD1BD /* ElectrigoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24951A342AF7E0B800DFD1BD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24951A3D2AF7E0B800DFD1BD /* ElectrigoUITests.swift in Sources */,
+				24951A3F2AF7E0B800DFD1BD /* ElectrigoUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		24951A302AF7E0B700DFD1BD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 24951A182AF7E0B500DFD1BD /* Electrigo */;
+			targetProxy = 24951A2F2AF7E0B700DFD1BD /* PBXContainerItemProxy */;
+		};
+		24951A3A2AF7E0B800DFD1BD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 24951A182AF7E0B500DFD1BD /* Electrigo */;
+			targetProxy = 24951A392AF7E0B800DFD1BD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		24951A402AF7E0B800DFD1BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		24951A412AF7E0B800DFD1BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		24951A432AF7E0B800DFD1BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Electrigo/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.esprit.Electrigo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		24951A442AF7E0B800DFD1BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Electrigo/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.esprit.Electrigo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		24951A462AF7E0B800DFD1BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.esprit.ElectrigoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Electrigo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Electrigo";
+			};
+			name = Debug;
+		};
+		24951A472AF7E0B800DFD1BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.esprit.ElectrigoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Electrigo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Electrigo";
+			};
+			name = Release;
+		};
+		24951A492AF7E0B800DFD1BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.esprit.ElectrigoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Electrigo;
+			};
+			name = Debug;
+		};
+		24951A4A2AF7E0B800DFD1BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.esprit.ElectrigoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Electrigo;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		24951A142AF7E0B400DFD1BD /* Build configuration list for PBXProject "Electrigo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24951A402AF7E0B800DFD1BD /* Debug */,
+				24951A412AF7E0B800DFD1BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		24951A422AF7E0B800DFD1BD /* Build configuration list for PBXNativeTarget "Electrigo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24951A432AF7E0B800DFD1BD /* Debug */,
+				24951A442AF7E0B800DFD1BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		24951A452AF7E0B800DFD1BD /* Build configuration list for PBXNativeTarget "ElectrigoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24951A462AF7E0B800DFD1BD /* Debug */,
+				24951A472AF7E0B800DFD1BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		24951A482AF7E0B800DFD1BD /* Build configuration list for PBXNativeTarget "ElectrigoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24951A492AF7E0B800DFD1BD /* Debug */,
+				24951A4A2AF7E0B800DFD1BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		24951A272AF7E0B700DFD1BD /* Electrigo.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				24951A282AF7E0B700DFD1BD /* Electrigo.xcdatamodel */,
+			);
+			currentVersion = 24951A282AF7E0B700DFD1BD /* Electrigo.xcdatamodel */;
+			path = Electrigo.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 24951A112AF7E0B400DFD1BD /* Project object */;
+}
