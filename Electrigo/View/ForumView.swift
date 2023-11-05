@@ -1,13 +1,11 @@
-//
-//  ForumView.swift
-//  Electrigo
-//
-//  Created by idriss EB on 5/11/2023.
-//
-
 import SwiftUI
 
+
+
 struct ForumView: View {
+    @State private var selectedTopic = "Tous" // Le sujet sélectionné par défaut
+    private let topics = ["Tous", "Voiture", "Borne",  "Technologie", "Autre"]
+    
     private let forum: [Forum] = [
         Forum(authorName: "Dhia Aissa",
               authorUsername: "dhia_patron",
@@ -41,13 +39,50 @@ struct ForumView: View {
 
     var body: some View {
         NavigationView {
-            List(forum) { forum in
-                ForumItemView(forum: forum)
+            VStack {
+                Picker("Sujet", selection: $selectedTopic) {
+                    ForEach(topics, id: \.self) { topic in
+                        Text(topic)
+                    }
+                }
+                .pickerStyle(SegmentedPickerStyle())
+                .padding()
+
+                if selectedTopic == "Voiture" {
+                    List(forum.filter { $0.authorName == "Dhia Aissa" }) { forum in
+                        ForumItemView(forum: forum)
+                    }
+                    .navigationTitle("Forum - Voiture")
+                } else if selectedTopic == "Borne" {
+                    List(forum.filter { $0.authorName != "Dhia Aissa" }) { forum in
+                        ForumItemView(forum: forum)
+                    }
+                    .navigationTitle("Forum - Borne")
+                } else {
+                    List(forum) { forum in
+                        ForumItemView(forum: forum)
+                    }
+                    .navigationTitle("Forum")
+                }
+
+                NavigationLink(destination: CommentsView()) {
+                    Text("Ajouter un post")
+                        .font(.headline)
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(Color.blue)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                }
             }
-            .navigationTitle("Forum")
+            .background(
+                Image("b") // Nom de l'image dans vos assets
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .edgesIgnoringSafeArea(.all)
+            )
         }
     }
-
 }
 
 struct ForumItemView: View {
@@ -59,12 +94,14 @@ struct ForumItemView: View {
                 .font(.system(size: 55))
                 .padding(.top)
                 .padding(.trailing, 5)
+                .foregroundColor(.blue)
 
             VStack(alignment: .leading) {
                 HStack {
                     Text(forum.authorName)
                         .bold()
                         .lineLimit(1)
+                        .foregroundColor(.black)
                     Text("@\(forum.authorUsername) • \(forum.timestampText)")
                         .lineLimit(1)
                         .truncationMode(.middle)
@@ -75,11 +112,23 @@ struct ForumItemView: View {
                 Text(forum.text)
                     .lineLimit(nil)
                     .multilineTextAlignment(.leading)
+                    .foregroundColor(.black)
 
                 ForumActionsView(forum: forum)
-                    .foregroundColor(.gray)
-                    .padding([.bottom, .top], 10)
-                    .padding(.trailing, 30)
+                    .foregroundColor(.blue)
+                        .padding([.bottom, .top], 10)
+                        .padding(.trailing, 30)
+
+                NavigationLink(destination: PostDetailView(forum: forum, numberOfReplies: forum.numberOfReplies, numberOfRetweets: forum.numberOfReplies)) {
+                    Image(systemName: "chevron.forward")
+                
+                        .font(.system(size: 16))
+                        .padding(5)
+                        .background(Color.blue)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                }
+                
             }
         }
     }
@@ -115,11 +164,8 @@ struct ForumActionsView: View {
     }
 }
 
-
-
 struct ForumView_Previews: PreviewProvider {
     static var previews: some View {
         ForumView()
     }
 }
-
