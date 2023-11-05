@@ -6,6 +6,7 @@ struct LoginView: View {
     @State private var isChecked = false
 
     var body: some View {
+        NavigationView{
         VStack {
             Text("Connectez-vous")
                 .font(.largeTitle)
@@ -82,13 +83,18 @@ struct LoginView: View {
             HStack {
                 Text("Pas encore inscris ? ")
                     .foregroundColor(.black)
-                Button(action: { /* TODO: Implement action here */ }) {
-                                Text("Créer un compte")
-                                    .underline()
-                                    .foregroundColor(.black)
-                            }
+                NavigationLink(destination: RegisterView()) {
+                                   Text("Créer un compte")
+                                       .underline()
+                                       .foregroundColor(.black)
+                               }
+
+
             }
+           
         }
+        }
+        
     }
 
     struct ContentView_Previews: PreviewProvider {
