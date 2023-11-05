@@ -11,13 +11,33 @@ import CoreLocation
 
 struct MapView: View {
     @EnvironmentObject var vm: locationlistViewModel
-    @State private var CoordinateRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 41.8902, longitude: 12.4922), span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
-        private let locationManager = CLLocationManager()
+    @State private var showLocationList = false 
+    private let locationManager = CLLocationManager()
     var body: some View {
-        MapViewRepresentable().ignoresSafeArea()
+           ZStack(alignment: .bottom) {
+               MapViewRepresentable().ignoresSafeArea()
+               Button(action: {
+                   showLocationList = true
+               }) {
+                   Image(systemName: "list.bullet")
+                       .font(.title)
+                       .padding()
+                       .foregroundColor(.white)
+                       .background(Color.blue)
+                       .clipShape(Circle())
+               }
+               .padding(.bottom, 30)
+               .padding(.trailing, 30)
+               
+            
+           }
+    
+           .fullScreenCover(isPresented: $showLocationList) {
+               LocationlistView()
+                   .environmentObject(vm) 
+           } .navigationBarBackButtonHidden(true)
     }
-}
-
+    }
 
 struct MapView_Previews: PreviewProvider {
     static var previews: some View {

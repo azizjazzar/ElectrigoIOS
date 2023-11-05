@@ -13,12 +13,17 @@ struct Location:Identifiable
 {
     var name : String
     var cityName : String
-    var coordinates :CLLocationCoordinate2D
+    var coordinates: Coordinates
     var description : String
     var imageNames : [String]
     var id :String{
         return name+cityName
         
+    }
+    
+    struct Coordinates {
+        var latitude: Double
+        var longitude: Double
     }
 
 }
