@@ -19,6 +19,7 @@
 		C739FAF42AF6BB3600FB3660 /* LocationsDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C739FAF32AF6BB3600FB3660 /* LocationsDataService.swift */; };
 		C739FAF62AF6C10700FB3660 /* LocationlistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C739FAF52AF6C10700FB3660 /* LocationlistView.swift */; };
 		C739FAF82AF6C13300FB3660 /* LocationlistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C739FAF72AF6C13300FB3660 /* LocationlistViewModel.swift */; };
+		C739FAFA2AF7104E00FB3660 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C739FAF92AF7104E00FB3660 /* MapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		C739FAF32AF6BB3600FB3660 /* LocationsDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationsDataService.swift; path = ../../../../Downloads/LocationsDataService.swift; sourceTree = "<group>"; };
 		C739FAF52AF6C10700FB3660 /* LocationlistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationlistView.swift; sourceTree = "<group>"; };
 		C739FAF72AF6C13300FB3660 /* LocationlistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationlistViewModel.swift; sourceTree = "<group>"; };
+		C739FAF92AF7104E00FB3660 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				C739FAF52AF6C10700FB3660 /* LocationlistView.swift */,
+				C739FAF92AF7104E00FB3660 /* MapView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C739FACB2AF6B15100FB3660 /* Electrigo.xcdatamodeld in Sources */,
+				C739FAFA2AF7104E00FB3660 /* MapView.swift in Sources */,
 				C739FAC82AF6B15100FB3660 /* Persistence.swift in Sources */,
 				C739FAF62AF6C10700FB3660 /* LocationlistView.swift in Sources */,
 				C739FAF42AF6BB3600FB3660 /* LocationsDataService.swift in Sources */,
