@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E53B2C52AF70C3B006E0BD4 /* SendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E53B2C42AF70C3B006E0BD4 /* SendView.swift */; };
 		0EA30BBB2AF6E24B00AFDB28 /* FlotteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA30BBA2AF6E24B00AFDB28 /* FlotteView.swift */; };
 		0EC13B912AF6B76700B231A3 /* ElectrigoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC13B902AF6B76700B231A3 /* ElectrigoApp.swift */; };
 		0EC13B952AF6B76700B231A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EC13B942AF6B76700B231A3 /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E53B2C42AF70C3B006E0BD4 /* SendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendView.swift; sourceTree = "<group>"; };
 		0EA30BBA2AF6E24B00AFDB28 /* FlotteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlotteView.swift; sourceTree = "<group>"; };
 		0EC13B8D2AF6B76700B231A3 /* Electrigo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Electrigo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EC13B902AF6B76700B231A3 /* ElectrigoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectrigoApp.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				0EA30BBA2AF6E24B00AFDB28 /* FlotteView.swift */,
+				0E53B2C42AF70C3B006E0BD4 /* SendView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 				0EC13B9D2AF6B76700B231A3 /* Electrigo.xcdatamodeld in Sources */,
 				0EC13B9A2AF6B76700B231A3 /* Persistence.swift in Sources */,
 				0EA30BBB2AF6E24B00AFDB28 /* FlotteView.swift in Sources */,
+				0E53B2C52AF70C3B006E0BD4 /* SendView.swift in Sources */,
 				0EC13B912AF6B76700B231A3 /* ElectrigoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
