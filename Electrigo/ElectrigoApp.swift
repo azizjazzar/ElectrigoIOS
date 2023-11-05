@@ -14,7 +14,8 @@ struct ElectrigoApp: App {
 
     var body: some Scene {
         WindowGroup {
-            LocationlistView().environmentObject(vm)
+            //LocationlistView().environmentObject(vm)
+            MapView()
         }
     }
 }
