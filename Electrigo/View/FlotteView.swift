@@ -62,13 +62,13 @@ struct FlotteView: View {
     
 }
 
-struct FlotteView_Previews: PreviewProvider {
-    static var previews: some View {
-        FlotteView()
-    }
-    
-    
-    
+struct ContentView_Previews: PreviewProvider {
+        
+        static var previews: some View {
+            
+            FlotteView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+            
+        }
     
     
 }
