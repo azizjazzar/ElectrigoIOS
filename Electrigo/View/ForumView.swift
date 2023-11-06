@@ -54,10 +54,21 @@ struct ForumView: View {
                     }
                     .navigationTitle("Forum - Voiture")
                 } else if selectedTopic == "Borne" {
-                    List(forum.filter { $0.authorName != "Dhia Aissa" }) { forum in
+                    List(forum.filter { $0.authorName == "Hamza" }) { forum in
                         ForumItemView(forum: forum)
                     }
                     .navigationTitle("Forum - Borne")
+                } else if selectedTopic == "Autre" {
+                    List(forum.filter { $0.authorName == "Aziz Jazzar" }) { forum in
+                        ForumItemView(forum: forum)
+                    }
+                    .navigationTitle("Forum - Technologie")
+                } else if selectedTopic == "Technologie" {
+                    List(forum.filter { $0.authorName == "adem" }) { forum in
+                        ForumItemView(forum: forum)
+                    }
+                    .navigationTitle("Forum - Technologie")
+
                 } else {
                     List(forum) { forum in
                         ForumItemView(forum: forum)
@@ -66,13 +77,13 @@ struct ForumView: View {
                 }
 
                 NavigationLink(destination: CommentsView()) {
-                    Text("Ajouter un post")
-                        .font(.headline)
-                        .padding()
-                        .frame(maxWidth: .infinity)
-                        .background(Color.blue)
+                    Image(systemName: "pencil")
+                        .resizable()
+                        .frame(width: 20, height: 20)
                         .foregroundColor(.white)
-                        .cornerRadius(10)
+                        .padding()
+                        .background(Color.blue)
+                        .cornerRadius(20)
                 }
             }
             .background(
@@ -91,7 +102,7 @@ struct ForumItemView: View {
     var body: some View {
         HStack(alignment: .top) {
             Image(systemName: "person.crop.circle.fill")
-                .font(.system(size: 55))
+                .font(.system(size: 40))
                 .padding(.top)
                 .padding(.trailing, 5)
                 .foregroundColor(.blue)
@@ -116,15 +127,15 @@ struct ForumItemView: View {
 
                 ForumActionsView(forum: forum)
                     .foregroundColor(.blue)
-                        .padding([.bottom, .top], 10)
-                        .padding(.trailing, 30)
+                        .padding([.bottom, .top], 0)
+                        .padding(.trailing, 50)
 
                 NavigationLink(destination: PostDetailView(forum: forum, numberOfReplies: forum.numberOfReplies, numberOfRetweets: forum.numberOfReplies)) {
-                    Image(systemName: "chevron.forward")
+                    Image(systemName: "")
                 
                         .font(.system(size: 16))
                         .padding(5)
-                        .background(Color.blue)
+                        .background(Color.white)
                         .foregroundColor(.white)
                         .cornerRadius(10)
                 }
@@ -133,6 +144,7 @@ struct ForumItemView: View {
         }
     }
 }
+
 
 struct ForumActionsView: View {
     let forum: Forum

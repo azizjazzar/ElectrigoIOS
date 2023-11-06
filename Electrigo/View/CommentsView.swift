@@ -18,7 +18,7 @@ struct CommentsView: View {
             Form {
                 Section(header: Text("Ajouter un post")) {
                     Picker("Choisir le sujet", selection: $selectedFilter) {
-                        ForEach(["Tous", "Voiture", "Bornes", "Technologie", "Autre"], id: \.self) { filter in
+                        ForEach([ "Voiture", "Bornes", "Technologie", "Autre"], id: \.self) { filter in
                             Text(filter)
                         }
                     }
