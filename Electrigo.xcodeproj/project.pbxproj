@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F91E813A2AF81ABC0055AAF5 /* ForgetpasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91E81392AF81ABC0055AAF5 /* ForgetpasswordView.swift */; };
+		F91E813C2AF81CA20055AAF5 /* OtpValidationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91E813B2AF81CA20055AAF5 /* OtpValidationView.swift */; };
+		F91E813E2AF81D9D0055AAF5 /* ChangePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91E813D2AF81D9D0055AAF5 /* ChangePasswordView.swift */; };
+		F91E81402AF83AB80055AAF5 /* UserSetingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91E813F2AF83AB80055AAF5 /* UserSetingsView.swift */; };
 		F930538E2AF6B1140066CF9E /* ElectrigoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F930538D2AF6B1140066CF9E /* ElectrigoApp.swift */; };
 		F93053922AF6B1150066CF9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F93053912AF6B1150066CF9E /* Assets.xcassets */; };
 		F93053952AF6B1150066CF9E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F93053942AF6B1150066CF9E /* Preview Assets.xcassets */; };
@@ -39,6 +43,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F91E81392AF81ABC0055AAF5 /* ForgetpasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetpasswordView.swift; sourceTree = "<group>"; };
+		F91E813B2AF81CA20055AAF5 /* OtpValidationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtpValidationView.swift; sourceTree = "<group>"; };
+		F91E813D2AF81D9D0055AAF5 /* ChangePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordView.swift; sourceTree = "<group>"; };
+		F91E813F2AF83AB80055AAF5 /* UserSetingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSetingsView.swift; sourceTree = "<group>"; };
 		F930538A2AF6B1140066CF9E /* Electrigo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Electrigo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F930538D2AF6B1140066CF9E /* ElectrigoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectrigoApp.swift; sourceTree = "<group>"; };
 		F93053912AF6B1150066CF9E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -154,6 +162,10 @@
 			children = (
 				F9B34E522AF6DF5700035AAD /* LoginView.swift */,
 				F9B34E542AF7095C00035AAD /* RegisterView.swift */,
+				F91E81392AF81ABC0055AAF5 /* ForgetpasswordView.swift */,
+				F91E813B2AF81CA20055AAF5 /* OtpValidationView.swift */,
+				F91E813D2AF81D9D0055AAF5 /* ChangePasswordView.swift */,
+				F91E813F2AF83AB80055AAF5 /* UserSetingsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -296,12 +308,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F91E813A2AF81ABC0055AAF5 /* ForgetpasswordView.swift in Sources */,
+				F91E813C2AF81CA20055AAF5 /* OtpValidationView.swift in Sources */,
 				F930539A2AF6B1150066CF9E /* Electrigo.xcdatamodeld in Sources */,
 				F9B34E532AF6DF5700035AAD /* LoginView.swift in Sources */,
 				F93053972AF6B1150066CF9E /* Persistence.swift in Sources */,
 				F9B34E552AF7095C00035AAD /* RegisterView.swift in Sources */,
 				F9B34E4F2AF6DEDA00035AAD /* User.swift in Sources */,
+				F91E813E2AF81D9D0055AAF5 /* ChangePasswordView.swift in Sources */,
 				F9B34E4D2AF6DEB700035AAD /* UserViewModel.swift in Sources */,
+				F91E81402AF83AB80055AAF5 /* UserSetingsView.swift in Sources */,
 				F930538E2AF6B1140066CF9E /* ElectrigoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

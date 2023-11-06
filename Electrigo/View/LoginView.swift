@@ -1,12 +1,16 @@
-import SwiftUI
+import SwiftUI;
+import CoreLocation;
 
 struct LoginView: View {
     @State private var email = ""
     @State private var password = ""
     @State private var isChecked = false
+    var location: CLLocation?
 
     var body: some View {
+      
         NavigationView{
+
         VStack {
             Text("Connectez-vous")
                 .font(.largeTitle)
@@ -40,27 +44,32 @@ struct LoginView: View {
                         .foregroundColor(.black)
                     Text("Se souvenir de moi ? /")
                         .foregroundColor(.black)
-                        .font(.system(size: 13, weight: .light))
+                        .font(.system(size: 15))
+
 
                 }
-                Button(action: { /* TODO: Implement action here */ }) {
-                                Text("Mot de Passe oublié?")
-                                    .underline()
-                                    .foregroundColor(.black)
-                                    .font(.system(size: 15, weight: .light))
-
-                            }
+                NavigationLink(destination: ForgetpasswordView()) {
+                                   Text("Mot passe oublier")
+                                       .underline()
+                                       .foregroundColor(.black)
+                               }
             }
             .padding(30)
 
+        
+         
             Button(action: { /* TODO: Implement login logic here */ }) {
-                Text("Se connecter")
+                Text("Se Connecter")
             }
             .padding(.vertical, 10)
             .frame(width: 350, height: 50)
             .background(Color.blue)
             .cornerRadius(15)
             .foregroundColor(.white)
+
+        
+
+
 
             Text("Ou ")
                 .foregroundColor(.black)
@@ -102,4 +111,5 @@ struct LoginView: View {
             LoginView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
         }
     }
+    
 }

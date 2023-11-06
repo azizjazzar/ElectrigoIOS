@@ -15,7 +15,7 @@ struct RegisterView: View {
     @State private var cpasse = ""
     @State private var date = Date()
     @State private var telephone = ""
-    
+    @State var selectedOption: Int = 1
     @State private var password = ""
     var body: some View {
         VStack {
@@ -66,13 +66,30 @@ struct RegisterView: View {
                 .cornerRadius(15)
                 .overlay(RoundedRectangle(cornerRadius: 10)
                 .stroke(Color.black, lineWidth: 1))
-            Text("Genre")
+           
+                
+                HStack
+                {
+                    Text("Genre")
+
+                RadioButtonView(index: 0, selectedIndex: $selectedOption)
+                RadioButtonView(index: 1, selectedIndex: $selectedOption)
+                    }
+            
+           
             TextField(" Telephone", text: $cpasse)
                 .frame(width: 350, height: 50)
                 .background(Color.clear)
                 .cornerRadius(15)
                 .overlay(RoundedRectangle(cornerRadius: 10)
                     .stroke(Color.black, lineWidth: 1))
+            
+             TextField(" Adresse", text: $cpasse)
+                 .frame(width: 350, height: 50)
+                 .background(Color.clear)
+                 .cornerRadius(15)
+                 .overlay(RoundedRectangle(cornerRadius: 10)
+                     .stroke(Color.black, lineWidth: 1))
 
             Button(action: { /* TODO: Implement login logic here */ }) {
                 Text("Créer un compte")
@@ -86,6 +103,22 @@ struct RegisterView: View {
          
               
 
+        }
+    }
+}
+struct RadioButtonView: View {
+    var index: Int
+    @Binding var selectedIndex: Int
+
+    var body: some View {
+        Button(action: {
+            selectedIndex = index
+        }) {
+            HStack {
+                Image(systemName: self.selectedIndex == self.index ? "largecircle.fill.circle" : "circle")
+                    .foregroundColor(.black)
+                Text(index == 0 ? "Homme" : "Femme")
+            }
         }
     }
 }
