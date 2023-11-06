@@ -51,7 +51,7 @@ struct LocationlistView: View {
             .navigationBarBackButtonHidden(true)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
-                    NavigationLink(destination: MapView()) {
+                NavigationLink(destination: MapView()) {
                         HStack {
                             Image(systemName: "chevron.left")
                                 .foregroundColor(.blue)
@@ -118,31 +118,37 @@ struct LocationDetailView: View {
                     
                     Spacer()
 
-                    // Info button
-                    Button(action: {
-                        // Action for info button
-                    }) {
-                        Text("Info")
-                            .padding()
-                            .foregroundColor(.white)
-                            .background(Color.blue)
-                            .cornerRadius(20)
-                            
-                    }
-
-                    // Review button
-                    Button(action: {
-                        // Action for review button
-                    }) {
-                        Text("Review")
-                            .padding()
-                            .foregroundColor(.white)
-                            .background(Color.green)
-                            .cornerRadius(20)
-                    }
+                    
                 }
+                     
                 .padding(.top, 16)
-            }
+                     HStack (alignment: .center, spacing: 16) {
+                         // Info button
+                         Button(action: {
+                             // Action for info button
+                         }) {
+                             Text("Info")
+                                 .padding()
+                                 .foregroundColor(.white)
+                                 .background(Color.blue)
+                                 .cornerRadius(20)
+                                 
+                         }
+
+                         // Review button
+                         Button(action: {
+                             // Action for review button
+                         }) {
+                             Text("Review")
+                                 .padding()
+                                 .foregroundColor(.white)
+                                 .background(Color.green)
+                                 .cornerRadius(20)
+                         }
+                     }.padding(10)
+                     
+                     }
+                    
             .padding()
         }
         .navigationBarTitle(Text("Detail de Borne "), displayMode: .inline)

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C70870452AF9012000A4DA31 /* AddBorneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70870442AF9012000A4DA31 /* AddBorneView.swift */; };
 		C739FABF2AF6B15000FB3660 /* ElectrigoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C739FABE2AF6B15000FB3660 /* ElectrigoApp.swift */; };
 		C739FAC32AF6B15100FB3660 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C739FAC22AF6B15100FB3660 /* Assets.xcassets */; };
 		C739FAC62AF6B15100FB3660 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C739FAC52AF6B15100FB3660 /* Preview Assets.xcassets */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C70870442AF9012000A4DA31 /* AddBorneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBorneView.swift; sourceTree = "<group>"; };
 		C739FABB2AF6B15000FB3660 /* Electrigo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Electrigo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C739FABE2AF6B15000FB3660 /* ElectrigoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectrigoApp.swift; sourceTree = "<group>"; };
 		C739FAC22AF6B15100FB3660 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				C739FAF52AF6C10700FB3660 /* LocationlistView.swift */,
 				C739FAF92AF7104E00FB3660 /* MapView.swift */,
 				C7AF860D2AF7DE8F004C6830 /* MapViewRepresentable.swift */,
+				C70870442AF9012000A4DA31 /* AddBorneView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				C739FAFA2AF7104E00FB3660 /* MapView.swift in Sources */,
 				C7AF86112AF7F199004C6830 /* LocationManager.swift in Sources */,
 				C739FAC82AF6B15100FB3660 /* Persistence.swift in Sources */,
+				C70870452AF9012000A4DA31 /* AddBorneView.swift in Sources */,
 				C739FAF62AF6C10700FB3660 /* LocationlistView.swift in Sources */,
 				C7AF860E2AF7DE8F004C6830 /* MapViewRepresentable.swift in Sources */,
 				C739FAF42AF6BB3600FB3660 /* LocationsDataService.swift in Sources */,

@@ -37,6 +37,7 @@ struct MapView: View {
                    .environmentObject(vm) 
            } .navigationBarBackButtonHidden(true)
     }
+    
     }
 
 struct MapView_Previews: PreviewProvider {
