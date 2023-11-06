@@ -20,12 +20,15 @@ struct FlotteView: View {
                 Spacer()
                     .frame(height: 200)
                 Button("E-mailing") {
-                    // TODO: Implement login logic here
+                    NavigationLink(destination: SendView()) {
+                        Text("E-mailing")
+                }
                 }
                 .frame(width: 201, height: 50)
                 .background(Color.blue)
                 .cornerRadius(15)
                 .foregroundColor(.white)
+                
                 Button("SOS") {
                     // TODO: Implement login logic here
                 }

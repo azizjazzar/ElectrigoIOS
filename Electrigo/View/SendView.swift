@@ -60,9 +60,8 @@ struct SendView: View {
 
             }.toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
-                    Button(action: {
-                        // Your back button action here
-                    }) {
+                    NavigationLink(destination: FlotteView())
+                    {
                         Image(systemName: "chevron.left")
                             .foregroundColor(.blue)
                         Text("Retour").foregroundColor(.blue)
