@@ -13,7 +13,7 @@ struct ElectrigoApp: App {
 
     var body: some Scene {
         WindowGroup {
-            LoginView()
+            BoutiqueView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
