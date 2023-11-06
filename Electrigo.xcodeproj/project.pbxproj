@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E0110AF2AF959A600C6E5A1 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0110AE2AF959A600C6E5A1 /* ChatView.swift */; };
+		0E0110B22AF95C9700C6E5A1 /* TitleRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0110B12AF95C9700C6E5A1 /* TitleRowView.swift */; };
 		0E0DFC1A2AF80DD6001EBB0E /* ArrivedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0DFC192AF80DD6001EBB0E /* ArrivedView.swift */; };
 		0E0DFC1C2AF81FEC001EBB0E /* MapflotteViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0DFC1B2AF81FEC001EBB0E /* MapflotteViewRepresentable.swift */; };
 		0E0DFC242AF821FF001EBB0E /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0DFC232AF821FF001EBB0E /* LocationManager.swift */; };
@@ -44,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E0110AE2AF959A600C6E5A1 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		0E0110B12AF95C9700C6E5A1 /* TitleRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleRowView.swift; sourceTree = "<group>"; };
 		0E0DFC192AF80DD6001EBB0E /* ArrivedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivedView.swift; sourceTree = "<group>"; };
 		0E0DFC1B2AF81FEC001EBB0E /* MapflotteViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapflotteViewRepresentable.swift; sourceTree = "<group>"; };
 		0E0DFC232AF821FF001EBB0E /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
@@ -91,6 +95,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E0110B02AF95C3100C6E5A1 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				0E0110B12AF95C9700C6E5A1 /* TitleRowView.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
 		0E0DFC1D2AF82059001EBB0E /* Managers */ = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +135,7 @@
 				0E44D8D92AF7F034003BA1F2 /* MapflotteView.swift */,
 				0E0DFC1B2AF81FEC001EBB0E /* MapflotteViewRepresentable.swift */,
 				0E0DFC192AF80DD6001EBB0E /* ArrivedView.swift */,
+				0E0110AE2AF959A600C6E5A1 /* ChatView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -162,6 +175,7 @@
 				0EC13B902AF6B76700B231A3 /* ElectrigoApp.swift */,
 				0E0DFC1D2AF82059001EBB0E /* Managers */,
 				0EA30BB92AF6E22900AFDB28 /* ViewModel */,
+				0E0110B02AF95C3100C6E5A1 /* Component */,
 				0EA30BB82AF6E21D00AFDB28 /* View */,
 				0EA30BB72AF6E21000AFDB28 /* Model */,
 				0EC13B942AF6B76700B231A3 /* Assets.xcassets */,
@@ -331,8 +345,10 @@
 				0EC13B9D2AF6B76700B231A3 /* Electrigo.xcdatamodeld in Sources */,
 				0E0DFC282AF82312001EBB0E /* LocationlistViewModel.swift in Sources */,
 				0E0DFC242AF821FF001EBB0E /* LocationManager.swift in Sources */,
+				0E0110B22AF95C9700C6E5A1 /* TitleRowView.swift in Sources */,
 				0EC13B9A2AF6B76700B231A3 /* Persistence.swift in Sources */,
 				0EA30BBB2AF6E24B00AFDB28 /* FlotteView.swift in Sources */,
+				0E0110AF2AF959A600C6E5A1 /* ChatView.swift in Sources */,
 				0E0DFC1A2AF80DD6001EBB0E /* ArrivedView.swift in Sources */,
 				0E0DFC1C2AF81FEC001EBB0E /* MapflotteViewRepresentable.swift in Sources */,
 				0E44D8DA2AF7F034003BA1F2 /* MapflotteView.swift in Sources */,

@@ -45,13 +45,8 @@ struct SendView: View {
                             .stroke(Color.black, lineWidth: 1)
                     )
                     .padding(.vertical, 10)
-                
-                Button("Valider") {
-                    if email.isEmpty || commentaire.isEmpty {
-                            // Disable the button.
-                        } else {
-                            // Enable the button.
-                        }
+                NavigationLink(destination: MapflotteView()) {
+                    Text("Valider") 
                 }
                 .frame(width: 201, height: 50)
                 .background(Color.blue)

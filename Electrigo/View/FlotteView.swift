@@ -19,10 +19,8 @@ struct FlotteView: View {
                 Image("a")
                 Spacer()
                     .frame(height: 200)
-                Button("E-mailing") {
-                    NavigationLink(destination: SendView()) {
-                        Text("E-mailing")
-                }
+                NavigationLink(destination: SendView()) {
+                Text("E-mailing") 
                 }
                 .frame(width: 201, height: 50)
                 .background(Color.blue)
