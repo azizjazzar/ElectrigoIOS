@@ -11,7 +11,7 @@ import MapKit
 
 struct MapViewRepresentable : UIViewRepresentable {
     let mapView = MKMapView()
-    let locationManager = LocationManager()
+   
     
     
     //lena bch n7athro l map view

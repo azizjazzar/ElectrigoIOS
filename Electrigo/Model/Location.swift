@@ -13,7 +13,7 @@ struct Location:Identifiable
 {
     var name : String
     var cityName : String
-    var coordinates: Coordinates
+    var coordinates: CLLocationCoordinate2D
     var description : String
     var imageNames : [String]
     var id :String{
@@ -21,9 +21,9 @@ struct Location:Identifiable
         
     }
     
-    struct Coordinates {
-        var latitude: Double
-        var longitude: Double
-    }
+   // struct Coordinates {
+       // var latitude: Double
+       // var longitude: Double
+   // }
 
 }

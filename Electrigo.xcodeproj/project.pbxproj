@@ -21,8 +21,9 @@
 		C739FAF62AF6C10700FB3660 /* LocationlistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C739FAF52AF6C10700FB3660 /* LocationlistView.swift */; };
 		C739FAF82AF6C13300FB3660 /* LocationlistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C739FAF72AF6C13300FB3660 /* LocationlistViewModel.swift */; };
 		C739FAFA2AF7104E00FB3660 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C739FAF92AF7104E00FB3660 /* MapView.swift */; };
-		C7AF860E2AF7DE8F004C6830 /* MapViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AF860D2AF7DE8F004C6830 /* MapViewRepresentable.swift */; };
 		C7AF86112AF7F199004C6830 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AF86102AF7F199004C6830 /* LocationManager.swift */; };
+		C7B0EB3D2AFA4D5A00A11FA7 /* ListLocationMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B0EB3C2AFA4D5A00A11FA7 /* ListLocationMapView.swift */; };
+		C7B0EB3F2AFA8D2500A11FA7 /* mapPinItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B0EB3E2AFA8D2500A11FA7 /* mapPinItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,8 +61,9 @@
 		C739FAF52AF6C10700FB3660 /* LocationlistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationlistView.swift; sourceTree = "<group>"; };
 		C739FAF72AF6C13300FB3660 /* LocationlistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationlistViewModel.swift; sourceTree = "<group>"; };
 		C739FAF92AF7104E00FB3660 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
-		C7AF860D2AF7DE8F004C6830 /* MapViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewRepresentable.swift; sourceTree = "<group>"; };
 		C7AF86102AF7F199004C6830 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		C7B0EB3C2AFA4D5A00A11FA7 /* ListLocationMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListLocationMapView.swift; sourceTree = "<group>"; };
+		C7B0EB3E2AFA8D2500A11FA7 /* mapPinItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mapPinItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,8 +158,9 @@
 			children = (
 				C739FAF52AF6C10700FB3660 /* LocationlistView.swift */,
 				C739FAF92AF7104E00FB3660 /* MapView.swift */,
-				C7AF860D2AF7DE8F004C6830 /* MapViewRepresentable.swift */,
 				C70870442AF9012000A4DA31 /* AddBorneView.swift */,
+				C7B0EB3C2AFA4D5A00A11FA7 /* ListLocationMapView.swift */,
+				C7B0EB3E2AFA8D2500A11FA7 /* mapPinItem.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -326,11 +329,12 @@
 			files = (
 				C739FACB2AF6B15100FB3660 /* Electrigo.xcdatamodeld in Sources */,
 				C739FAFA2AF7104E00FB3660 /* MapView.swift in Sources */,
+				C7B0EB3D2AFA4D5A00A11FA7 /* ListLocationMapView.swift in Sources */,
+				C7B0EB3F2AFA8D2500A11FA7 /* mapPinItem.swift in Sources */,
 				C7AF86112AF7F199004C6830 /* LocationManager.swift in Sources */,
 				C739FAC82AF6B15100FB3660 /* Persistence.swift in Sources */,
 				C70870452AF9012000A4DA31 /* AddBorneView.swift in Sources */,
 				C739FAF62AF6C10700FB3660 /* LocationlistView.swift in Sources */,
-				C7AF860E2AF7DE8F004C6830 /* MapViewRepresentable.swift in Sources */,
 				C739FAF42AF6BB3600FB3660 /* LocationsDataService.swift in Sources */,
 				C739FAF12AF6B93E00FB3660 /* Location.swift in Sources */,
 				C739FABF2AF6B15000FB3660 /* ElectrigoApp.swift in Sources */,
@@ -495,7 +499,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Electrigo/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Please Allows us to acess your location";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "S'il vous plaît, permet-nous d'accéder à votre position";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -524,7 +528,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Electrigo/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Please Allows us to acess your location";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "S'il vous plaît, permet-nous d'accéder à votre position";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

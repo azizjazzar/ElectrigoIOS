@@ -13,9 +13,9 @@ class LocationManager:NSObject,ObservableObject{
         locationManager.delegate = self
         //accurcy of location
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        // request authoraziration men aand l user :always/while using phone / never
+         //request authoraziration men aand l user :always/while using phone / never
         locationManager.requestWhenInUseAuthorization()
-        // to93ed tabab3 f coordinates mtaa l user
+        //to93ed tabab3 f coordinates mtaa l user
         locationManager.startUpdatingLocation()
     }
 }
