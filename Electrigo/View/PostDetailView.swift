@@ -8,8 +8,8 @@ import SwiftUI
 
 struct PostDetailView: View {
     let forum: Forum
-    let numberOfReplies: Int
-    let numberOfRetweets: Int
+    let numberOfUpvote: Int
+    let numberOfDownvote: Int
 
     @State private var response = ""
 
@@ -34,14 +34,14 @@ struct PostDetailView: View {
 
                         // Reduce the space between the number of replies and the number of retweets with the author name.
                         HStack(spacing: 5) {
-                            Text("Upvote: \(numberOfReplies)")
+                            Text("Upvote: \(numberOfUpvote)")
                                 .padding()
                                 .foregroundColor(.gray)
-                            Text("DownVote: \(numberOfRetweets)")
+                            Text("DownVote: \(numberOfDownvote)")
                                 .padding()
                                 .foregroundColor(.gray)
                         }
-                        .padding(.top, 80)
+                        .padding(.top, 10)
                     }
 
                     // Forum text
@@ -64,7 +64,8 @@ struct PostDetailView: View {
                     // Response text field and button
                     Section {
                         // Add a text field for writing a response
-                        TextField("Write a response...", text: $response)
+                        TextField("Votre commentaire", text: $response)
+                            .frame(width: 300, height: 100)
                             .padding()
                             .foregroundColor(.black)
                             .background(Color.gray.opacity(0.2))

@@ -4,7 +4,6 @@
 //
 //  Created by idriss EB on 5/11/2023.
 //
-
 import SwiftUI
 
 struct CommentsView: View {
@@ -17,11 +16,13 @@ struct CommentsView: View {
         NavigationView {
             Form {
                 Section(header: Text("Ajouter un post")) {
-                    Picker("Choisir le sujet", selection: $selectedFilter) {
+                    Picker("Choisir le sujet", selection: $selectedFilter, content: {
                         ForEach([ "Voiture", "Bornes", "Technologie", "Autre"], id: \.self) { filter in
                             Text(filter)
                         }
-                    }
+                    })
+                    .pickerStyle(MenuPickerStyle())
+                    .foregroundColor(Color.blue)
 
                     TextField("Description", text: $commentText)
                         .frame(width: 300, height: 150)
@@ -49,7 +50,7 @@ struct CommentsView: View {
                     .shadow(radius: 10)
                 }
             }
-            .navigationTitle("post")
+            .navigationTitle("Post")
             .navigationBarTitleDisplayMode(.inline)
             .background(Color.blue)
         }

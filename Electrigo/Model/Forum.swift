@@ -13,7 +13,7 @@ struct Forum : Identifiable {
     let authorUsername: String
     let timestampText: String
     let text: String
-    let numberOfReplies: Int
-    let numberOfRetweets: Int
-    let numberOfLikes: Int
+    let numberOfUpvote: Int
+    let numberOfDownvote: Int
+    let numberOfComments: Int
 }

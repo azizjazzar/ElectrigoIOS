@@ -7,34 +7,34 @@ struct ForumView: View {
     private let topics = ["Tous", "Voiture", "Borne",  "Technologie", "Autre"]
     
     private let forum: [Forum] = [
-        Forum(authorName: "Dhia Aissa",
+        Forum(authorName: "Dhia ",
               authorUsername: "dhia_patron",
               timestampText: "4h",
               text: "good morning 🌞",
-              numberOfReplies: 2,
-              numberOfRetweets: 3,
-              numberOfLikes: 8),
+              numberOfUpvote: 2,
+              numberOfDownvote: 3,
+              numberOfComments: 8),
         Forum(authorName: "Hamza",
               authorUsername: "hamza",
               timestampText: "15h",
               text: "just setting up my twitter",
-              numberOfReplies: 5,
-              numberOfRetweets: 3,
-              numberOfLikes: 4),
-        Forum(authorName: "Aziz Jazzar",
+              numberOfUpvote: 5,
+              numberOfDownvote: 3,
+              numberOfComments: 4),
+        Forum(authorName: "Aziz ",
               authorUsername: "realDonaldTrump",
               timestampText: "6h",
               text: "Despite the negative press covfefe",
-              numberOfReplies: 2,
-              numberOfRetweets: 45,
-              numberOfLikes: 89),
+              numberOfUpvote: 2,
+              numberOfDownvote: 45,
+              numberOfComments: 89),
         Forum(authorName: "adem",
               authorUsername: "samir",
               timestampText: "15h",
-              text: "this is a tweet with a lot of text because I need to test multi-line tweets in my new SwiftUI twitter app :)",
-              numberOfReplies: 5,
-              numberOfRetweets: 3,
-              numberOfLikes: 45)
+              text: "test :)",
+              numberOfUpvote: 5,
+              numberOfDownvote: 3,
+              numberOfComments: 45)
     ]
 
     var body: some View {
@@ -49,7 +49,7 @@ struct ForumView: View {
                 .padding()
 
                 if selectedTopic == "Voiture" {
-                    List(forum.filter { $0.authorName == "Dhia Aissa" }) { forum in
+                    List(forum.filter { $0.authorName == "Dhia " }) { forum in
                         ForumItemView(forum: forum)
                     }
                     .navigationTitle("Forum - Voiture")
@@ -59,10 +59,10 @@ struct ForumView: View {
                     }
                     .navigationTitle("Forum - Borne")
                 } else if selectedTopic == "Autre" {
-                    List(forum.filter { $0.authorName == "Aziz Jazzar" }) { forum in
+                    List(forum.filter { $0.authorName == "Aziz " }) { forum in
                         ForumItemView(forum: forum)
                     }
-                    .navigationTitle("Forum - Technologie")
+                    .navigationTitle("Forum - Autre")
                 } else if selectedTopic == "Technologie" {
                     List(forum.filter { $0.authorName == "adem" }) { forum in
                         ForumItemView(forum: forum)
@@ -130,7 +130,7 @@ struct ForumItemView: View {
                         .padding([.bottom, .top], 0)
                         .padding(.trailing, 50)
 
-                NavigationLink(destination: PostDetailView(forum: forum, numberOfReplies: forum.numberOfReplies, numberOfRetweets: forum.numberOfReplies)) {
+                NavigationLink(destination: PostDetailView(forum: forum, numberOfUpvote: forum.numberOfUpvote, numberOfDownvote: forum.numberOfUpvote)) {
                     Image(systemName: "")
                 
                         .font(.system(size: 16))
@@ -154,19 +154,19 @@ struct ForumActionsView: View {
             Button(action: {}) {
                 Image(systemName: "arrow.up.circle")
             }
-            Text(forum.numberOfReplies > 0 ? "\(forum.numberOfReplies)" : "")
+            Text(forum.numberOfUpvote > 0 ? "\(forum.numberOfUpvote)" : "")
             Spacer()
 
             Button(action: {}) {
                 Image(systemName: "arrow.down.circle")
             }
-            Text(forum.numberOfRetweets > 0 ? "\(forum.numberOfRetweets)" : "")
+            Text(forum.numberOfDownvote > 0 ? "\(forum.numberOfDownvote)" : "")
             Spacer()
 
             Button(action: {}) {
                 Image(systemName: "message")
             }
-            Text(forum.numberOfLikes > 0 ? "\(forum.numberOfLikes)" : "")
+            Text(forum.numberOfComments > 0 ? "\(forum.numberOfComments)" : "")
             Spacer()
 
             Button(action: {}) {
