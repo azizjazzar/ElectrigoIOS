@@ -18,6 +18,11 @@
 		0E44D8DA2AF7F034003BA1F2 /* MapflotteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E44D8D92AF7F034003BA1F2 /* MapflotteView.swift */; };
 		0E53B2C52AF70C3B006E0BD4 /* SendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E53B2C42AF70C3B006E0BD4 /* SendView.swift */; };
 		0EA30BBB2AF6E24B00AFDB28 /* FlotteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA30BBA2AF6E24B00AFDB28 /* FlotteView.swift */; };
+		0EB5E6E82AFB96C9002FA949 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB5E6E72AFB96C9002FA949 /* Message.swift */; };
+		0EB5E6EA2AFB97C0002FA949 /* MessageBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB5E6E92AFB97C0002FA949 /* MessageBubbleView.swift */; };
+		0EB5E6EC2AFBC0E3002FA949 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB5E6EB2AFBC0E3002FA949 /* Extensions.swift */; };
+		0EB5E6F02AFBC726002FA949 /* MessageFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB5E6EF2AFBC726002FA949 /* MessageFieldView.swift */; };
+		0EB5E6F22AFBD57A002FA949 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0EB5E6F12AFBD57A002FA949 /* GoogleService-Info.plist */; };
 		0EC13B912AF6B76700B231A3 /* ElectrigoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC13B902AF6B76700B231A3 /* ElectrigoApp.swift */; };
 		0EC13B952AF6B76700B231A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EC13B942AF6B76700B231A3 /* Assets.xcassets */; };
 		0EC13B982AF6B76700B231A3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EC13B972AF6B76700B231A3 /* Preview Assets.xcassets */; };
@@ -57,6 +62,11 @@
 		0E44D8D92AF7F034003BA1F2 /* MapflotteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapflotteView.swift; sourceTree = "<group>"; };
 		0E53B2C42AF70C3B006E0BD4 /* SendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendView.swift; sourceTree = "<group>"; };
 		0EA30BBA2AF6E24B00AFDB28 /* FlotteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlotteView.swift; sourceTree = "<group>"; };
+		0EB5E6E72AFB96C9002FA949 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		0EB5E6E92AFB97C0002FA949 /* MessageBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBubbleView.swift; sourceTree = "<group>"; };
+		0EB5E6EB2AFBC0E3002FA949 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		0EB5E6EF2AFBC726002FA949 /* MessageFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageFieldView.swift; sourceTree = "<group>"; };
+		0EB5E6F12AFBD57A002FA949 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0EC13B8D2AF6B76700B231A3 /* Electrigo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Electrigo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EC13B902AF6B76700B231A3 /* ElectrigoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectrigoApp.swift; sourceTree = "<group>"; };
 		0EC13B942AF6B76700B231A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -99,6 +109,8 @@
 			isa = PBXGroup;
 			children = (
 				0E0110B12AF95C9700C6E5A1 /* TitleRowView.swift */,
+				0EB5E6E92AFB97C0002FA949 /* MessageBubbleView.swift */,
+				0EB5E6EF2AFBC726002FA949 /* MessageFieldView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -123,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				0E0DFC292AF82414001EBB0E /* Location.swift */,
+				0EB5E6E72AFB96C9002FA949 /* Message.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -151,6 +164,7 @@
 		0EC13B842AF6B76700B231A3 = {
 			isa = PBXGroup;
 			children = (
+				0EB5E6F12AFBD57A002FA949 /* GoogleService-Info.plist */,
 				0E0DFC202AF8212E001EBB0E /* Data */,
 				0EC13B8F2AF6B76700B231A3 /* Electrigo */,
 				0EC13BA52AF6B76800B231A3 /* ElectrigoTests */,
@@ -190,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				0EC13B972AF6B76700B231A3 /* Preview Assets.xcassets */,
+				0EB5E6EB2AFBC0E3002FA949 /* Extensions.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -317,6 +332,7 @@
 			files = (
 				0EC13B982AF6B76700B231A3 /* Preview Assets.xcassets in Resources */,
 				0EC13B952AF6B76700B231A3 /* Assets.xcassets in Resources */,
+				0EB5E6F22AFBD57A002FA949 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,12 +364,16 @@
 				0E0110B22AF95C9700C6E5A1 /* TitleRowView.swift in Sources */,
 				0EC13B9A2AF6B76700B231A3 /* Persistence.swift in Sources */,
 				0EA30BBB2AF6E24B00AFDB28 /* FlotteView.swift in Sources */,
+				0EB5E6F02AFBC726002FA949 /* MessageFieldView.swift in Sources */,
 				0E0110AF2AF959A600C6E5A1 /* ChatView.swift in Sources */,
 				0E0DFC1A2AF80DD6001EBB0E /* ArrivedView.swift in Sources */,
 				0E0DFC1C2AF81FEC001EBB0E /* MapflotteViewRepresentable.swift in Sources */,
 				0E44D8DA2AF7F034003BA1F2 /* MapflotteView.swift in Sources */,
 				0E53B2C52AF70C3B006E0BD4 /* SendView.swift in Sources */,
+				0EB5E6E82AFB96C9002FA949 /* Message.swift in Sources */,
 				0E0DFC2A2AF82414001EBB0E /* Location.swift in Sources */,
+				0EB5E6EC2AFBC0E3002FA949 /* Extensions.swift in Sources */,
+				0EB5E6EA2AFB97C0002FA949 /* MessageBubbleView.swift in Sources */,
 				0EC13B912AF6B76700B231A3 /* ElectrigoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

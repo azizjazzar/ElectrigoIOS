@@ -37,7 +37,8 @@ struct FlotteView: View {
                 .foregroundColor(.white)
                 
                 
-            }.toolbar {
+            }
+            .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button(action: {
                         // Your back button action here
@@ -51,13 +52,16 @@ struct FlotteView: View {
                     Button(action: {
                         // Your back button action here
                     }) {
-                        Image(systemName: "message")
-                            .foregroundColor(.blue)
+                        NavigationLink(destination: ChatView() ) {
+                            Image(systemName: "message")
+                                .foregroundColor(.blue)
+                            
+                        }
                         
                     }
                 }
                 
-            }}
+            }}.navigationBarBackButtonHidden(true)
             
     }
     

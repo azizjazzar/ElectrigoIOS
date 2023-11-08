@@ -11,19 +11,31 @@ import CoreLocation
 
 struct MapflotteView: View {
     var body: some View {
-        VStack {
-            MapflotteViewRepresentable()
-                .ignoresSafeArea()
-            NavigationLink(destination: ArrivedView()) {
-            Text("OK") 
+        NavigationView{
+            VStack {
+                MapflotteViewRepresentable()
+                    .ignoresSafeArea()
+                NavigationLink(destination: ArrivedView()) {
+                    Text("Start")
+                }
+                .frame(width: 350, height: 50)
+                .background(Color.blue)
+                .cornerRadius(15)
+                
+                .foregroundColor(.white)
+                
+            }.toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    NavigationLink(destination: SendView())
+                    {
+                        Image(systemName: "chevron.left")
+                            .foregroundColor(.blue)
+                        Text("Retour").foregroundColor(.blue)
+                    }
+                }
             }
-            .frame(width: 350, height: 50)
-            .background(Color.blue)
-            .cornerRadius(15)
-            
-            .foregroundColor(.white)
-            
-        }
+        }.navigationBarBackButtonHidden(true)
+        
     }
 }
     

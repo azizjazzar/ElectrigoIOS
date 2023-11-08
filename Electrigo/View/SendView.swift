@@ -17,6 +17,7 @@ struct SendView: View {
             VStack{
                 Image("a")
                 TextField("Prenom", text: $Prenom)
+                    .padding(12)
                     .frame(width: 350, height: 50)
                     .background(Color.clear)
                     .cornerRadius(15)
@@ -27,6 +28,7 @@ struct SendView: View {
                     .padding(.vertical, 10)
 
                 TextField("Email*", text: $email)
+                    .padding(12)
                     .frame(width: 350, height: 50)
                     .background(Color.clear)
                     .cornerRadius(15)
@@ -37,6 +39,7 @@ struct SendView: View {
                     .padding(.vertical, 10)
                 
                 TextField("Saisissez votre commentaire?*", text: $commentaire)
+                    .padding(12)
                     .frame(width: 350, height: 150)
                     .background(Color.clear)
                     .cornerRadius(15)
@@ -64,7 +67,7 @@ struct SendView: View {
                 }
             }
             
-        }
+        }.navigationBarBackButtonHidden(true)
         
     }
     
