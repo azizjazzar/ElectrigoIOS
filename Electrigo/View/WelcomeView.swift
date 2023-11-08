@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SplashScreen: View {
+struct WelcomeView: View {
     @State private var isShawing = false
     
     var body: some View {
@@ -44,9 +44,9 @@ struct SplashScreen: View {
 }
     
        
-struct SplashScreen_Previews: PreviewProvider {
+struct SWelcomeView_Previews: PreviewProvider {
     static var previews: some View {
-        SplashScreen()
+        WelcomeView()
     }
     
     

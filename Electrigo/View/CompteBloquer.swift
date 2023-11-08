@@ -8,24 +8,28 @@
 import SwiftUI
 struct CompteBloquer: View {
 
-    @State private var isSheetPresented = false
+    @State var message: String = ""
 
-    @State private var offset: CGFloat = 0
-
-        var body: some View {
-      Text("hello")
-        }
-}
-
-struct BottomSheetView: View {
     var body: some View {
-        VStack {
-            Text("Cette est la sheet")
+        // Crée un fond gris
+        VStack{
+            // Crée une icône du système pour représenter l'utilisateur bloqué
+            Image(systemName: "person.badge.minus")
+                .resizable()
+                .frame(width: 100, height: 100)
+                .foregroundColor(.black)
+            // Crée un champ de texte pour permettre à l'utilisateur d'envoyer un message
+            Text("Votre compte a été blocquer temporairement suspendu pour avoir enfreint nos régles.Contacter nous si vous pensez que c'est une erreur.")
+
+
+            TextField("Votre message", text: $message)
+                .frame(width: 300, height: 300)
+            
+            // Crée un bouton pour envoyer le message
+            Button("Envoyer") {
+                // Envoie le message à un serveur ou à une base de données
+            }
         }
-        .padding()
-        .background(Color.white)
-        .cornerRadius(20)
-        .shadow(radius: 10)
     }
 }
 

@@ -12,6 +12,7 @@
 		F91E813E2AF81D9D0055AAF5 /* ChangePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91E813D2AF81D9D0055AAF5 /* ChangePasswordView.swift */; };
 		F91E81402AF83AB80055AAF5 /* UserSetingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91E813F2AF83AB80055AAF5 /* UserSetingsView.swift */; };
 		F92272CF2AFB273F00140BEA /* CompteBloquer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92272CE2AFB273F00140BEA /* CompteBloquer.swift */; };
+		F92D577F2AFC2B930090D1E5 /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92D577E2AFC2B930090D1E5 /* UserProfileView.swift */; };
 		F930538E2AF6B1140066CF9E /* ElectrigoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F930538D2AF6B1140066CF9E /* ElectrigoApp.swift */; };
 		F93053922AF6B1150066CF9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F93053912AF6B1150066CF9E /* Assets.xcassets */; };
 		F93053952AF6B1150066CF9E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F93053942AF6B1150066CF9E /* Preview Assets.xcassets */; };
@@ -20,7 +21,7 @@
 		F93053A42AF6B1150066CF9E /* ElectrigoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93053A32AF6B1150066CF9E /* ElectrigoTests.swift */; };
 		F93053AE2AF6B1150066CF9E /* ElectrigoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93053AD2AF6B1150066CF9E /* ElectrigoUITests.swift */; };
 		F93053B02AF6B1150066CF9E /* ElectrigoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93053AF2AF6B1150066CF9E /* ElectrigoUITestsLaunchTests.swift */; };
-		F964F1452AFB41F2007321EB /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F964F1442AFB41F2007321EB /* SplashScreen.swift */; };
+		F964F1452AFB41F2007321EB /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F964F1442AFB41F2007321EB /* WelcomeView.swift */; };
 		F964F1472AFB442B007321EB /* GifImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F964F1462AFB442B007321EB /* GifImage.swift */; };
 		F964F14F2AFB4724007321EB /* car.gif in Resources */ = {isa = PBXBuildFile; fileRef = F964F14E2AFB4724007321EB /* car.gif */; };
 		F9B34E4D2AF6DEB700035AAD /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B34E4C2AF6DEB700035AAD /* UserViewModel.swift */; };
@@ -52,6 +53,7 @@
 		F91E813D2AF81D9D0055AAF5 /* ChangePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordView.swift; sourceTree = "<group>"; };
 		F91E813F2AF83AB80055AAF5 /* UserSetingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSetingsView.swift; sourceTree = "<group>"; };
 		F92272CE2AFB273F00140BEA /* CompteBloquer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompteBloquer.swift; sourceTree = "<group>"; };
+		F92D577E2AFC2B930090D1E5 /* UserProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
 		F930538A2AF6B1140066CF9E /* Electrigo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Electrigo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F930538D2AF6B1140066CF9E /* ElectrigoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectrigoApp.swift; sourceTree = "<group>"; };
 		F93053912AF6B1150066CF9E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -63,7 +65,7 @@
 		F93053A92AF6B1150066CF9E /* ElectrigoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ElectrigoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F93053AD2AF6B1150066CF9E /* ElectrigoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectrigoUITests.swift; sourceTree = "<group>"; };
 		F93053AF2AF6B1150066CF9E /* ElectrigoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectrigoUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		F964F1442AFB41F2007321EB /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
+		F964F1442AFB41F2007321EB /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		F964F1462AFB442B007321EB /* GifImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifImage.swift; sourceTree = "<group>"; };
 		F964F14E2AFB4724007321EB /* car.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = car.gif; sourceTree = "<group>"; };
 		F9B34E4C2AF6DEB700035AAD /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 		F9B34E4A2AF6DE2700035AAD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F92D577E2AFC2B930090D1E5 /* UserProfileView.swift */,
 				F9B34E522AF6DF5700035AAD /* LoginView.swift */,
 				F9B34E542AF7095C00035AAD /* RegisterView.swift */,
 				F91E81392AF81ABC0055AAF5 /* ForgetpasswordView.swift */,
@@ -175,7 +178,7 @@
 				F91E813D2AF81D9D0055AAF5 /* ChangePasswordView.swift */,
 				F91E813F2AF83AB80055AAF5 /* UserSetingsView.swift */,
 				F92272CE2AFB273F00140BEA /* CompteBloquer.swift */,
-				F964F1442AFB41F2007321EB /* SplashScreen.swift */,
+				F964F1442AFB41F2007321EB /* WelcomeView.swift */,
 				F964F1462AFB442B007321EB /* GifImage.swift */,
 				F964F14E2AFB4724007321EB /* car.gif */,
 			);
@@ -328,9 +331,10 @@
 				F9B34E532AF6DF5700035AAD /* LoginView.swift in Sources */,
 				F93053972AF6B1150066CF9E /* Persistence.swift in Sources */,
 				F9B34E552AF7095C00035AAD /* RegisterView.swift in Sources */,
-				F964F1452AFB41F2007321EB /* SplashScreen.swift in Sources */,
+				F964F1452AFB41F2007321EB /* WelcomeView.swift in Sources */,
 				F9B34E4F2AF6DEDA00035AAD /* User.swift in Sources */,
 				F91E813E2AF81D9D0055AAF5 /* ChangePasswordView.swift in Sources */,
+				F92D577F2AFC2B930090D1E5 /* UserProfileView.swift in Sources */,
 				F964F1472AFB442B007321EB /* GifImage.swift in Sources */,
 				F9B34E4D2AF6DEB700035AAD /* UserViewModel.swift in Sources */,
 				F91E81402AF83AB80055AAF5 /* UserSetingsView.swift in Sources */,

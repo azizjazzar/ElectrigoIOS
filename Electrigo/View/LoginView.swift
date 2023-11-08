@@ -3,39 +3,35 @@ import CoreLocation;
 
 struct LoginView: View {
     @State private var email = ""
-    @State private var isShawing = false
     @State private var password = ""
     @State private var isChecked = false
     var location: CLLocation?
 
     var body: some View {
-      
         NavigationView{
 
         VStack {
             Text("Connectez-vous")
                 .font(.largeTitle)
                 .bold()
-                .padding(.vertical,40)
-
-            TextField(" Email", text: $email)
-                .frame(width: 350, height: 50)
-                .background(Color.clear)
-                .cornerRadius(15)
-                .overlay(RoundedRectangle(cornerRadius: 10)
-                .stroke(Color.black, lineWidth: 1))
-                .padding(.vertical, 10)
-
-            SecureField(" Mot de passe", text: $password)
-                .frame(width: 350, height: 50)
-                .background(Color.clear)
-                .cornerRadius(15)
-                .overlay(RoundedRectangle(cornerRadius: 10)
-                .stroke(Color.black, lineWidth: 1))
-                .foregroundColor(.black)
-                .labelStyle(.titleOnly)
-                .font(.system(size: 15, weight: .light))
-
+                TextField(" Email", text: $email)
+                    .frame(width: 350, height: 50)
+                    .background(Color.clear)
+                    .cornerRadius(15)
+                    .overlay(RoundedRectangle(cornerRadius: 10)
+                        .stroke(Color.black, lineWidth: 1))
+                    .padding(.vertical, 10)
+                
+                SecureField(" Mot de passe", text: $password)
+                    .frame(width: 350, height: 50)
+                    .background(Color.clear)
+                    .cornerRadius(15)
+                    .overlay(RoundedRectangle(cornerRadius: 10)
+                        .stroke(Color.black, lineWidth: 1))
+                    .foregroundColor(.black)
+                    .labelStyle(.titleOnly)
+                    .font(.system(size: 15, weight: .light))
+            
             // Checkbox
             HStack(spacing: 10) {
                 Button(action: { self.isChecked.toggle() }) {
@@ -59,15 +55,17 @@ struct LoginView: View {
 
         
          
-            Button(action: { /* TODO: Implement login logic here */ }) {
-                Text("Se Connecter")
-            }
-            .padding(.vertical, 10)
-            .frame(width: 350, height: 50)
-            .background(Color.blue)
-            .cornerRadius(15)
-            .foregroundColor(.white)
-
+            
+              NavigationLink("Se connecter", destination: UserSetingsView())
+        
+                .navigationBarBackButtonHidden(true)
+                .padding(.vertical, 10)
+                .frame(width: 350, height: 50)
+                .background(Color.blue)
+                .cornerRadius(15)
+                .foregroundColor(.white)
+                
+            
         
 
 
@@ -101,27 +99,21 @@ struct LoginView: View {
 
 
             }
-            Button("Show Sheet") {
-                isShawing.toggle()
-            }
-            .sheet(isPresented: $isShawing) {
-                previews.presentationDetents([.medium,.large] )
-                    .presentationDragIndicator(.visible)
-            }
+           
            
         }
+
         }
         
+        
     }
-
+ 
     struct ContentView_Previews: PreviewProvider {
         static var previews: some View {
             LoginView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
         }
     }
-         var previews: some View {
-          Text("hello")
-        }
+    
     
     
 }

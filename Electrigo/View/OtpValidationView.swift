@@ -13,6 +13,7 @@ struct OtpValidationView: View {
     var body: some View {
         NavigationView {
             VStack(spacing: 30) {
+                
                 // Title
                 Text("Mot de passe oublié")
                     .font(.title)

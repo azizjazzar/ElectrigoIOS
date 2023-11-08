@@ -22,75 +22,76 @@ struct RegisterView: View {
             Text("Rejoignez nous ")
                 .font(.largeTitle)
                 .bold()
-            
-            TextField(" Email", text: $email)
-                .frame(width: 350, height: 50)
-                .background(Color.clear)
-                .cornerRadius(15)
-                .overlay(RoundedRectangle(cornerRadius: 10)
-                    .stroke(Color.black, lineWidth: 1))
-            HStack
-            {
-            TextField(" Nom", text: $nom)
-                .frame(width: 171, height: 50)
-                .background(Color.clear)
-                .cornerRadius(15)
-                .overlay(RoundedRectangle(cornerRadius: 10)
-                    .stroke(Color.black, lineWidth: 1))
-                TextField(" Prenom", text: $prenom)
-                    .frame(width: 171, height: 50)
+            Form{
+                TextField(" Email", text: $email)
+                    .frame(width: 350, height: 50)
+                    .background(Color.clear)
+                    .cornerRadius(15)
+                    .overlay(RoundedRectangle(cornerRadius: 10)
+                        .stroke(Color.black, lineWidth: 1))
+                HStack
+                {
+                    TextField(" Nom", text: $nom)
+                        .frame(width: 171, height: 50)
+                        .background(Color.clear)
+                        .cornerRadius(15)
+                        .overlay(RoundedRectangle(cornerRadius: 10)
+                            .stroke(Color.black, lineWidth: 1))
+                    TextField(" Prenom", text: $prenom)
+                        .frame(width: 171, height: 50)
+                        .background(Color.clear)
+                        .cornerRadius(15)
+                        .overlay(RoundedRectangle(cornerRadius: 10)
+                            .stroke(Color.black, lineWidth: 1))
+                    
+                }
+                TextField(" Mot passe", text: $passe)
+                    .frame(width: 350, height: 50)
+                    .background(Color.clear)
+                    .cornerRadius(15)
+                    .overlay(RoundedRectangle(cornerRadius: 10)
+                        .stroke(Color.black, lineWidth: 1))
+                TextField(" Confirmer Mot passe", text: $cpasse)
+                    .frame(width: 350, height: 50)
+                    .background(Color.clear)
+                    .cornerRadius(15)
+                    .overlay(RoundedRectangle(cornerRadius: 10)
+                        .stroke(Color.black, lineWidth: 1))
+                DatePicker(
+                    "Date de naissance",
+                    selection: $date,
+                    displayedComponents: [.date]
+                ).frame(width: 350, height: 50)
+                
                     .background(Color.clear)
                     .cornerRadius(15)
                     .overlay(RoundedRectangle(cornerRadius: 10)
                         .stroke(Color.black, lineWidth: 1))
                 
-            }
-            TextField(" Mot passe", text: $passe)
-                .frame(width: 350, height: 50)
-                .background(Color.clear)
-                .cornerRadius(15)
-                .overlay(RoundedRectangle(cornerRadius: 10)
-                    .stroke(Color.black, lineWidth: 1))
-            TextField(" Confirmer Mot passe", text: $cpasse)
-                           .frame(width: 350, height: 50)
-                .background(Color.clear)
-                .cornerRadius(15)
-                .overlay(RoundedRectangle(cornerRadius: 10)
-                    .stroke(Color.black, lineWidth: 1))
-                       DatePicker(
-                              " Start Date",
-                              selection: $date,
-                              displayedComponents: [.date]
-                          ).frame(width: 350, height: 50)
-                .background(Color.clear)
-                .cornerRadius(15)
-                .overlay(RoundedRectangle(cornerRadius: 10)
-                .stroke(Color.black, lineWidth: 1))
-           
                 
                 HStack
                 {
                     Text("Genre")
-
-                RadioButtonView(index: 0, selectedIndex: $selectedOption)
-                RadioButtonView(index: 1, selectedIndex: $selectedOption)
-                    }
-            
+                    
+                    RadioButtonView(index: 0, selectedIndex: $selectedOption)
+                    RadioButtonView(index: 1, selectedIndex: $selectedOption)
+                }
+                
+                
+                TextField(" Telephone", text: $cpasse)
+                    .frame(width: 350, height: 50)
+                    .background(Color.clear)
+                    .cornerRadius(15)
+                    .overlay(RoundedRectangle(cornerRadius: 10)
+                        .stroke(Color.black, lineWidth: 1))
+                
+                TextField(" Adresse", text: $cpasse)
+                    .frame(width: 350, height: 50)
+                    .background(Color.clear)
+                    .cornerRadius(15)
+                    .overlay(RoundedRectangle(cornerRadius: 10)
+                        .stroke(Color.black, lineWidth: 1))
            
-            TextField(" Telephone", text: $cpasse)
-                .frame(width: 350, height: 50)
-                .background(Color.clear)
-                .cornerRadius(15)
-                .overlay(RoundedRectangle(cornerRadius: 10)
-                    .stroke(Color.black, lineWidth: 1))
-            
-             TextField(" Adresse", text: $cpasse)
-                 .frame(width: 350, height: 50)
-                 .background(Color.clear)
-                 .cornerRadius(15)
-                 .overlay(RoundedRectangle(cornerRadius: 10)
-                     .stroke(Color.black, lineWidth: 1))
-
             Button(action: { /* TODO: Implement login logic here */ }) {
                 Text("Créer un compte")
             }
@@ -101,7 +102,7 @@ struct RegisterView: View {
             .foregroundColor(.white)
             
          
-              
+            }
 
         }
     }
