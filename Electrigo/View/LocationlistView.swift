@@ -65,36 +65,62 @@ struct LocationlistView: View {
 }
 
 struct LocationDetailView: View {
-    var location: Location // Replace YourLocationType with your location type
+    var location: Location // Replace YourLocationType with your location t
+    @State private var showContributeButtons: Bool = false
 
     var body: some View {
         ScrollView {
-                 VStack(alignment: .leading, spacing: 16) {
-                     // Scrollable images
-                     ScrollView(.horizontal, showsIndicators: true) {
-                         HStack(spacing: 0) {
-                             ForEach(location.imageNames, id: \.self) { imageName in
-                                 Image(imageName)
-                                     .resizable()
-                                     .aspectRatio(contentMode: .fit)
-                                     .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height/2, alignment: .center)
-                             }
-                         }
-                         .tabViewStyle(PageTabViewStyle())
-                     }
-                     .padding(.bottom, 10)
-                
+            VStack(alignment: .leading, spacing: 16) {
+                // Scrollable images
+                ScrollView(.horizontal, showsIndicators: true) {
+                    HStack(spacing: 0) {
+                        ForEach(location.imageNames, id: \.self) { imageName in
+                            Image(imageName)
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height/2, alignment: .center)
+                        }
+                    }
+                }
+                .padding(.bottom, 10)
+
                 Button(action: {
-                    // Action for review button
+                    showContributeButtons.toggle()
                 }) {
                     Text("Contribuer")
-                              }
-                              .padding(.vertical, 10)
-                              .frame(width: 259, height: 50)
-                              .background(Color.blue)
-                              .cornerRadius(10)
-                              .foregroundColor(.white)
+                        .frame(width: 259, height: 50)
+                        .background(Color.blue)
+                        .cornerRadius(10)
+                        .foregroundColor(.white)
+                }
                 .padding(.horizontal, 60)
+
+                if showContributeButtons {
+                    HStack(spacing: 16) {
+                        NavigationLink(destination: AddBorneView()) {
+                            Text("Ajouter une Borne")
+                                .frame(minWidth: 0, maxWidth: .infinity)
+                                .frame(height: 50)
+                                .background(Color.green)
+                                .cornerRadius(10)
+                                .foregroundColor(.white)
+                        }
+                          
+                        
+
+                        NavigationLink(destination: AlertPage()) {
+                            Text("Alerter les utilisateurs")
+                                .frame(minWidth: 0, maxWidth: .infinity)
+                                .frame(height: 50)
+                                .background(Color.red.opacity(0.75 ))
+                                .cornerRadius(10)
+                                .foregroundColor(.white)
+                        }
+                            
+                        
+                    }
+                    .padding(.bottom, 20)
+                }
 
                 // Title
                 Text(location.name)
@@ -108,52 +134,41 @@ struct LocationDetailView: View {
                 Text(location.description)
                     .font(.body)
 
-                // Stars and buttons
+                // Stars
                 HStack {
-                    Image(systemName: "star")
-                    Image(systemName: "star")
-                    Image(systemName: "star")
-                    Image(systemName: "star")
-                    Image(systemName: "star")
-                    
+                    ForEach(0..<5) { _ in
+                        Image(systemName: "star")
+                    }
                     Spacer()
-
-                    
                 }
-                     
                 .padding(.top, 16)
-                     HStack (alignment: .center, spacing: 16) {
-                         // Info button
-                         Button(action: {
-                             // Action for info button
-                         }) {
-                             Text("Info")
-                                 .padding()
-                                 .foregroundColor(.white)
-                                 .background(Color.blue)
-                                 .cornerRadius(20)
-                                 
-                         }
 
-                         // Review button
-                         Button(action: {
-                             // Action for review button
-                         }) {
-                             Text("Review")
-                                 .padding()
-                                 .foregroundColor(.white)
-                                 .background(Color.green)
-                                 .cornerRadius(20)
-                         }
-                     }.padding(10)
-                     
-                     }
-                    
+                // Action buttons
+                HStack(spacing: 16) {
+                    Button(action: {}) {
+                        Text("Info")
+                            .padding()
+                            .foregroundColor(.white)
+                            .background(Color.blue)
+                            .cornerRadius(20)
+                    }
+
+                    Button(action: {}) {
+                        Text("Review")
+                            .padding()
+                            .foregroundColor(.white)
+                            .background(Color.green)
+                            .cornerRadius(20)
+                    }
+                }
+                .padding(10)
+            }
             .padding()
         }
-        .navigationBarTitle(Text("Detail de Borne "), displayMode: .inline)
+        .navigationBarTitle("Detail de Borne", displayMode: .inline)
     }
 }
+
 
 struct LocationlistView_Previews: PreviewProvider {
     static var previews: some View {

@@ -10,7 +10,7 @@ import SwiftUI
 struct ListLocationMapView: View {
     @EnvironmentObject var vm: locationlistViewModel
     let location : Location
-    
+ 
     
     
     var body: some View {

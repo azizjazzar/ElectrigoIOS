@@ -18,6 +18,7 @@ struct AddBorneView: View {
 
     var body: some View {
         NavigationView {
+            
             Form {
                 Section(header: Text("Nom:")) {
                     TextField("Example:", text: $name)
@@ -114,6 +115,8 @@ struct AddBorneView: View {
                         
                     }
                 }
+              
+               
                 
                 
                 Section {
@@ -143,7 +146,8 @@ struct AddBorneView: View {
                     }
                 }
             }
-            .navigationTitle("Add New Location")
+            .navigationTitle(Text("Ajouter un nouveau borne").font(.headline).font(.system(size: 5)))
+
         }
     }
 }

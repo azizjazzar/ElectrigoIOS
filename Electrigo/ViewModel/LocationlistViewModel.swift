@@ -19,6 +19,7 @@ class locationlistViewModel:ObservableObject {
     }
     var locationManager: LocationManager
     @Published var isListDisplayed = false
+    //@State private var mapRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 24.59, longitude: 46.70), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
     
     
     init(){
@@ -38,3 +39,10 @@ class locationlistViewModel:ObservableObject {
     }
     
 }
+
+
+
+
+
+
+

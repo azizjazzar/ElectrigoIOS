@@ -12,6 +12,7 @@ import CoreLocation
 struct MapView: View {
     @EnvironmentObject var vm: locationlistViewModel
     @State private var showLocationList = false
+    @State private var userLocation = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 24.59, longitude: 46.70), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
     private let locationManager = CLLocationManager()
 
     var body: some View {
