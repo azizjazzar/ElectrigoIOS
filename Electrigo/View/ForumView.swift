@@ -1,23 +1,5 @@
 import SwiftUI
 
-struct User {
-    var username: String
-    var userImageName: String
-}
-
-struct Comment {
-    var text: String
-    // ...
-}
-
-struct Post {
-    var user: User
-    var description: String
-    var date: String
-    var category: String
-    var comments: [Comment]
-    // ...
-}
 
 struct PostDetailView: View {
     @State private var newComment: String = ""

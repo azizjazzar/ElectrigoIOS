@@ -7,13 +7,21 @@
 
 import Foundation
 
-struct Forum : Identifiable {
-    let id = UUID()
-    let authorName: String
-    let authorUsername: String
-    let timestampText: String
-    let text: String
-    let numberOfUpvote: Int
-    let numberOfDownvote: Int
-    let numberOfComments: Int
+struct User {
+    var username: String
+    var userImageName: String
+}
+
+struct Comment {
+    var text: String
+    // ...
+}
+
+struct Post {
+    var user: User
+    var description: String
+    var date: String
+    var category: String
+    var comments: [Comment]
+    // ...
 }
