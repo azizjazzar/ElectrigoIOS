@@ -102,9 +102,6 @@ struct PostDetailView: View {
     }
 }
 
-
-
-
 struct ContentView: View {
     var user1: User
     var user2: User
@@ -116,15 +113,15 @@ struct ContentView: View {
     @State private var selectedCategory: String = "Tout" // Catégorie par défaut
 
     init() {
-        user1 = User(username: "Utilisateur 1", userImageName: "user1")
-        user2 = User(username: "Utilisateur 2", userImageName: "user2")
-        user3 = User(username: "Utilisateur 3", userImageName: "user3")
-        user4 = User(username: "Utilisateur 4", userImageName: "user4")
+        user1 = User(username: "Idirss ", userImageName: "user1")
+        user2 = User(username: "Aziz ", userImageName: "user2")
+        user3 = User(username: "Hamza", userImageName: "user3")
+        user4 = User(username: "Dhia", userImageName: "user4")
 
         posts = [
-            Post(user: user1, description: "Description du premier post", date: "06 Nov 2023", category: "Voitures", comments: []),
-            Post(user: user2, description: "Description du deuxième post", date: "07 Nov 2023", category: "Bornes", comments: []),
-            Post(user: user3, description: "Description du troisieme post", date: "08 Nov 2023", category: "Autre", comments: []),
+            Post(user: user1, description: "Que pensez vous de la tesla ", date: "06 Nov 2023", category: "Voitures", comments: []),
+            Post(user: user2, description: "instalation borne totale", date: "07 Nov 2023", category: "Bornes", comments: []),
+            Post(user: user3, description: "ou je peux acheter un chargeur ", date: "08 Nov 2023", category: "Autre", comments: []),
             Post(user: user4, description: "Description du quatrieme post", date: "09 Nov 2023", category: "Autre", comments: []),
             
             // Ajoutez plus de publications ici avec différents utilisateurs et commentaires
@@ -141,9 +138,8 @@ struct ContentView: View {
 
     var body: some View {
         ZStack {
-            // Arrière-plan
             Rectangle()
-                .foregroundColor(.blue) // Couleur bleue
+                .foregroundColor(.blue)
                 .edgesIgnoringSafeArea(.all)
             NavigationView {
                 VStack {
@@ -167,7 +163,6 @@ struct ContentView: View {
                         }
                     }
 
-                    // Bouton pour ajouter une publication
                     NavigationLink(destination: AddPostView()) {
                         Text("Ajouter une publication")
                             .font(.headline)
@@ -183,136 +178,143 @@ struct ContentView: View {
             }
         }
     }
+}
 
-    struct CategoryIcon: View {
-        var name: String
+struct CategoryIcon: View {
+    var name: String
 
-        var body: some View {
-            VStack {
-                Image(name)
-                    .resizable()
-                    .frame(width: 50, height: 20)
-                Text(name)
-                    .font(.caption)
-            }
-            .padding(10)
+    var body: some View {
+        VStack {
+            Image(name)
+                .resizable()
+                .frame(width: 50, height: 20)
+            Text(name)
+                .font(.caption)
         }
-    }
-
-    struct PostRow: View {
-        var post: Post
-
-        var body: some View {
-            HStack {
-                Image(post.user.userImageName)
-                    .resizable()
-                    .frame(width: 60, height: 60)
-                    .cornerRadius(25)
-
-                VStack(alignment: .leading) {
-                    HStack {
-                        Text(post.user.username)
-                            .font(.caption)
-                            .foregroundColor(.blue)
-                        Text(post.category)
-                            .font(.caption)
-                            .foregroundColor(.gray)
-                    }
-                    Text(post.description)
-                        .font(.body)
-                        .foregroundColor(.black)
-                        .opacity(0.8)
-                }
-
-                Spacer() // Pour élargir l'espace à gauche
-
-                VStack {
-                    Text(post.date)
-                        .font(.caption)
-                        .foregroundColor(.gray)
-
-                    HStack(spacing: 1) { // Espacement personnalisé entre les icônes
-                        Button(action: {
-                            // Ajoutez l'action d'upvote ici
-                        }) {
-                            Image(systemName: "arrow.up.circle")
-                                .font(.system(size: 30))
-                        }
-                        Button(action: {
-                            // Ajoutez l'action de downvote ici
-                        }) {
-                            Image(systemName: "arrow.down.circle")
-                                .font(.system(size: 30))
-                        }
-                        Button(action: {
-                            // Ajoutez l'action pour afficher les commentaires ici
-                        }) {
-                            Image(systemName: "message.circle")
-                                .font(.system(size: 30))
-                        }
-                    }
-                }
-            }
-            .padding(10)
-        }
-    }
-
-    struct ElectrigoApp_Previews: PreviewProvider {
-        static var previews: some View {
-            ContentView()
-        }
+        .padding(10)
     }
 }
 
-// Nouvelle vue pour le formulaire d'ajout de publication
+struct PostRow: View {
+    var post: Post
+
+    var body: some View {
+        HStack {
+            Image(post.user.userImageName)
+                .resizable()
+                .frame(width: 60, height: 60)
+                .cornerRadius(25)
+
+            VStack(alignment: .leading) {
+                HStack {
+                    Text(post.user.username)
+                        .font(.caption)
+                        .foregroundColor(.blue)
+                    Text(post.category)
+                        .font(.caption)
+                        .foregroundColor(.gray)
+                }
+                Text(post.description)
+                    .font(.body)
+                    .foregroundColor(.black)
+                    .opacity(0.8)
+            }
+
+            Spacer()
+
+            VStack {
+                Text(post.date)
+                    .font(.caption)
+                    .foregroundColor(.gray)
+
+                HStack(spacing: 1) {
+                    Button(action: {
+                        // Ajoutez l'action d'upvote ici
+                    }) {
+                        Image(systemName: "arrow.up.circle")
+                            .font(.system(size: 30))
+                    }
+                    Button(action: {
+                        // Ajoutez l'action de downvote ici
+                    }) {
+                        Image(systemName: "arrow.down.circle")
+                            .font(.system(size: 30))
+                    }
+                    Button(action: {
+                        // Ajoutez l'action pour afficher les commentaires ici
+                    }) {
+                        Image(systemName: "message.circle")
+                            .font(.system(size: 30))
+                    }
+                }
+            }
+        }
+        .padding(10)
+    }
+}
+
+struct ElectrigoApp_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
+}
+
 struct AddPostView: View {
     @State private var newPostDescription: String = ""
-    @State private var selectedCategory: String = "Voitures" // Catégorie par défaut
-    
+    @State private var selectedCategory: String = "Voitures"
+    @State private var showAlert = false // Ajoutez cet état pour contrôler l'affichage de l'alerte
+
     var body: some View {
-        
-        
         VStack {
-
-                Text("Ajouter une publication")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                    .padding(.top, 20)
-                
-                TextField("Description de la publication", text: $newPostDescription)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding()
-                    .background(Color(.secondarySystemBackground))
-                    .cornerRadius(10)
-                
-                Picker("Catégorie", selection: $selectedCategory) {
-                    Text("Voitures").tag("Voitures")
-                    Text("Bornes").tag("Bornes")
-                    Text("Autre").tag("Autre")
-                }
-                .pickerStyle(SegmentedPickerStyle())
-                .padding()
-                
-                // Bouton pour ajouter la nouvelle publication
-                Button(action: {
-                    // Ajoutez votre code pour enregistrer la nouvelle publication ici
-                }) {
-                    HStack {
-                        Image(systemName: "checkmark.circle.fill")
-                            .font(.title)
-                        Text("Ajouter")
-                            .font(.headline)
-                            .fontWeight(.bold)
-                    }
-                    .padding()
-                    .background(Color.blue)
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
-                }
-                .padding()
+            Text("Ajouter une publication")
+                .font(.largeTitle)
+                .fontWeight(.bold)
+                .padding(.top, 20) // Ajustez cette valeur pour déplacer la vue vers le haut
+            
+            Picker("Catégorie", selection: $selectedCategory) {
+                Text("Voitures").tag("Voitures")
+                Text("Bornes").tag("Bornes")
+                Text("Autre").tag("Autre")
             }
-            .navigationBarTitle("Ajout de Publication")
-            .padding(.horizontal, 20)
+            .pickerStyle(SegmentedPickerStyle())
+            .background(Color.blue.opacity(0.3))
+            .padding()
+            
+            TextField("Description de la publication", text: $newPostDescription)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .padding()
+                .background(Color.blue.opacity(0.3))
+                .cornerRadius(10)
+           
+            
+            Button(action: {
+                showAlert = true                // Ajoutez votre code pour enregistrer la nouvelle publication ici
+            }) {
+                HStack {
+                    Image(systemName: "checkmark.circle.fill")
+                        .font(.title)
+                    Text("Ajouter")
+                        .font(.headline)
+                        .fontWeight(.bold)
+                }
+                .padding()
+                .background(Color.blue)
+                .foregroundColor(.white)
+                .cornerRadius(10)
+            }
+            .padding()
+            .alert(isPresented: $showAlert) {
+                            Alert(
+                                title: Text("Publication ajoutée"),
+                                message: Text("Votre nouvelle publication a été enregistrée avec succès."),
+                                dismissButton: .default(Text("OK"))
+                            )
+                        }
+            
+            
+            Spacer() // Ajoute un espace supplémentaire en bas pour centrer le contenu
         }
+        .navigationBarTitle("Ajout de Publication")
+        .padding(.horizontal, 20)
     }
-
+}
