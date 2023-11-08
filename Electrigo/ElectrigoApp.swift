@@ -13,7 +13,7 @@ struct ElectrigoApp: App {
 
     var body: some Scene {
         WindowGroup {
-            UserSetingsView()
+            SplashScreen()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

@@ -3,6 +3,7 @@ import CoreLocation;
 
 struct LoginView: View {
     @State private var email = ""
+    @State private var isShawing = false
     @State private var password = ""
     @State private var isChecked = false
     var location: CLLocation?
@@ -17,7 +18,7 @@ struct LoginView: View {
                 .bold()
                 .padding(.vertical,40)
 
-            TextField("Email", text: $email)
+            TextField(" Email", text: $email)
                 .frame(width: 350, height: 50)
                 .background(Color.clear)
                 .cornerRadius(15)
@@ -25,7 +26,7 @@ struct LoginView: View {
                 .stroke(Color.black, lineWidth: 1))
                 .padding(.vertical, 10)
 
-            SecureField("Mot de passe", text: $password)
+            SecureField(" Mot de passe", text: $password)
                 .frame(width: 350, height: 50)
                 .background(Color.clear)
                 .cornerRadius(15)
@@ -33,7 +34,7 @@ struct LoginView: View {
                 .stroke(Color.black, lineWidth: 1))
                 .foregroundColor(.black)
                 .labelStyle(.titleOnly)
-                .font(.system(size: 12, weight: .light))
+                .font(.system(size: 15, weight: .light))
 
             // Checkbox
             HStack(spacing: 10) {
@@ -100,6 +101,13 @@ struct LoginView: View {
 
 
             }
+            Button("Show Sheet") {
+                isShawing.toggle()
+            }
+            .sheet(isPresented: $isShawing) {
+                previews.presentationDetents([.medium,.large] )
+                    .presentationDragIndicator(.visible)
+            }
            
         }
         }
@@ -111,5 +119,9 @@ struct LoginView: View {
             LoginView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
         }
     }
+         var previews: some View {
+          Text("hello")
+        }
+    
     
 }

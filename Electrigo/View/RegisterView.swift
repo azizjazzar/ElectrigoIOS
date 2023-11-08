@@ -52,7 +52,7 @@ struct RegisterView: View {
                 .overlay(RoundedRectangle(cornerRadius: 10)
                     .stroke(Color.black, lineWidth: 1))
             TextField(" Confirmer Mot passe", text: $cpasse)
-                .frame(width: 350, height: 50)
+                           .frame(width: 350, height: 50)
                 .background(Color.clear)
                 .cornerRadius(15)
                 .overlay(RoundedRectangle(cornerRadius: 10)
