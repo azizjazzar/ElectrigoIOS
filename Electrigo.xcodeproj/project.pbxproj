@@ -17,8 +17,8 @@
 		24951A3F2AF7E0B800DFD1BD /* ElectrigoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24951A3E2AF7E0B800DFD1BD /* ElectrigoUITestsLaunchTests.swift */; };
 		24951A502AF7E1DC00DFD1BD /* Forum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24951A4F2AF7E1DC00DFD1BD /* Forum.swift */; };
 		24951A522AF7E25400DFD1BD /* ForumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24951A512AF7E25400DFD1BD /* ForumView.swift */; };
-		24951A542AF7EE3B00DFD1BD /* CommentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24951A532AF7EE3B00DFD1BD /* CommentsView.swift */; };
 		24951A562AF831A900DFD1BD /* PostDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24951A552AF831A900DFD1BD /* PostDetailView.swift */; };
+		24B65D522AFBBE1000F84A1A /* TickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B65D512AFBBE1000F84A1A /* TickView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,8 +52,8 @@
 		24951A3E2AF7E0B800DFD1BD /* ElectrigoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectrigoUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		24951A4F2AF7E1DC00DFD1BD /* Forum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forum.swift; sourceTree = "<group>"; };
 		24951A512AF7E25400DFD1BD /* ForumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForumView.swift; sourceTree = "<group>"; };
-		24951A532AF7EE3B00DFD1BD /* CommentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsView.swift; sourceTree = "<group>"; };
 		24951A552AF831A900DFD1BD /* PostDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailView.swift; sourceTree = "<group>"; };
+		24B65D512AFBBE1000F84A1A /* TickView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,8 +145,8 @@
 			isa = PBXGroup;
 			children = (
 				24951A512AF7E25400DFD1BD /* ForumView.swift */,
-				24951A532AF7EE3B00DFD1BD /* CommentsView.swift */,
 				24951A552AF831A900DFD1BD /* PostDetailView.swift */,
+				24B65D512AFBBE1000F84A1A /* TickView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -298,11 +298,11 @@
 			files = (
 				24951A292AF7E0B700DFD1BD /* Electrigo.xcdatamodeld in Sources */,
 				24951A262AF7E0B700DFD1BD /* Persistence.swift in Sources */,
-				24951A542AF7EE3B00DFD1BD /* CommentsView.swift in Sources */,
 				24951A522AF7E25400DFD1BD /* ForumView.swift in Sources */,
 				24951A562AF831A900DFD1BD /* PostDetailView.swift in Sources */,
 				24951A1D2AF7E0B500DFD1BD /* ElectrigoApp.swift in Sources */,
 				24951A502AF7E1DC00DFD1BD /* Forum.swift in Sources */,
+				24B65D522AFBBE1000F84A1A /* TickView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
