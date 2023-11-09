@@ -4,35 +4,54 @@ struct VehiculeView: View {
     @State private var selectedTab = 0 // Assurez-vous que cette variable est dans
     @State private var search: String = ""
     @State private var selectedIndex: Int = 1
+    @State private var selectedLogo: String?
+
     let vehicules: [Véhicule] = [ // Remplacez par vos données de véhicules
-        Véhicule(id: 1, marque: "Ford", modele: "Ford F-150", vitesseMax: 200, capaciteBatterie: "6,3kwh", boite: "Automatique", nombreDePlaces: 5, image: "ford" ,imagelogo: "fordlogo" ,priceday: "150" ,userphoto: "user1" ,descriptionV:"Le modèle Ford A4 est équipé de la toute dernière technologie de sécurité avancée, offrant une tranquillité d'esprit totale à ses conducteurs. Avec des fonctionnalités telles que le système de freinage automatique d'urgence, l'assistance au maintien de voie, et les airbags latéraux, la sécurité est une priorité absolue."),
-        Véhicule(id: 2, marque: "Ford", modele: "A4", vitesseMax: 200, capaciteBatterie: "6,3kwh", boite: "Automatique", nombreDePlaces: 5, image: "bmw" ,imagelogo: "fordlogo" ,priceday: "160" ,userphoto: "user1",descriptionV:"adem"),
-        Véhicule(id: 3, marque: "Ford", modele: "A4", vitesseMax: 200, capaciteBatterie: "6,3kwh", boite: "Automatique", nombreDePlaces: 5, image: "jeep" ,imagelogo: "fordlogo" ,priceday: "170" ,userphoto: "user1",descriptionV:"adem"),
-        Véhicule(id: 4, marque: "Ford", modele: "A4", vitesseMax: 200, capaciteBatterie: "6,3kwh", boite: "Automatique", nombreDePlaces: 5, image: "ford" ,imagelogo: "fordlogo" ,priceday: "150" ,userphoto: "user1",descriptionV:"adem"),
+        Véhicule(id: 1, marque: "Ford", modele: "Ford F-150", vitesseMax: 200, capaciteBatterie: "6,3kwh", boite: "Automatique", nombreDePlaces: 5, image: "audi" ,imagelogo: "fordlogo" ,priceday: "150" ,userphoto: "user1" ,descriptionV:"Le modèle Ford A4 est équipé de la toute dernière technologie de sécurité avancée, offrant une tranquillité d'esprit totale à ses conducteurs. Avec des fonctionnalités telles que le système de freinage automatique d'urgence, l'assistance au maintien de voie, et les airbags latéraux, la sécurité est une priorité absolue."),
+        Véhicule(id: 2, marque: "Ford", modele: "A4", vitesseMax: 200, capaciteBatterie: "6,3kwh", boite: "Automatique", nombreDePlaces: 5, image: "cupra" ,imagelogo: "fordlogo" ,priceday: "160" ,userphoto: "user1",descriptionV:"adem"),
+        Véhicule(id: 3, marque: "Ford", modele: "A4", vitesseMax: 200, capaciteBatterie: "6,3kwh", boite: "Automatique", nombreDePlaces: 5, image: "mercedes" ,imagelogo: "fordlogo" ,priceday: "170" ,userphoto: "user1",descriptionV:"adem"),
+        Véhicule(id: 4, marque: "Ford", modele: "A4", vitesseMax: 200, capaciteBatterie: "6,3kwh", boite: "Automatique", nombreDePlaces: 5, image: "porche" ,imagelogo: "fordlogo" ,priceday: "150" ,userphoto: "user1",descriptionV:"adem"),
         Véhicule(id: 5, marque: "Ford", modele: "A4", vitesseMax: 200, capaciteBatterie: "6,3kwh", boite: "Automatique", nombreDePlaces: 5, image: "ford" ,imagelogo: "fordlogo" ,priceday: "150" ,userphoto: "user1",descriptionV:"adem"),
-        Véhicule(id: 6, marque: "Ford", modele: "A4", vitesseMax: 200, capaciteBatterie: "6,3kwh", boite: "Automatique", nombreDePlaces: 5, image: "ford" ,imagelogo: "fordlogo" ,priceday: "150" ,userphoto: "user1",descriptionV:"adem"),
-        Véhicule(id: 7, marque: "Ford", modele: "A4", vitesseMax: 200, capaciteBatterie: "6,3kwh", boite: "Automatique", nombreDePlaces: 5, image: "ford" ,imagelogo: "fordlogo" ,priceday: "150" ,userphoto: "user1",descriptionV:"adem"),
-        
+        Véhicule(id: 6, marque: "Ford", modele: "A4", vitesseMax: 200, capaciteBatterie: "6,3kwh", boite: "Automatique", nombreDePlaces: 5, image: "polestera" ,imagelogo: "fordlogo" ,priceday: "150" ,userphoto: "user1",descriptionV:"adem"),
+        Véhicule(id: 7, marque: "Ford", modele: "A4", vitesseMax: 200, capaciteBatterie: "6,3kwh", boite: "Automatique", nombreDePlaces: 5, image: "renaut" ,imagelogo: "fordlogo" ,priceday: "150" ,userphoto: "user1",descriptionV:"adem"),
+        Véhicule(id: 8, marque: "Ford", modele: "A4", vitesseMax: 200, capaciteBatterie: "6,3kwh", boite: "Automatique", nombreDePlaces: 5, image: "tesla" ,imagelogo: "fordlogo" ,priceday: "150" ,userphoto: "user1",descriptionV:"adem"),
     ]
-    
+
+
     
     struct LogoListView: View {
-        let logos: [String] = ["fordlogo", "logobmw", "logojeep", "logofiat"] // Remplacez ceci par vos noms de logos
+        let logos: [String] = ["logoferrari", "logotesla", "logocupra", "logocitroen", "logopeugeot", "logonissan", "logoaudi", "lgomini", "logoseat"]
+    
 
+        @Binding var selectedLogo: String?
+        
         var body: some View {
             ScrollView(.horizontal, showsIndicators: false) {
                 LazyHGrid(rows: [GridItem(.fixed(50))], spacing: 10) {
-                    ForEach(logos, id: \.self) { logo in
+                    Button(action: {
+                        selectedLogo = nil // Afficher tous les véhicules
+                    }) {
+                        Text("Tous")
+                    }
+                    
+                    ForEach(0..<logos.count, id: \.self) { index in
+                        let logo = logos[index]
+                        
+
                         Button(action: {
-                            // Ajoutez ici la logique de filtrage en fonction du logo sélectionné
+                            selectedLogo = logo // Sélectionnez le logo
                         }) {
-                            Image(logo)
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 40, height: 40)
-                                .padding(10)
-                                .background(Color.white)
-                                .cornerRadius(10)
+                            ZStack {
+                                Image(logo)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 40, height: 40)
+                                    .padding(10)
+                                    .background(Color.white)
+                                    .cornerRadius(10)
+                                
+                                // Ajustez la position de l'image de l'utilisateur
+                            }
                         }
                         .foregroundColor(.white)
                     }
@@ -41,6 +60,7 @@ struct VehiculeView: View {
             }
         }
     }
+
 
     var body: some View {
         NavigationView {
@@ -58,7 +78,8 @@ struct VehiculeView: View {
                             .padding()
                         
                         SearchAndScanView(search: $search)
-                        LogoListView()
+                        LogoListView(selectedLogo: $selectedLogo)
+
                         
                         ScrollView (.horizontal, showsIndicators: false) {
                             HStack {
@@ -67,32 +88,33 @@ struct VehiculeView: View {
                             .padding()
                         }
                         
-                        Text("Popular")
-                            .font(.custom("PlayfairDisplay-Bold", size: 24))
+                        Text("Populaire")
+                            .font(.custom("PlayfairDisplay-Bold", size: 19))
                             .padding(.horizontal)
-                            .foregroundColor(Color.blue.opacity(0.5))
+                            .foregroundColor(Color.black.opacity(0.9))
                         
                         ScrollView (.horizontal, showsIndicators: false) {
                             HStack (spacing: 0) {
                                 ForEach(vehicules, id: \.id) { vehicule in
-                                    NavigationLink(
-                                        destination: DetailsVehiculeView(),
-                                        label: {
-                                            VehiculeCardView(vehicule: vehicule)
-                                        }
-                                    )
-                                    .navigationBarHidden(true)
-                                    .foregroundColor(.black)
+                                    if selectedLogo == nil || selectedLogo == vehicule.marque.lowercased() {
+                                        NavigationLink(
+                                            destination: DetailsVehiculeView(),
+                                            label: {
+                                                VehiculeCardView(vehicule: vehicule)
+                                            }
+                                        )
+                                    }
                                 }
+
 
                                 .padding(.leading)
                             }
                         }
                         .padding(.bottom)
                         
-                        Text("Best")
-                            .font(.custom("PlayfairDisplay-Bold", size: 24))
-                            .foregroundColor(Color.blue.opacity(0.5))
+                        Text("Nos nouvelles voitures")
+                            .font(.custom("PlayfairDisplay-Bold", size: 19))
+                            .foregroundColor(Color.black.opacity(0.9))
                             .padding(.horizontal)
                         
                         ScrollView (.horizontal, showsIndicators: false) {
@@ -121,37 +143,56 @@ struct VehiculeView: View {
         }
     }
     
+
+    //card view
     struct VehiculeCardView: View {
         let vehicule: Véhicule
-        
+        let userImages: [String] = ["user1", "user1", "user1", "user1", "user1", "user1", "user1", "user1"]
+
         var body: some View {
             VStack {
                 Image(vehicule.image)
                     .resizable()
                     .frame(width: 150, height: 150)
                     .cornerRadius(20.0)
+
                 Text(vehicule.marque)
                     .font(.title3)
                     .fontWeight(.bold)
                     .foregroundColor(.white)
+                    .padding(.top, 4) // Ajoute un espace au-dessus du texte
 
-                
-                HStack (spacing: 2) {
-                    ForEach(0 ..< 5) { item in
-                        Image("star")
-                    }
+                HStack {
                     Spacer()
                     Text("$\(vehicule.priceday)")
-                        .font(.title3)
+                        .font(.custom("PlayfairDisplay-Bold", size: 20))
                         .fontWeight(.bold)
+                        .offset(x: -105, y: -15)
+                        
+                    Text("/day")
+                        .font(.custom("PlayfairDisplay-Bold", size: 20))
+                        .fontWeight(.bold)
+                        .foregroundColor(.gray)
+                        .offset(x: -110, y: -15)
                 }
             }
             .frame(width: 210)
-            .padding()
-            .background(Color.blue.opacity(0.3))
-            .cornerRadius(20.0)
+            .padding(1) // Réduit l'espace entre la cellule et le contour bleu
+            .background(
+                RoundedRectangle(cornerRadius: 20)
+                    .fill(Color.white)
+                    .shadow(color: Color.blue.opacity(0.4), radius: 4, x: 0, y: 10) // Ajoute une ombre en bas pour l'effet 3D
+            )
+            .overlay(
+                Image(userImages[vehicule.id - 1])
+                    .resizable()
+                    .frame(width: 40, height: 40)
+                    .cornerRadius(20.0)
+                    .offset(x: 70, y: 72)
+            )
         }
     }
+
 
     
     
@@ -182,12 +223,12 @@ struct VehiculeView: View {
     struct TagLineView: View {
         var body: some View {
             Text("Trouvez les \nmeilleures ")
-                .font(.custom("PlayfairDisplay-Regular", size: 28))
-                .foregroundColor(Color.blue.opacity(0.5))
+                .font(.custom("PlayfairDisplay-Regular", size: 22))
+                .foregroundColor(Color.black.opacity(0.5))
             + Text("Voitures!")
-                .font(.custom("PlayfairDisplay-Bold", size: 28))
+                .font(.custom("PlayfairDisplay-Bold", size: 26))
                 .fontWeight(.bold)
-                .foregroundColor(Color.blue.opacity(0.5))
+                .foregroundColor(Color.blue)
         }
     }
     
@@ -205,10 +246,7 @@ struct VehiculeView: View {
                         .background(Color.white)
                         .cornerRadius(10.0)
                         .padding(.trailing, 8)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 10)
-                                .stroke(Color.blue.opacity(0.3), lineWidth: 1)
-                        )
+                        
                 }
             }
             .padding(.horizontal)
@@ -240,8 +278,8 @@ struct VehiculeView: View {
     struct ImageSliderView: View {
         
         @State private var currentIndex = 0
-        var slides: [String] = ["ford", "bmw", "golf", "jeep", "user1"]
-        var isNewBadgeVisible: Bool = true // Vous pouvez activer ou désactiver en fonction de vos besoins
+        var slides: [String] = ["ford", "bmw", "golf", "jeep", "porche"]
+       
         
         var body: some View {
             
@@ -254,17 +292,8 @@ struct VehiculeView: View {
                         .frame(width: .infinity, height: 120)
                         .scaledToFit()
                         .cornerRadius(15)
-                    
-                    if isNewBadgeVisible {
-                        Text("New")
-                            .font(.system(size: 12))
-                            .foregroundColor(.white)
-                            .background(Color.red)
-                            .padding(4)
-                            .cornerRadius(8)
-                            .position(x: 20, y: 16)
-                            .position(x: 20, y: 16)
-                    }
+              
+
                 }
                 
                 HStack{
