@@ -174,7 +174,7 @@ struct UserSetings: View {
                 .cornerRadius(15)
                 .foregroundColor(.red)
             }
-        }
+        }.navigationBarBackButtonHidden(true)
     }
 }
 

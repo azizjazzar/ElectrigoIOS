@@ -36,8 +36,7 @@ struct BarDeNavigationView: View {
             }
             .accentColor(.blue)
         }
-        .navigationBarTitle("Paramètres")
-    }
+        .navigationBarTitle(" ")   }
 }
 
 

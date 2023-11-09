@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F88733682AFD18A0009D585A /* BoutiqueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88733642AFD189F009D585A /* BoutiqueView.swift */; };
-		F88733692AFD18A0009D585A /* RemercimentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88733652AFD189F009D585A /* RemercimentView.swift */; };
-		F887336A2AFD18A0009D585A /* DetailProduit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88733662AFD18A0009D585A /* DetailProduit.swift */; };
-		F887336B2AFD18A0009D585A /* ProduitFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88733672AFD18A0009D585A /* ProduitFormView.swift */; };
-		F887336E2AFD19EF009D585A /* Produit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F887336C2AFD19EF009D585A /* Produit.swift */; };
-		F887336F2AFD19EF009D585A /* Categorie.swift in Sources */ = {isa = PBXBuildFile; fileRef = F887336D2AFD19EF009D585A /* Categorie.swift */; };
 		F88733712AFD1B57009D585A /* BarDeNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88733702AFD1B57009D585A /* BarDeNavigationView.swift */; };
+		F88733762AFD254F009D585A /* DetailProduit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88733722AFD254F009D585A /* DetailProduit.swift */; };
+		F88733772AFD254F009D585A /* RemercimentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88733732AFD254F009D585A /* RemercimentView.swift */; };
+		F88733782AFD254F009D585A /* BoutiqueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88733742AFD254F009D585A /* BoutiqueView.swift */; };
+		F88733792AFD254F009D585A /* ProduitFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88733752AFD254F009D585A /* ProduitFormView.swift */; };
+		F887337C2AFD256F009D585A /* Categorie.swift in Sources */ = {isa = PBXBuildFile; fileRef = F887337A2AFD256F009D585A /* Categorie.swift */; };
+		F887337D2AFD256F009D585A /* Produit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F887337B2AFD256F009D585A /* Produit.swift */; };
 		F91E813A2AF81ABC0055AAF5 /* ForgetpasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91E81392AF81ABC0055AAF5 /* ForgetpasswordView.swift */; };
 		F91E813C2AF81CA20055AAF5 /* OtpValidationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91E813B2AF81CA20055AAF5 /* OtpValidationView.swift */; };
 		F91E813E2AF81D9D0055AAF5 /* ChangePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91E813D2AF81D9D0055AAF5 /* ChangePasswordView.swift */; };
@@ -55,13 +55,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		F88733642AFD189F009D585A /* BoutiqueView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BoutiqueView.swift; path = ../../../ElectrigoIOS/Electrigo/View/BoutiqueView.swift; sourceTree = "<group>"; };
-		F88733652AFD189F009D585A /* RemercimentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RemercimentView.swift; path = ../../../ElectrigoIOS/Electrigo/View/RemercimentView.swift; sourceTree = "<group>"; };
-		F88733662AFD18A0009D585A /* DetailProduit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailProduit.swift; path = ../../../ElectrigoIOS/Electrigo/View/DetailProduit.swift; sourceTree = "<group>"; };
-		F88733672AFD18A0009D585A /* ProduitFormView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProduitFormView.swift; path = ../../../ElectrigoIOS/Electrigo/View/ProduitFormView.swift; sourceTree = "<group>"; };
-		F887336C2AFD19EF009D585A /* Produit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Produit.swift; path = ../../../ElectrigoIOS/Electrigo/Model/Produit.swift; sourceTree = "<group>"; };
-		F887336D2AFD19EF009D585A /* Categorie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Categorie.swift; path = ../../../ElectrigoIOS/Electrigo/Model/Categorie.swift; sourceTree = "<group>"; };
 		F88733702AFD1B57009D585A /* BarDeNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarDeNavigationView.swift; sourceTree = "<group>"; };
+		F88733722AFD254F009D585A /* DetailProduit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailProduit.swift; sourceTree = "<group>"; };
+		F88733732AFD254F009D585A /* RemercimentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemercimentView.swift; sourceTree = "<group>"; };
+		F88733742AFD254F009D585A /* BoutiqueView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoutiqueView.swift; sourceTree = "<group>"; };
+		F88733752AFD254F009D585A /* ProduitFormView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProduitFormView.swift; sourceTree = "<group>"; };
+		F887337A2AFD256F009D585A /* Categorie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Categorie.swift; sourceTree = "<group>"; };
+		F887337B2AFD256F009D585A /* Produit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Produit.swift; sourceTree = "<group>"; };
 		F91E81392AF81ABC0055AAF5 /* ForgetpasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetpasswordView.swift; sourceTree = "<group>"; };
 		F91E813B2AF81CA20055AAF5 /* OtpValidationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtpValidationView.swift; sourceTree = "<group>"; };
 		F91E813D2AF81D9D0055AAF5 /* ChangePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordView.swift; sourceTree = "<group>"; };
@@ -176,8 +176,8 @@
 		F9B34E492AF6DE1900035AAD /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				F887336D2AFD19EF009D585A /* Categorie.swift */,
-				F887336C2AFD19EF009D585A /* Produit.swift */,
+				F887337A2AFD256F009D585A /* Categorie.swift */,
+				F887337B2AFD256F009D585A /* Produit.swift */,
 				F9B34E4E2AF6DEDA00035AAD /* User.swift */,
 			);
 			path = Model;
@@ -186,10 +186,10 @@
 		F9B34E4A2AF6DE2700035AAD /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F88733642AFD189F009D585A /* BoutiqueView.swift */,
-				F88733662AFD18A0009D585A /* DetailProduit.swift */,
-				F88733672AFD18A0009D585A /* ProduitFormView.swift */,
-				F88733652AFD189F009D585A /* RemercimentView.swift */,
+				F88733742AFD254F009D585A /* BoutiqueView.swift */,
+				F88733722AFD254F009D585A /* DetailProduit.swift */,
+				F88733752AFD254F009D585A /* ProduitFormView.swift */,
+				F88733732AFD254F009D585A /* RemercimentView.swift */,
 				F92D577E2AFC2B930090D1E5 /* UserProfileView.swift */,
 				F9B34E522AF6DF5700035AAD /* LoginView.swift */,
 				F9B34E542AF7095C00035AAD /* RegisterView.swift */,
@@ -346,26 +346,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				F92272CF2AFB273F00140BEA /* CompteBloquer.swift in Sources */,
+				F88733782AFD254F009D585A /* BoutiqueView.swift in Sources */,
 				F91E813A2AF81ABC0055AAF5 /* ForgetpasswordView.swift in Sources */,
 				F91E813C2AF81CA20055AAF5 /* OtpValidationView.swift in Sources */,
-				F887336E2AFD19EF009D585A /* Produit.swift in Sources */,
+				F88733762AFD254F009D585A /* DetailProduit.swift in Sources */,
+				F887337D2AFD256F009D585A /* Produit.swift in Sources */,
 				F930539A2AF6B1150066CF9E /* Electrigo.xcdatamodeld in Sources */,
+				F887337C2AFD256F009D585A /* Categorie.swift in Sources */,
 				F9B34E532AF6DF5700035AAD /* LoginView.swift in Sources */,
-				F887336F2AFD19EF009D585A /* Categorie.swift in Sources */,
 				F93053972AF6B1150066CF9E /* Persistence.swift in Sources */,
-				F88733682AFD18A0009D585A /* BoutiqueView.swift in Sources */,
 				F9B34E552AF7095C00035AAD /* RegisterView.swift in Sources */,
-				F88733692AFD18A0009D585A /* RemercimentView.swift in Sources */,
 				F964F1452AFB41F2007321EB /* WelcomeView.swift in Sources */,
-				F887336A2AFD18A0009D585A /* DetailProduit.swift in Sources */,
-				F887336B2AFD18A0009D585A /* ProduitFormView.swift in Sources */,
 				F9B34E4F2AF6DEDA00035AAD /* User.swift in Sources */,
 				F88733712AFD1B57009D585A /* BarDeNavigationView.swift in Sources */,
 				F91E813E2AF81D9D0055AAF5 /* ChangePasswordView.swift in Sources */,
 				F92D577F2AFC2B930090D1E5 /* UserProfileView.swift in Sources */,
+				F88733792AFD254F009D585A /* ProduitFormView.swift in Sources */,
 				F964F1472AFB442B007321EB /* GifImage.swift in Sources */,
 				F9B34E4D2AF6DEB700035AAD /* UserViewModel.swift in Sources */,
 				F91E81402AF83AB80055AAF5 /* UserSetingsView.swift in Sources */,
+				F88733772AFD254F009D585A /* RemercimentView.swift in Sources */,
 				F930538E2AF6B1140066CF9E /* ElectrigoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
