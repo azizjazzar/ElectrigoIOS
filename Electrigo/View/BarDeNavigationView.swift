@@ -29,10 +29,13 @@ struct BarDeNavigationView: View {
                 BoutiqueView().tabItem {
                     Image(systemName: "cart.fill")
                 }.tag(3)
+                FlotteView().tabItem {
+                    Image(systemName: "car.fill")
+                }.tag(4)
 
                 UserSetings().tabItem {
                     Image(systemName: "person.crop.circle.fill")
-                }.tag(4)
+                }.tag(5)
             }
             .accentColor(.blue)
         }
