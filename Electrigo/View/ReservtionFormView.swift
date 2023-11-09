@@ -27,7 +27,7 @@ struct ReservationFormView: View {
                 DatePicker("Heure de fin", selection: $endTime, displayedComponents: .hourAndMinute)
             }
         }
-
+       
         Button(action: {
             // Effectuez l'action de réservation ici
             // Mettez à jour isReserving pour montrer que la réservation est en cours
@@ -42,8 +42,12 @@ struct ReservationFormView: View {
         .padding()
         .background(Color.blue)
         .cornerRadius(12)
+      
     }
 }
+
+
+
 
 struct ReservationFormView_Previews: PreviewProvider {
     static var previews: some View {

@@ -164,6 +164,8 @@ struct VehiculeForumView: View {
                 VStack(alignment: .leading, spacing: 10) {
                     Text("Boite")
                         .font(.custom("Poppins", size: 14))
+                    
+                    
                         .fontWeight(.bold)
                         .italic()
                         .foregroundColor(Color(red: 0.27, green: 0.27, blue: 0.27))
