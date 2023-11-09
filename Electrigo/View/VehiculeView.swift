@@ -7,18 +7,23 @@ struct VehiculeView: View {
     @State private var selectedLogo: String?
 
     let vehicules: [Véhicule] = [ // Remplacez par vos données de véhicules
-        Véhicule(id: 1, marque: "Ford", modele: "Ford F-150", vitesseMax: 200, capaciteBatterie: "6,3kwh", boite: "Automatique", nombreDePlaces: 5, image: "audi" ,imagelogo: "fordlogo" ,priceday: "150" ,userphoto: "user1" ,descriptionV:"Le modèle Ford A4 est équipé de la toute dernière technologie de sécurité avancée, offrant une tranquillité d'esprit totale à ses conducteurs. Avec des fonctionnalités telles que le système de freinage automatique d'urgence, l'assistance au maintien de voie, et les airbags latéraux, la sécurité est une priorité absolue."),
-        Véhicule(id: 2, marque: "Ford", modele: "A4", vitesseMax: 200, capaciteBatterie: "6,3kwh", boite: "Automatique", nombreDePlaces: 5, image: "cupra" ,imagelogo: "fordlogo" ,priceday: "160" ,userphoto: "user1",descriptionV:"adem"),
-        Véhicule(id: 3, marque: "Ford", modele: "A4", vitesseMax: 200, capaciteBatterie: "6,3kwh", boite: "Automatique", nombreDePlaces: 5, image: "mercedes" ,imagelogo: "fordlogo" ,priceday: "170" ,userphoto: "user1",descriptionV:"adem"),
-        Véhicule(id: 4, marque: "Ford", modele: "A4", vitesseMax: 200, capaciteBatterie: "6,3kwh", boite: "Automatique", nombreDePlaces: 5, image: "porche" ,imagelogo: "fordlogo" ,priceday: "150" ,userphoto: "user1",descriptionV:"adem"),
-        Véhicule(id: 5, marque: "Ford", modele: "A4", vitesseMax: 200, capaciteBatterie: "6,3kwh", boite: "Automatique", nombreDePlaces: 5, image: "ford" ,imagelogo: "fordlogo" ,priceday: "150" ,userphoto: "user1",descriptionV:"adem"),
-        Véhicule(id: 6, marque: "Ford", modele: "A4", vitesseMax: 200, capaciteBatterie: "6,3kwh", boite: "Automatique", nombreDePlaces: 5, image: "polestera" ,imagelogo: "fordlogo" ,priceday: "150" ,userphoto: "user1",descriptionV:"adem"),
-        Véhicule(id: 7, marque: "Ford", modele: "A4", vitesseMax: 200, capaciteBatterie: "6,3kwh", boite: "Automatique", nombreDePlaces: 5, image: "renaut" ,imagelogo: "fordlogo" ,priceday: "150" ,userphoto: "user1",descriptionV:"adem"),
-        Véhicule(id: 8, marque: "Ford", modele: "A4", vitesseMax: 200, capaciteBatterie: "6,3kwh", boite: "Automatique", nombreDePlaces: 5, image: "tesla" ,imagelogo: "fordlogo" ,priceday: "150" ,userphoto: "user1",descriptionV:"adem"),
+        Véhicule(id: 1, marque: "audi", modele: "Ford F-150", vitesseMax: 200, capaciteBatterie: "6,3kwh", boite: "Automatique", nombreDePlaces: 5, image: "audi" ,imagelogo: "fordlogo" ,priceday: "150" ,userphoto: "user1" ,descriptionV:"Le modèle Ford A4 est équipé de la toute dernière technologie de sécurité avancée, offrant une tranquillité d'esprit totale à ses conducteurs. Avec des fonctionnalités telles que le système de freinage automatique d'urgence, l'assistance au maintien de voie, et les airbags latéraux, la sécurité est une priorité absolue."),
+        Véhicule(id: 2, marque: "cupra", modele: "A4", vitesseMax: 200, capaciteBatterie: "6,3kwh", boite: "Automatique", nombreDePlaces: 5, image: "cupra" ,imagelogo: "fordlogo" ,priceday: "160" ,userphoto: "user1",descriptionV:"adem"),
+        Véhicule(id: 3, marque: "mercedes", modele: "A4", vitesseMax: 200, capaciteBatterie: "6,3kwh", boite: "Automatique", nombreDePlaces: 5, image: "mercedes" ,imagelogo: "fordlogo" ,priceday: "170" ,userphoto: "user1",descriptionV:"adem"),
+        Véhicule(id: 4, marque: "porche", modele: "A4", vitesseMax: 200, capaciteBatterie: "6,3kwh", boite: "Automatique", nombreDePlaces: 5, image: "porche" ,imagelogo: "fordlogo" ,priceday: "150" ,userphoto: "user1",descriptionV:"adem"),
+        Véhicule(id: 5, marque: "ford", modele: "A4", vitesseMax: 200, capaciteBatterie: "6,3kwh", boite: "Automatique", nombreDePlaces: 5, image: "ford" ,imagelogo: "fordlogo" ,priceday: "150" ,userphoto: "user1",descriptionV:"adem"),
+        Véhicule(id: 6, marque: "polestera", modele: "A4", vitesseMax: 200, capaciteBatterie: "6,3kwh", boite: "Automatique", nombreDePlaces: 5, image: "polestera" ,imagelogo: "fordlogo" ,priceday: "150" ,userphoto: "user1",descriptionV:"adem"),
+        Véhicule(id: 7, marque: "renaut", modele: "A4", vitesseMax: 200, capaciteBatterie: "6,3kwh", boite: "Automatique", nombreDePlaces: 5, image: "renaut" ,imagelogo: "fordlogo" ,priceday: "150" ,userphoto: "user1",descriptionV:"adem"),
+        Véhicule(id: 8, marque: "tesla", modele: "A4", vitesseMax: 200, capaciteBatterie: "6,3kwh", boite: "Automatique", nombreDePlaces: 5, image: "tesla" ,imagelogo: "fordlogo" ,priceday: "150" ,userphoto: "user1",descriptionV:"adem"),
     ]
 
 
-    
+
+
+
+
+                    // Le reste de votre AppBarView
+                
     struct LogoListView: View {
         let logos: [String] = ["logoferrari", "logotesla", "logocupra", "logocitroen", "logopeugeot", "logonissan", "logoaudi", "lgomini", "logoseat"]
     
@@ -98,7 +103,7 @@ struct VehiculeView: View {
                                 ForEach(vehicules, id: \.id) { vehicule in
                                     if selectedLogo == nil || selectedLogo == vehicule.marque.lowercased() {
                                         NavigationLink(
-                                            destination: DetailsVehiculeView(),
+                                            destination: DetailScreen(),
                                             label: {
                                                 VehiculeCardView(vehicule: vehicule)
                                             }
@@ -121,7 +126,7 @@ struct VehiculeView: View {
                             HStack (spacing: 0) {
                                 ForEach(vehicules, id: \.id) { vehicule in
                                     NavigationLink(
-                                        destination: DetailsVehiculeView(),
+                                        destination: DetailScreen(),
                                         label: {
                                             VehiculeCardView(vehicule: vehicule)
                                         }
@@ -197,6 +202,8 @@ struct VehiculeView: View {
     
     
     struct AppBarView: View {
+        @State private var isVehiculeForumViewPresented = false // Ajoutez un état pour contrôler la présentation de la page VehiculeForumView
+
         var body: some View {
             HStack {
                 Button(action: {}) {
@@ -205,19 +212,24 @@ struct VehiculeView: View {
                         .background(Color.white)
                         .cornerRadius(10.0)
                 }
-                
+
                 Spacer()
-                
-                Button(action: {}) {
-                    Image(uiImage: #imageLiteral(resourceName: "Profile"))
-                        .resizable()
-                        .frame(width: 42, height: 42)
-                        .cornerRadius(10.0)
+
+                Button(action: {
+                    isVehiculeForumViewPresented.toggle() // Activez la présentation de la page VehiculeForumView
+                }) {
+                    Image(systemName: "plus")
+                        .font(.title) // Utilisez une icône "+" de système
+                        .foregroundColor(.blue)
+                }
+                .sheet(isPresented: $isVehiculeForumViewPresented) {
+                    VehiculeForumView() // Utilisez NavigationLink pour présenter la page VehiculeForumView
                 }
             }
             .padding(.horizontal)
         }
     }
+
     
     
     struct TagLineView: View {
@@ -274,49 +286,7 @@ struct VehiculeView: View {
     
   
     
-    //image random slide
-    struct ImageSliderView: View {
-        
-        @State private var currentIndex = 0
-        var slides: [String] = ["ford", "bmw", "golf", "jeep", "porche"]
-       
-        
-        var body: some View {
-            
-            ZStack(alignment: .topTrailing) {
-                
-                ZStack(alignment: .trailing){
-                    
-                    Image(slides[currentIndex])
-                        .resizable()
-                        .frame(width: .infinity, height: 120)
-                        .scaledToFit()
-                        .cornerRadius(15)
-              
-
-                }
-                
-                HStack{
-                    ForEach(0..<slides.count) { index in
-                        Circle()
-                            .fill(self.currentIndex == index ? Color("kPrimary") : Color("kSecondary"))
-                            .frame(width: 10, height: 10)
-                    }
-                }
-                .padding()
-            }
-            .padding()
-            .onAppear {
-                Timer.scheduledTimer(withTimeInterval: 4, repeats: true) { timer in
-                    if self.currentIndex + 1 == self.slides.count {
-                        self.currentIndex = 0
-                    } else {
-                        self.currentIndex += 1
-                    }
-                }
-            }
-        }
-    }
+   
     
     
     struct BottomNavBarItem: View {
