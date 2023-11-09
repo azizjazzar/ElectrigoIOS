@@ -27,20 +27,22 @@ struct ReservationFormView: View {
                 DatePicker("Date de fin", selection: $endDate, displayedComponents: .date)
                 DatePicker("Heure de fin", selection: $endTime, displayedComponents: .hourAndMinute)
             }
-
         }
        
         Button(action: {
             // Logique de validation
         }) {
-            Text("Confirmer votre resérvation")
-                .font(.custom("Jost", size: 14))
-                .fontWeight(.bold)
-                .foregroundColor(.white)
-                .padding()
-                .background(Color(red: 0.05, green: 0.60, blue: 1))
-                .cornerRadius(12)
+            NavigationLink(destination: ConfirmtionpaimentView()) {
+                Text("Confirmer votre réservation")
+                    .font(.custom("Jost", size: 14))
+                    .fontWeight(.bold)
+                    .foregroundColor(.white)
+                    .padding()
+                    .background(Color(red: 0.05, green: 0.60, blue: 1))
+                    .cornerRadius(12)
+            }
         }
+
     
       
     }

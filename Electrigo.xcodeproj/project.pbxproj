@@ -12,6 +12,7 @@
 		76401D472AFC83F8003B4C9D /* ReservtionFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76401D462AFC83F8003B4C9D /* ReservtionFormView.swift */; };
 		769962262AF80F9A0056F878 /* VehiculelistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769962252AF80F9A0056F878 /* VehiculelistViewModel.swift */; };
 		769962282AF814610056F878 /* Vehicule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769962272AF814610056F878 /* Vehicule.swift */; };
+		76D383482AFD1FE600D29AE4 /* ConfirmtionpaimentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D383472AFD1FE600D29AE4 /* ConfirmtionpaimentView.swift */; };
 		C3ED60BB2AF8050E000EE6EC /* ElectrigoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3ED60BA2AF8050E000EE6EC /* ElectrigoApp.swift */; };
 		C3ED60BF2AF80512000EE6EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3ED60BE2AF80512000EE6EC /* Assets.xcassets */; };
 		C3ED60C22AF80512000EE6EC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3ED60C12AF80512000EE6EC /* Preview Assets.xcassets */; };
@@ -46,6 +47,7 @@
 		76401D462AFC83F8003B4C9D /* ReservtionFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservtionFormView.swift; sourceTree = "<group>"; };
 		769962252AF80F9A0056F878 /* VehiculelistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehiculelistViewModel.swift; sourceTree = "<group>"; };
 		769962272AF814610056F878 /* Vehicule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicule.swift; sourceTree = "<group>"; };
+		76D383472AFD1FE600D29AE4 /* ConfirmtionpaimentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmtionpaimentView.swift; sourceTree = "<group>"; };
 		C3ED60B72AF8050E000EE6EC /* Electrigo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Electrigo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3ED60BA2AF8050E000EE6EC /* ElectrigoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectrigoApp.swift; sourceTree = "<group>"; };
 		C3ED60BE2AF80512000EE6EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 				C3ED60F12AF80737000EE6EC /* VehiculeView.swift */,
 				76401D442AFC7BFE003B4C9D /* VehiculeForumView.swift */,
 				76401D462AFC83F8003B4C9D /* ReservtionFormView.swift */,
+				76D383472AFD1FE600D29AE4 /* ConfirmtionpaimentView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 				769962282AF814610056F878 /* Vehicule.swift in Sources */,
 				C3ED60F22AF80737000EE6EC /* VehiculeView.swift in Sources */,
 				C3ED60C42AF80512000EE6EC /* Persistence.swift in Sources */,
+				76D383482AFD1FE600D29AE4 /* ConfirmtionpaimentView.swift in Sources */,
 				C3ED60BB2AF8050E000EE6EC /* ElectrigoApp.swift in Sources */,
 				76401D472AFC83F8003B4C9D /* ReservtionFormView.swift in Sources */,
 				76401D432AFC7BAB003B4C9D /* DetailScreen.swift in Sources */,
