@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct ImagePicker: View {
+/*struct ImagePicker: View {
     @Binding var image: Image?
     @State private var isImagePickerPresented: Bool = false
     @State private var selectedImage: UIImage?
@@ -27,8 +27,8 @@ struct ImagePicker: View {
             }
         }
     }
-}
-
+}*/
+/*
 struct ImagePickerView: UIViewControllerRepresentable {
     @Binding var selectedImage: UIImage?
 
@@ -69,7 +69,7 @@ struct ImagePickerView: UIViewControllerRepresentable {
 
     func updateUIViewController(_ uiViewController: UIViewController, context: Context) {}
 }
-
+*/
 struct ProduitFormView: View {
     @State private var productName = ""
     @State private var productAddress = ""
@@ -211,7 +211,7 @@ struct ProduitFormView: View {
 }
 
 
-struct ContentView_Previews: PreviewProvider {
+struct PorduitFormView_Previews: PreviewProvider {
     static var previews: some View {
         ProduitFormView()
     }

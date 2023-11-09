@@ -47,6 +47,7 @@ struct BoutiqueView: View {
                         Text("Populaire")
                             .font(Font.custom("GillSans", size: 20))
                             .padding(.horizontal)
+                            .foregroundColor(.black)
                         
                         ScrollView (.horizontal, showsIndicators: false) {
                             HStack (spacing: 0) {
@@ -67,6 +68,7 @@ struct BoutiqueView: View {
                         Text("Meuilleurs")
                             .font(Font.custom("GillSans", size: 20))
                             .padding(.horizontal)
+                            .foregroundColor(.black)
                            
                         
                         ScrollView (.horizontal, showsIndicators: false) {

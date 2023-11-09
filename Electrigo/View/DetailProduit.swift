@@ -25,7 +25,7 @@ struct DetailProduit: View {
                         .aspectRatio(1,contentMode: .fit)
                         .edgesIgnoringSafeArea(.top)
                 
-                DescriptionView(produit :produit)
+                DescriptionProduitView(produit :produit)
                 
             }
             .edgesIgnoringSafeArea(.top)
@@ -63,7 +63,7 @@ struct DetailProduit: View {
 }
 
 
-struct RoundedCorner: Shape {
+/*struct RoundedCorner: Shape {
 
     var radius: CGFloat = .infinity
     var corners: UIRectCorner = .allCorners
@@ -72,13 +72,13 @@ struct RoundedCorner: Shape {
         let path = UIBezierPath(roundedRect: rect, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
         return Path(path.cgPath)
     }
-}
-
+}*/
+/*
 extension View {
     func cornerRadius(_ radius: CGFloat, corners: UIRectCorner) -> some View {
         clipShape( RoundedCorner(radius: radius, corners: corners) )
     }
-}
+}*/
 
 /*struct DetailScreen_Previews: PreviewProvider {
     static var previews: some View {
@@ -87,7 +87,7 @@ extension View {
 }*/
 
 
-struct ColorDotView: View {
+/*struct ColorDotView: View {
     let color: Color
     var body: some View {
         color
@@ -95,8 +95,8 @@ struct ColorDotView: View {
             .clipShape(Circle())
     }
 }
-
-struct DescriptionView: View {
+*/
+struct DescriptionProduitView: View {
     let produit : Produit
     var body: some View {
         VStack (alignment: .leading) {
@@ -104,6 +104,7 @@ struct DescriptionView: View {
             Text(produit.nom)
                 .font(.title)
                 .fontWeight(.bold)
+                .foregroundColor(.black)
             //                Rating
             HStack (spacing: 4) {
                 ForEach(0 ..< produit.rating) { item in
@@ -112,15 +113,19 @@ struct DescriptionView: View {
                 Text(" \(produit.rating)")
                     .opacity(0.5)
                     .padding(.leading, 8)
+                
                 Spacer()
             }
             
             Text("Description")
                 .fontWeight(.medium)
                 .padding(.vertical, 8)
+                .foregroundColor(.black)
             Text(produit.description)
                 .lineSpacing(8.0)
                 .opacity(0.6)
+                .foregroundColor(.black)
+
             
             
             //                Info
@@ -144,8 +149,10 @@ struct DescriptionView: View {
                     Text("Boutique")
                         .font(.system(size: 16))
                         .fontWeight(.semibold)
+                        .foregroundColor(.black)
                     Text(produit.boutiue)
                         .opacity(0.6)
+                        .foregroundColor(.black)
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
             }
@@ -199,7 +206,7 @@ struct DescriptionView: View {
         .offset(x: 0, y: -30.0)
     }
 }
-
+/*
 
 struct BackButton: View {
     let action: () -> Void
@@ -213,3 +220,4 @@ struct BackButton: View {
         }
     }
 }
+*/

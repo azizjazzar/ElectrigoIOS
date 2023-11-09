@@ -9,7 +9,7 @@ import SwiftUI
 
 struct WelcomeView: View {
     @State private var isShawing = false
-    
+
     var body: some View {
         ZStack {
             GifImage(name: "car")
@@ -34,9 +34,10 @@ struct WelcomeView: View {
                     
                 }
                 .sheet(isPresented: $isShawing) {
-                    LoginView().body.presentationDetents([.medium,.large] )
+                    LoginView().body.presentationDetents([.large] )
                         .presentationDragIndicator(.visible)
                 }
+             
             }
 
         }.offset(y:270)

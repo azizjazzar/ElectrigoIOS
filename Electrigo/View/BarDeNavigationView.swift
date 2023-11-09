@@ -22,7 +22,7 @@ struct BarDeNavigationView: View {
                     Image(systemName: "location.fill")
                 }.tag(1)
 
-                Text("Adem").tabItem {
+                VehiculeView().tabItem {
                     Image(systemName: "car.fill")
                 }.tag(2)
 

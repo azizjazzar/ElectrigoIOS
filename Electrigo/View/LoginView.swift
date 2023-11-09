@@ -6,14 +6,14 @@ struct LoginView: View {
     @State private var password = ""
     @State private var isChecked = false
     var location: CLLocation?
-
+    
     var body: some View {
-        NavigationView{
-
-        VStack {
-            Text("Connectez-vous")
-                .font(.largeTitle)
-                .bold()
+        
+        NavigationStack{
+            VStack {
+                Text("Connectez-vous")
+                    .font(.largeTitle)
+                    .bold()
                 TextField(" Email", text: $email)
                     .frame(width: 350, height: 50)
                     .background(Color.clear)
@@ -31,48 +31,57 @@ struct LoginView: View {
                     .foregroundColor(.black)
                     .labelStyle(.titleOnly)
                     .font(.system(size: 15, weight: .light))
-            
-            // Checkbox
-            HStack(spacing: 10) {
-                Button(action: { self.isChecked.toggle() }) {
-                    Image(systemName: isChecked ? "checkmark.circle.fill" : "circle")
-                        .resizable()
-                        .frame(width: 20, height: 20)
-                        .foregroundColor(.black)
-                    Text("Se souvenir de moi ? /")
-                        .foregroundColor(.black)
-                        .font(.system(size: 15))
-
+                
+                // Checkbox
+                HStack(spacing: 10) {
+                    Button(action: { self.isChecked.toggle() }) {
+                        Image(systemName: isChecked ? "checkmark.circle.fill" : "circle")
+                            .resizable()
+                            .frame(width: 20, height: 20)
+                            .foregroundColor(.black)
+                        Text("Se souvenir de moi ? /")
+                            .foregroundColor(.black)
+                            .font(.system(size: 15))
+                        
+                        
+                    }
+                    NavigationLink(destination: ForgetpasswordView()) {
+                        Text("Mot passe oublier")
+                            .underline()
+                            .foregroundColor(.black)
+                    }
+                }
+                .padding(30)
+                
+                
+                
+                
+                NavigationLink{
+                    // BarDeNavigationView()
+                    BarDeNavigationView().presentationDetents([.large])
+                           .navigationBarBackButtonHidden(true)
 
                 }
-                NavigationLink(destination: ForgetpasswordView()) {
-                                   Text("Mot passe oublier")
-                                       .underline()
-                                       .foregroundColor(.black)
-                               }
-            }
-            .padding(30)
-
-        
-         
-            
-              NavigationLink("Se connecter", destination: BarDeNavigationView())
-        
-                .navigationBarBackButtonHidden(true)
-                .padding(.vertical, 10)
-                .frame(width: 350, height: 50)
-                .background(Color.blue)
-                .cornerRadius(15)
-                .foregroundColor(.white)
                 
+                label :{ Text("Se connecter")}
+                
+                    .navigationBarBackButtonHidden(true)
+                    .padding(.vertical, 10)
+                    .frame(width: 350, height: 50)
+                    .background(Color.blue)
+                    .cornerRadius(15)
+                    .foregroundColor(.white)
+                
+            }
             
-        
-
-
-
+            
+            
+            
+            
+            
             Text("Ou ")
                 .foregroundColor(.black)
-
+            
             HStack {
                 Button(action: { /* TODO: Implement action here */ }) {
                     
@@ -87,28 +96,29 @@ struct LoginView: View {
                 }
             }.padding(.vertical, 40)
             
-
+            
             HStack {
                 Text("Pas encore inscris ? ")
                     .foregroundColor(.black)
-                NavigationLink(destination: RegisterView()) {
-                                   Text("Créer un compte")
-                                       .underline()
-                                       .foregroundColor(.black)
-                               }
-
-
+                NavigationLink(destination : RegisterView()) {
+                    Text("Créer un compte")
+                        .underline()
+                        .foregroundColor(.black)
+                }
+                
+                
             }
-           
-           
+            
+            
         }
-
-        }.navigationBarBackButtonHidden(true)
+        
+        
         
         
     }
+}
  
-    struct ContentView_Previews: PreviewProvider {
+    struct LoginView_Previews: PreviewProvider {
         static var previews: some View {
             LoginView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
         }
@@ -116,4 +126,4 @@ struct LoginView: View {
     
     
     
-}
+

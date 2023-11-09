@@ -103,7 +103,7 @@ struct VehiculeView: View {
                                 ForEach(vehicules, id: \.id) { vehicule in
                                     if selectedLogo == nil || selectedLogo == vehicule.marque.lowercased() {
                                         NavigationLink(
-                                            destination: DetailScreen(),
+                                           destination: DetailScreen(),
                                             label: {
                                                 VehiculeCardView(vehicule: vehicule)
                                             }
@@ -126,7 +126,7 @@ struct VehiculeView: View {
                             HStack (spacing: 0) {
                                 ForEach(vehicules, id: \.id) { vehicule in
                                     NavigationLink(
-                                        destination: DetailScreen(),
+                                      destination: DetailScreen(),
                                         label: {
                                             VehiculeCardView(vehicule: vehicule)
                                         }
@@ -142,7 +142,7 @@ struct VehiculeView: View {
                 
                 VStack {
                     Spacer()
-                    BottomNavBarView()
+                   
                 }
             }
         }
@@ -301,21 +301,7 @@ struct VehiculeView: View {
     }
     
     
-    struct BottomNavBarView: View {
-        var body: some View {
-            HStack {
-                BottomNavBarItem(image: Image("Home"), action: {})
-                BottomNavBarItem(image: Image("fav"), action: {})
-                BottomNavBarItem(image: Image("shop"), action: {})
-                BottomNavBarItem(image: Image("User"), action: {})
-            }
-            .padding()
-            .background(Color.white)
-            .clipShape(Capsule())
-            .padding(.horizontal)
-            .shadow(color: Color.blue.opacity(0.15), radius: 8, x: 2, y: 6)
-        }
-    }
+  
     
     
     
