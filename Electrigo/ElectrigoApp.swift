@@ -1,9 +1,4 @@
-//
-//  ElectrigoApp.swift
-//  Electrigo
-//
-//  Created by aziz jazzar on 4/11/2023.
-//
+
 
 import SwiftUI
 
@@ -14,7 +9,8 @@ struct ElectrigoApp: App {
     var body: some Scene {
         WindowGroup {
             BoutiqueView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+              
         }
     }
 }
+

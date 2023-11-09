@@ -1,9 +1,4 @@
-//
-//  ElectrigoTests.swift
-//  ElectrigoTests
-//
-//  Created by aziz jazzar on 4/11/2023.
-//
+
 
 import XCTest
 @testable import Electrigo
