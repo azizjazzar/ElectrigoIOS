@@ -6,37 +6,7 @@
 //
 
 import SwiftUI
-struct UserSetingsView: View {
-    @State private var selectedTab = 0 // Initialize selectedTab to 0
 
-    var body: some View {
-        NavigationView {
-            TabView(selection: $selectedTab) {
-                Text("Dhia").tabItem {
-                    Image(systemName: "house")
-                }.tag(0)
-
-                Text("Dhia").tabItem {
-                    Image(systemName: "location.fill")
-                }.tag(1)
-
-                Text("Adem").tabItem {
-                    Image(systemName: "car.fill")
-                }.tag(2)
-
-                Text("Aziz").tabItem {
-                    Image(systemName: "cart.fill")
-                }.tag(3)
-
-                UserSetings().tabItem {
-                    Image(systemName: "person.crop.circle.fill")
-                }.tag(4)
-            }
-            .accentColor(.blue)
-        }
-        .navigationBarTitle("Paramètres")
-    }
-}
 
 struct UserSetings: View {
     @State private var selectedTab = 0
@@ -77,7 +47,7 @@ struct UserSetings: View {
                             .offset(y: 0)
                             .padding(.bottom, 30)
                         
-                        NavigationLink(destination: UserSetingsView()) {
+                        NavigationLink(destination: BarDeNavigationView()) {
                             HStack {
                                 Text("Modifier profile")
                                 Image(systemName: "arrow.right")
@@ -209,11 +179,15 @@ struct UserSetings: View {
 }
 
 
+
+
+
+
     
     
 struct UserSetingsView_Previews: PreviewProvider {
     static var previews: some View {
-        UserSetingsView()
+        UserSetings()
     }
 }
     

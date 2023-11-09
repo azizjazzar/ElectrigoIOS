@@ -56,7 +56,7 @@ struct LoginView: View {
         
          
             
-              NavigationLink("Se connecter", destination: UserSetingsView())
+              NavigationLink("Se connecter", destination: BarDeNavigationView())
         
                 .navigationBarBackButtonHidden(true)
                 .padding(.vertical, 10)
