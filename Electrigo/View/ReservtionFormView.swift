@@ -17,31 +17,31 @@ struct ReservationFormView: View {
 
     var body: some View {
         Form {
-            Section(header: Text("Date de début et heure")) {
+            Section(header: Text("Date de début et heure").foregroundColor(.blue)) {
                 DatePicker("Date de début", selection: $startDate, displayedComponents: .date)
                 DatePicker("Heure de début", selection: $startTime, displayedComponents: .hourAndMinute)
             }
 
-            Section(header: Text("Date de fin et heure")) {
+
+            Section(header: Text("Date de fin et heure").foregroundColor(.blue)) {
                 DatePicker("Date de fin", selection: $endDate, displayedComponents: .date)
                 DatePicker("Heure de fin", selection: $endTime, displayedComponents: .hourAndMinute)
             }
+
         }
        
         Button(action: {
-            // Effectuez l'action de réservation ici
-            // Mettez à jour isReserving pour montrer que la réservation est en cours
-            isReserving = true
-            // Après la réservation, vous pouvez masquer le formulaire
-            isVisible = false
+            // Logique de validation
         }) {
-            Text("Confirmer la réservation")
-                .font(.title)
+            Text("Confirmer votre resérvation")
+                .font(.custom("Jost", size: 14))
+                .fontWeight(.bold)
                 .foregroundColor(.white)
+                .padding()
+                .background(Color(red: 0.05, green: 0.60, blue: 1))
+                .cornerRadius(12)
         }
-        .padding()
-        .background(Color.blue)
-        .cornerRadius(12)
+    
       
     }
 }
