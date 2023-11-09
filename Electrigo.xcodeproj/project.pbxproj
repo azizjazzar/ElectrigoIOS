@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		76401D432AFC7BAB003B4C9D /* DetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76401D422AFC7BAB003B4C9D /* DetailScreen.swift */; };
 		76401D452AFC7BFE003B4C9D /* VehiculeForumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76401D442AFC7BFE003B4C9D /* VehiculeForumView.swift */; };
+		76401D472AFC83F8003B4C9D /* ReservtionFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76401D462AFC83F8003B4C9D /* ReservtionFormView.swift */; };
 		769962262AF80F9A0056F878 /* VehiculelistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769962252AF80F9A0056F878 /* VehiculelistViewModel.swift */; };
 		769962282AF814610056F878 /* Vehicule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769962272AF814610056F878 /* Vehicule.swift */; };
 		C3ED60BB2AF8050E000EE6EC /* ElectrigoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3ED60BA2AF8050E000EE6EC /* ElectrigoApp.swift */; };
@@ -42,6 +43,7 @@
 /* Begin PBXFileReference section */
 		76401D422AFC7BAB003B4C9D /* DetailScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailScreen.swift; path = ../../../../.Trash/DetailScreen.swift; sourceTree = "<group>"; };
 		76401D442AFC7BFE003B4C9D /* VehiculeForumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehiculeForumView.swift; sourceTree = "<group>"; };
+		76401D462AFC83F8003B4C9D /* ReservtionFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservtionFormView.swift; sourceTree = "<group>"; };
 		769962252AF80F9A0056F878 /* VehiculelistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehiculelistViewModel.swift; sourceTree = "<group>"; };
 		769962272AF814610056F878 /* Vehicule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicule.swift; sourceTree = "<group>"; };
 		C3ED60B72AF8050E000EE6EC /* Electrigo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Electrigo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -165,6 +167,7 @@
 				76401D422AFC7BAB003B4C9D /* DetailScreen.swift */,
 				C3ED60F12AF80737000EE6EC /* VehiculeView.swift */,
 				76401D442AFC7BFE003B4C9D /* VehiculeForumView.swift */,
+				76401D462AFC83F8003B4C9D /* ReservtionFormView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 				C3ED60F22AF80737000EE6EC /* VehiculeView.swift in Sources */,
 				C3ED60C42AF80512000EE6EC /* Persistence.swift in Sources */,
 				C3ED60BB2AF8050E000EE6EC /* ElectrigoApp.swift in Sources */,
+				76401D472AFC83F8003B4C9D /* ReservtionFormView.swift in Sources */,
 				76401D432AFC7BAB003B4C9D /* DetailScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
