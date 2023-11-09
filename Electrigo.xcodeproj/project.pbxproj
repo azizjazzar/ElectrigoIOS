@@ -20,6 +20,10 @@
 		F8CA57B02AFD4E840022D28C /* ReservtionFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CA57AC2AFD4E840022D28C /* ReservtionFormView.swift */; };
 		F8CA57B22AFD4E9D0022D28C /* Vehicule.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CA57B12AFD4E9D0022D28C /* Vehicule.swift */; };
 		F8CA57B42AFD52ED0022D28C /* DetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CA57B32AFD52ED0022D28C /* DetailScreen.swift */; };
+		F8CA57C02AFD72BA0022D28C /* PostDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CA57BC2AFD72BA0022D28C /* PostDetailView.swift */; };
+		F8CA57C12AFD72BA0022D28C /* Forum.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CA57BD2AFD72BA0022D28C /* Forum.swift */; };
+		F8CA57C42AFD7B5F0022D28C /* NewsDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CA57C32AFD7B5F0022D28C /* NewsDetailView.swift */; };
+		F8CA57C82AFD7D1C0022D28C /* ForumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CA57C72AFD7D1C0022D28C /* ForumView.swift */; };
 		F91E813A2AF81ABC0055AAF5 /* ForgetpasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91E81392AF81ABC0055AAF5 /* ForgetpasswordView.swift */; };
 		F91E813C2AF81CA20055AAF5 /* OtpValidationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91E813B2AF81CA20055AAF5 /* OtpValidationView.swift */; };
 		F91E813E2AF81D9D0055AAF5 /* ChangePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91E813D2AF81D9D0055AAF5 /* ChangePasswordView.swift */; };
@@ -74,6 +78,10 @@
 		F8CA57AC2AFD4E840022D28C /* ReservtionFormView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservtionFormView.swift; sourceTree = "<group>"; };
 		F8CA57B12AFD4E9D0022D28C /* Vehicule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vehicule.swift; sourceTree = "<group>"; };
 		F8CA57B32AFD52ED0022D28C /* DetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailScreen.swift; sourceTree = "<group>"; };
+		F8CA57BC2AFD72BA0022D28C /* PostDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailView.swift; sourceTree = "<group>"; };
+		F8CA57BD2AFD72BA0022D28C /* Forum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Forum.swift; sourceTree = "<group>"; };
+		F8CA57C32AFD7B5F0022D28C /* NewsDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsDetailView.swift; sourceTree = "<group>"; };
+		F8CA57C72AFD7D1C0022D28C /* ForumView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForumView.swift; sourceTree = "<group>"; };
 		F91E81392AF81ABC0055AAF5 /* ForgetpasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetpasswordView.swift; sourceTree = "<group>"; };
 		F91E813B2AF81CA20055AAF5 /* OtpValidationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtpValidationView.swift; sourceTree = "<group>"; };
 		F91E813D2AF81D9D0055AAF5 /* ChangePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordView.swift; sourceTree = "<group>"; };
@@ -188,6 +196,7 @@
 		F9B34E492AF6DE1900035AAD /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F8CA57BD2AFD72BA0022D28C /* Forum.swift */,
 				F8CA57B12AFD4E9D0022D28C /* Vehicule.swift */,
 				F887337A2AFD256F009D585A /* Categorie.swift */,
 				F887337B2AFD256F009D585A /* Produit.swift */,
@@ -199,6 +208,9 @@
 		F9B34E4A2AF6DE2700035AAD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F8CA57C72AFD7D1C0022D28C /* ForumView.swift */,
+				F8CA57C32AFD7B5F0022D28C /* NewsDetailView.swift */,
+				F8CA57BC2AFD72BA0022D28C /* PostDetailView.swift */,
 				F8CA57AA2AFD4E840022D28C /* ConfirmtionpaimentView.swift */,
 				F8CA57AC2AFD4E840022D28C /* ReservtionFormView.swift */,
 				F8CA57A92AFD4E840022D28C /* VehiculeForumView.swift */,
@@ -366,6 +378,7 @@
 				F92272CF2AFB273F00140BEA /* CompteBloquer.swift in Sources */,
 				F88733782AFD254F009D585A /* BoutiqueView.swift in Sources */,
 				F91E813A2AF81ABC0055AAF5 /* ForgetpasswordView.swift in Sources */,
+				F8CA57C02AFD72BA0022D28C /* PostDetailView.swift in Sources */,
 				F91E813C2AF81CA20055AAF5 /* OtpValidationView.swift in Sources */,
 				F8CA57AD2AFD4E840022D28C /* VehiculeForumView.swift in Sources */,
 				F88733762AFD254F009D585A /* DetailProduit.swift in Sources */,
@@ -379,6 +392,7 @@
 				F964F1452AFB41F2007321EB /* WelcomeView.swift in Sources */,
 				F9B34E4F2AF6DEDA00035AAD /* User.swift in Sources */,
 				F88733712AFD1B57009D585A /* BarDeNavigationView.swift in Sources */,
+				F8CA57C42AFD7B5F0022D28C /* NewsDetailView.swift in Sources */,
 				F91E813E2AF81D9D0055AAF5 /* ChangePasswordView.swift in Sources */,
 				F8CA57AE2AFD4E840022D28C /* ConfirmtionpaimentView.swift in Sources */,
 				F92D577F2AFC2B930090D1E5 /* UserProfileView.swift in Sources */,
@@ -391,6 +405,8 @@
 				F91E81402AF83AB80055AAF5 /* UserSetingsView.swift in Sources */,
 				F88733772AFD254F009D585A /* RemercimentView.swift in Sources */,
 				F930538E2AF6B1140066CF9E /* ElectrigoApp.swift in Sources */,
+				F8CA57C82AFD7D1C0022D28C /* ForumView.swift in Sources */,
+				F8CA57C12AFD72BA0022D28C /* Forum.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,7 +14,7 @@ struct BarDeNavigationView: View {
     var body: some View {
         NavigationView {
             TabView(selection: $selectedTab) {
-                Text("Dhia").tabItem {
+              ContentView().tabItem {
                     Image(systemName: "house")
                 }.tag(0)
 
