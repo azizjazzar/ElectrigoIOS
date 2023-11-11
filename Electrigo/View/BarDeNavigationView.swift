@@ -1,41 +1,37 @@
-//
-//  BarDeNavigationView.swift
-//  Electrigo
-//
-//  Created by aziztemimi on 9/11/2023.
-//
 
 import SwiftUI
 
 struct BarDeNavigationView: View {
     
-    @State private var selectedTab = 0 // Initialize selectedTab to 0
-    
+    @State public var selectedTab = 0 // Initialize selectedTab to 0
+    @StateObject var vm = locationlistViewModel()
+    init(selectedTab: Int) {
+        self.selectedTab = selectedTab
+    }
     var body: some View {
         NavigationView {
             TabView(selection: $selectedTab) {
-              ContentView().tabItem {
-                    Image(systemName: "house")
+                VehiculeView().tabItem {
+                    Image(systemName: "car.fill")
                 }.tag(0)
-
-                Text("Dhia").tabItem {
+                MapView().environmentObject(vm).tabItem {
                     Image(systemName: "location.fill")
                 }.tag(1)
 
-                VehiculeView().tabItem {
-                    Image(systemName: "car.fill")
+              
+
+                ContentView().tabItem {
+                    Image(systemName: "house")
                 }.tag(2)
 
                 BoutiqueView().tabItem {
                     Image(systemName: "cart.fill")
                 }.tag(3)
                 FlotteView().tabItem {
-                    Image(systemName: "car.fill")
+                    Image(systemName: "sos.circle")
                 }.tag(4)
 
-                UserSetings().tabItem {
-                    Image(systemName: "person.crop.circle.fill")
-                }.tag(5)
+                
             }
             .accentColor(.blue)
         }
@@ -45,6 +41,6 @@ struct BarDeNavigationView: View {
 
 struct BarDeNavigationView_Previews: PreviewProvider {
     static var previews: some View {
-        BarDeNavigationView()
+        BarDeNavigationView(selectedTab: 3)
     }
 }

@@ -23,7 +23,7 @@ struct ForgetpasswordView: View {
                 .cornerRadius(15)
                 .overlay(RoundedRectangle(cornerRadius: 10)
                     .stroke(Color.black, lineWidth: 1))
-            NavigationLink(destination: ChangePasswordView()) {
+            NavigationLink(destination: OtpValidationView()) {
                                Text("Mot passe oublier")
                     .padding(.vertical, 10)
                     .frame(width: 350, height: 50)

@@ -162,7 +162,7 @@ struct DescriptionView: View {
             Text("Audi \nA4")
                 .font(.title)
                 .fontWeight(.bold)
-                .foregroundColor(Color.blue)
+                .foregroundColor(Color.white)
                 .offset(x: 20, y: 20)
             
             HStack (spacing: 4) {
@@ -179,9 +179,11 @@ struct DescriptionView: View {
                 .fontWeight(.medium)
                 .padding(.vertical, 8)
                 .offset(x: 20, y: 20)
+                .foregroundColor(Color.white)
             Text("L'Audi A4 est une série de voitures compactes et de taille moyenne fabriquées par le constructeur automobile allemand Audi, qui est une filiale du groupe Volkswagen")
                 .lineSpacing(8.0)
-                .opacity(0.6)
+                .foregroundColor(Color.white)
+            
                 .offset(x: 20, y: 20) // Adjust the values of x and y as needed
             
             //                Info
@@ -222,17 +224,22 @@ struct DescriptionView: View {
                             .padding(.vertical, 8)
                             .offset(x: -8)
                             .opacity(0.7)
+                        
                     }
                 }
 
                
             }
             .padding(.vertical)
-            
+            .foregroundColor(.black)
 
     }
+      
+
 }
+        
 }
+
 struct ReserveButton: View {
     @Binding var isVisible: Bool
     

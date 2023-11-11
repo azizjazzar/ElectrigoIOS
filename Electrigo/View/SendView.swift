@@ -58,11 +58,11 @@ struct SendView: View {
 
             }.toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
-                    NavigationLink(destination: FlotteView())
+                    NavigationLink(destination: BarDeNavigationView(selectedTab: 1))
                     {
                         Image(systemName: "chevron.left")
                             .foregroundColor(.blue)
-                        Text("Retour").foregroundColor(.blue)
+                        Text("").foregroundColor(.blue)
                     }
                 }
             }

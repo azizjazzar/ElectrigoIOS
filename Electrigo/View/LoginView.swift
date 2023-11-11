@@ -58,7 +58,7 @@ struct LoginView: View {
                 
                 NavigationLink{
                     // BarDeNavigationView()
-                    BarDeNavigationView().presentationDetents([.large])
+                    BarDeNavigationView(selectedTab: 0).presentationDetents([.large])
                            .navigationBarBackButtonHidden(true)
 
                 }
@@ -71,6 +71,9 @@ struct LoginView: View {
                     .background(Color.blue)
                     .cornerRadius(15)
                     .foregroundColor(.white)
+                    .sheet(isPresented: $isChecked) {
+                        UserSetings() // Utilisez NavigationLink pour présenter la page VehiculeForumView
+                    }
                 
             }
             

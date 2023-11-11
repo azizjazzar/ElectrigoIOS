@@ -64,9 +64,9 @@ struct OtpValidationView: View {
                                 }
 
                 // Send button
-                Button(action: { /* TODO: Implement login logic here */ }) {
-                    Text("Envoyer")
-                }
+                NavigationLink(destination: ChangePasswordView()) {
+                                   Text("Changer le mot de passe")
+                               }
                 .padding(.vertical, 10)
                 .frame(width: 350, height: 50)
                 .background(Color.blue)

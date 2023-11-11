@@ -234,13 +234,17 @@ struct VehiculeView: View {
     
     struct TagLineView: View {
         var body: some View {
-            Text("Trouvez les \nmeilleures ")
-                .font(.custom("PlayfairDisplay-Regular", size: 22))
-                .foregroundColor(Color.black.opacity(0.5))
-            + Text("Voitures!")
-                .font(.custom("PlayfairDisplay-Bold", size: 26))
-                .fontWeight(.bold)
-                .foregroundColor(Color.blue)
+            VStack{
+                Text("  Trouvez les \nmeilleures ")
+                    .font(.custom("PlayfairDisplay-Regular", size: 22))
+                    .foregroundColor(Color.black.opacity(0.5))
+                
+                + Text("Voitures!")
+                    .font(.custom("PlayfairDisplay-Bold", size: 26))
+                    .fontWeight(.bold)
+                    .foregroundColor(Color.blue)
+            }            .offset(x:70,y:0) // Centrer horizontalement
+
         }
     }
     

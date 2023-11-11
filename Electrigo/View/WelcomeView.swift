@@ -31,12 +31,13 @@ struct WelcomeView: View {
                     Image(systemName: "arrow.up.to.line")
                         .resizable()
                         .frame(width: 30, height: 40)
+
                     
                 }
                 .sheet(isPresented: $isShawing) {
-                    LoginView().body.presentationDetents([.large] )
-                        .presentationDragIndicator(.visible)
-                }
+                                  LoginView().body.presentationDetents([.medium,.large] )
+                                      .presentationDragIndicator(.visible)
+                              }
              
             }
 
