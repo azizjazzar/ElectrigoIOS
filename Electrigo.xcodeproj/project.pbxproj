@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C73ED73A2B00FF4B000E61AD /* LocationReviewForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73ED7392B00FF4B000E61AD /* LocationReviewForm.swift */; };
+		C73ED73C2B012377000E61AD /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73ED73B2B012377000E61AD /* Review.swift */; };
 		F88733712AFD1B57009D585A /* BarDeNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88733702AFD1B57009D585A /* BarDeNavigationView.swift */; };
 		F88733762AFD254F009D585A /* DetailProduit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88733722AFD254F009D585A /* DetailProduit.swift */; };
 		F88733772AFD254F009D585A /* RemercimentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88733732AFD254F009D585A /* RemercimentView.swift */; };
@@ -86,6 +88,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C73ED7392B00FF4B000E61AD /* LocationReviewForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationReviewForm.swift; sourceTree = "<group>"; };
+		C73ED73B2B012377000E61AD /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		F88733702AFD1B57009D585A /* BarDeNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarDeNavigationView.swift; sourceTree = "<group>"; };
 		F88733722AFD254F009D585A /* DetailProduit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailProduit.swift; sourceTree = "<group>"; };
 		F88733732AFD254F009D585A /* RemercimentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemercimentView.swift; sourceTree = "<group>"; };
@@ -230,6 +234,7 @@
 				F9A729682AFDC03F0051B027 /* MapView.swift */,
 				F9A7296D2AFDC03F0051B027 /* MapViewRepresentable.swift */,
 				F9A7296A2AFDC03F0051B027 /* PicturePicker.swift */,
+				C73ED7392B00FF4B000E61AD /* LocationReviewForm.swift */,
 			);
 			path = GestionBone;
 			sourceTree = "<group>";
@@ -279,11 +284,11 @@
 		F930538C2AF6B1140066CF9E /* Electrigo */ = {
 			isa = PBXGroup;
 			children = (
+				F930538D2AF6B1140066CF9E /* ElectrigoApp.swift */,
 				F9A7297F2AFDC18A0051B027 /* Data */,
 				F8CA49422AFD9CC400E3D9DE /* LocationManager.swift */,
 				F9A7297D2AFDC16C0051B027 /* LocationDataService.swift */,
 				F8CA493E2AFD9C3800E3D9DE /* Managers */,
-				F930538D2AF6B1140066CF9E /* ElectrigoApp.swift */,
 				F9B34E4B2AF6DE3500035AAD /* ViewModel */,
 				F9B34E4A2AF6DE2700035AAD /* View */,
 				F9B34E492AF6DE1900035AAD /* Model */,
@@ -329,6 +334,7 @@
 				F887337A2AFD256F009D585A /* Categorie.swift */,
 				F887337B2AFD256F009D585A /* Produit.swift */,
 				F9B34E4E2AF6DEDA00035AAD /* User.swift */,
+				C73ED73B2B012377000E61AD /* Review.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -534,8 +540,10 @@
 				F8CA57B22AFD4E9D0022D28C /* Vehicule.swift in Sources */,
 				F91E81402AF83AB80055AAF5 /* UserSetingsView.swift in Sources */,
 				F88733772AFD254F009D585A /* RemercimentView.swift in Sources */,
+				C73ED73A2B00FF4B000E61AD /* LocationReviewForm.swift in Sources */,
 				F930538E2AF6B1140066CF9E /* ElectrigoApp.swift in Sources */,
 				F8CA493A2AFD9B2200E3D9DE /* MapflotteView.swift in Sources */,
+				C73ED73C2B012377000E61AD /* Review.swift in Sources */,
 				F8CA57C82AFD7D1C0022D28C /* ForumView.swift in Sources */,
 				F8CA57C12AFD72BA0022D28C /* Forum.swift in Sources */,
 				F8CA49432AFD9CC400E3D9DE /* LocationManager.swift in Sources */,
