@@ -176,8 +176,12 @@ struct LocationDetailView: View {
                     Spacer()
                     
 
-                    ContributeButton()
+                    NavigationLink(destination: AlertPage()) {
+                                    Text("Go to Alert Page")
+                                }
+
                 }
+                .buttonStyle(CustomButtonStyless())
                 .padding(10)
 
                 // Call to action
