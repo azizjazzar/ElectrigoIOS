@@ -19,10 +19,10 @@
 		C739FADF2AF6B15100FB3660 /* ElectrigoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C739FADE2AF6B15100FB3660 /* ElectrigoUITests.swift */; };
 		C739FAE12AF6B15100FB3660 /* ElectrigoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C739FAE02AF6B15100FB3660 /* ElectrigoUITestsLaunchTests.swift */; };
 		C739FAF12AF6B93E00FB3660 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = C739FAF02AF6B93E00FB3660 /* Location.swift */; };
-		C739FAF42AF6BB3600FB3660 /* LocationsDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C739FAF32AF6BB3600FB3660 /* LocationsDataService.swift */; };
 		C739FAF62AF6C10700FB3660 /* LocationlistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C739FAF52AF6C10700FB3660 /* LocationlistView.swift */; };
 		C739FAF82AF6C13300FB3660 /* LocationlistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C739FAF72AF6C13300FB3660 /* LocationlistViewModel.swift */; };
 		C739FAFA2AF7104E00FB3660 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C739FAF92AF7104E00FB3660 /* MapView.swift */; };
+		C740E8532AFDBCB30083AB80 /* LocationsDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C740E8522AFDBCB30083AB80 /* LocationsDataService.swift */; };
 		C7AF86112AF7F199004C6830 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AF86102AF7F199004C6830 /* LocationManager.swift */; };
 		C7B0EB3D2AFA4D5A00A11FA7 /* ListLocationMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B0EB3C2AFA4D5A00A11FA7 /* ListLocationMapView.swift */; };
 		C7B0EB3F2AFA8D2500A11FA7 /* mapPinItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B0EB3E2AFA8D2500A11FA7 /* mapPinItem.swift */; };
@@ -61,10 +61,10 @@
 		C739FADE2AF6B15100FB3660 /* ElectrigoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectrigoUITests.swift; sourceTree = "<group>"; };
 		C739FAE02AF6B15100FB3660 /* ElectrigoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectrigoUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C739FAF02AF6B93E00FB3660 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
-		C739FAF32AF6BB3600FB3660 /* LocationsDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationsDataService.swift; path = ../../../../Downloads/LocationsDataService.swift; sourceTree = "<group>"; };
 		C739FAF52AF6C10700FB3660 /* LocationlistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationlistView.swift; sourceTree = "<group>"; };
 		C739FAF72AF6C13300FB3660 /* LocationlistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationlistViewModel.swift; sourceTree = "<group>"; };
 		C739FAF92AF7104E00FB3660 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		C740E8522AFDBCB30083AB80 /* LocationsDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationsDataService.swift; sourceTree = "<group>"; };
 		C7AF86102AF7F199004C6830 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		C7B0EB3C2AFA4D5A00A11FA7 /* ListLocationMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListLocationMapView.swift; sourceTree = "<group>"; };
 		C7B0EB3E2AFA8D2500A11FA7 /* mapPinItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mapPinItem.swift; sourceTree = "<group>"; };
@@ -190,7 +190,7 @@
 		C739FAF22AF6BB1D00FB3660 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				C739FAF32AF6BB3600FB3660 /* LocationsDataService.swift */,
+				C740E8522AFDBCB30083AB80 /* LocationsDataService.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -343,10 +343,10 @@
 				C70870452AF9012000A4DA31 /* AddBorneView.swift in Sources */,
 				C739FAF62AF6C10700FB3660 /* LocationlistView.swift in Sources */,
 				C73996492AFB88E400543A5C /* PicturePicker.swift in Sources */,
-				C739FAF42AF6BB3600FB3660 /* LocationsDataService.swift in Sources */,
 				C739FAF12AF6B93E00FB3660 /* Location.swift in Sources */,
 				C739FABF2AF6B15000FB3660 /* ElectrigoApp.swift in Sources */,
 				C739FAF82AF6C13300FB3660 /* LocationlistViewModel.swift in Sources */,
+				C740E8532AFDBCB30083AB80 /* LocationsDataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
