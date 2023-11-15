@@ -12,106 +12,71 @@ enum ChargingStationProblemType: String, CaseIterable {
 }
 
 struct AlertPage: View {
-    @State private var selectedProblemType: ChargingStationProblemType = .stationNotWorking
+    @State private var selectedProblemType: ChargingStationProblemType?
     @State private var comment: String = ""
-
+    @State private var showAlert = false
+    
     var body: some View {
         NavigationView {
-            ZStack {
-                
+            VStack(alignment: .leading, spacing: 20) {
+                // Problem type selection
+                Text("What type of problem are you experiencing?")
+                    .font(.title2)
+                    .fontWeight(.bold)
+                    .padding()
 
-                VStack(alignment: .leading, spacing: 20) {
-                    // Problem type selection
-                    Text("Select the type of problem you are experiencing:")
-                        .font(.title2)
-                        .fontWeight(.medium)
-                        .padding()
-
-                    VStack(alignment: .leading, spacing: 10) {
-                        ForEach(ChargingStationProblemType.allCases, id: \.self) { problemType in
-                            ProblemTypeItem(problemType: problemType, selectedProblemType: $selectedProblemType)
-                        }
-                        .padding()
-                    }
-
-                    NavigationLink(destination: CommentPage(comment: $comment)) {
-                        Text("Next")
-                            .frame(minWidth: 0, maxWidth: .infinity)
-                            .frame(height: 50)
-                            .background(Color.red.opacity(0.75 ))
-                            .cornerRadius(10)
-                            .foregroundColor(.white)
-                    }
+                List(ChargingStationProblemType.allCases, id: \.self) { problemType in
+                    ProblemTypeItem(selectedProblemType: $selectedProblemType, problemType: problemType)
                 }
+                .listStyle(PlainListStyle())
+                .padding(.horizontal, 30)
+
+                NavigationLink(destination: CommentPage(selectedProblemType: selectedProblemType, comment: $comment, showAlert: $showAlert)) {
+                    Text("Next")
+                }
+                .buttonStyle(CustomButtonStyless())
             }
             .navigationTitle("Report Charging Station Problem")
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarBackButtonHidden(true)
         }
+        .alert(isPresented: $showAlert) {
+            Alert(
+                title: Text("Publication ajoutée"),
+                message: Text("Votre nouvelle publication a été enregistrée avec succès."),
+                dismissButton: .default(Text("OK"))
+            )
+        }
     }
 }
-
-
-
 
 struct ProblemTypeItem: View {
+    @Binding var selectedProblemType: ChargingStationProblemType?
     let problemType: ChargingStationProblemType
-    @Binding var selectedProblemType: ChargingStationProblemType
 
     var body: some View {
-        Button(action: {
-            selectedProblemType = problemType
-        }) {
-            HStack {
-                if problemType == selectedProblemType {
-                    Image(systemName: "circle.fill")
-                        .foregroundColor(.blue)
-                } else {
-                    Image(systemName: "circle")
-                        .foregroundColor(.gray)
-                }
+        HStack {
+            Image(systemName: selectedProblemType == problemType ? "circle.fill" : "circle")
+                .resizable()
+                .frame(width: 20, height: 20)
+                .foregroundColor(.blue)
 
-                Text(problemType.description)
-                    .font(.body)
-                    .padding()
-            }
+            Text(problemType.description)
+                .font(.body)
+                .fontWeight(.medium)
         }
-        .padding()
-    }
-}
-
-struct ProblemTypeItemWithComment: View {
-    let problemType: ChargingStationProblemType
-    @Binding var selectedProblemType: ChargingStationProblemType
-    @Binding var showCommentPage: Bool
-    @Binding var comment: String
-
-    var body: some View {
-        Button(action: {
+        .padding(.vertical, 10)
+        .onTapGesture {
             selectedProblemType = problemType
-            showCommentPage = true // Update the `showCommentPage` property
-        }) {
-            HStack {
-                if problemType == selectedProblemType {
-                    Image(systemName: "circle.fill")
-                        .foregroundColor(.blue)
-                } else {
-                    Image(systemName: "circle")
-                        .foregroundColor(.gray)
-                }
-
-                Text(problemType.description)
-                    .font(.body)
-                    .padding()
-            }
         }
-        .padding()
     }
 }
 
 struct CommentPage: View {
+    var selectedProblemType: ChargingStationProblemType?
     @Binding var comment: String
-
+    @Binding var showAlert: Bool
+    
     var body: some View {
         NavigationView {
             Form {
@@ -119,17 +84,22 @@ struct CommentPage: View {
                     TextField("Enter your comment", text: $comment)
                         .padding()
                 }
-
-                NavigationLink(destination: ArrivedView() ){
-                    Text("Submit Comment")
-                        .frame(minWidth: 0, maxWidth: .infinity)
-                        .frame(height: 50)
-                        .background(Color.red.opacity(0.75 ))
-                        .cornerRadius(10)
-                        .foregroundColor(.white)
+                Button(action: {
+                    showAlert = true
+                }) {
+                    HStack {
+                        Image(systemName: "checkmark.circle.fill")
+                            .font(.title)
+                        Text("Ajouter")
+                            .font(.headline)
+                            .fontWeight(.bold)
+                    }
+                    .padding()
+                    .background(Color.blue)
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
                 }
-                .foregroundColor(.blue)
-                .padding()
+                .padding(12)
             }
             .navigationTitle("Share Additional Details")
             .navigationBarTitleDisplayMode(.inline)
@@ -139,60 +109,29 @@ struct CommentPage: View {
 }
 
 
-
-struct ArrivedView: View {
-    @State private var isAnimated = false
-
-    var body: some View {
-        VStack {
-            ZStack {
-                Circle()
-                    .stroke(Color.blue, lineWidth: 100)
-                    .frame(width: 100, height: 100)
-                    .scaleEffect(isAnimated ? 1 : 0)
-                    .animation(.spring(response: 0.3, dampingFraction: 0.5))
-                    .onAppear {
-                        isAnimated = true
-                    }
-
-                Image(systemName: "checkmark")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 100, height: 100)
-                    .foregroundColor(.white)
-                    .scaleEffect(isAnimated ? 1 : 0)
-                    .animation(.spring(response: 0.3, dampingFraction: 0.5))
-                    .onAppear {
-                        isAnimated = true
-                    }
-            }
-            .padding(50)
-
-            Text("We Have Arrived!")
-                .font(.title)
-                .fontWeight(.bold)
-                .foregroundColor(.black)
-                .multilineTextAlignment(.center)
-
-            Text("We have arrived at GYM location")
-                .foregroundColor(.gray)
-
-            Spacer()
-                .frame(height: 100)
-
-            Button("OK") {
-                // TODO: Implement logic here
-            }
-            .frame(width: 350, height: 50)
-            .background(Color.blue)
-            .cornerRadius(15)
+struct CustomButtonStyless: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .frame(maxWidth: .infinity)
+            .frame(height: 45)
+            .background(Color.red.opacity(0.75))
             .foregroundColor(.white)
-        }
+            .cornerRadius(15)
+            .shadow(radius: 4)
+            .padding(.horizontal, 39)
     }
 }
+
+
+
+
 
 struct AlertPage_Previews: PreviewProvider {
     static var previews: some View {
         AlertPage()
+            
     }
 }
+
+
+
