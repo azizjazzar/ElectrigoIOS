@@ -132,6 +132,3 @@ struct AlertPage_Previews: PreviewProvider {
             
     }
 }
-
-
-

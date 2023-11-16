@@ -1,24 +1,26 @@
-//
-//  Forum.swift
-//  Electrigo
-//
-//  Created by idriss EB on 5/11/2023.
-//
-
 import Foundation
 
-struct User {
-    var username: String
-    var userImageName: String
+
+
+
+
+struct Userr {
+    var userrname: String
+    var userrImageName: String
 }
 
-struct Comment {
-    var text: String
-    // ...
+class Comment: Identifiable, ObservableObject {
+    var id = UUID()
+    @Published var text: String
+    @Published var replies: [Comment] = []
+
+    init(text: String) {
+        self.text = text
+    }
 }
 
 struct Post {
-    var user: User
+    var userr: Userr
     var description: String
     var date: String
     var category: String

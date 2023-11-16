@@ -20,14 +20,12 @@ struct BarDeNavigationView: View {
 
               
 
-                ContentView().tabItem {
-                    Image(systemName: "house")
-                }.tag(2)
+              
 
                 BoutiqueView().tabItem {
                     Image(systemName: "cart.fill")
                 }.tag(3)
-                FlotteView().tabItem {
+                GarageView().tabItem {
                     Image(systemName: "sos.circle")
                 }.tag(4)
 

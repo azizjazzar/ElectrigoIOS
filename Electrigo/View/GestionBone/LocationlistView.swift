@@ -10,8 +10,8 @@ import SwiftUI
 struct LocationlistView: View {
     
     @EnvironmentObject var vm: locationlistViewModel
-    @State private var selectedLocation: Location? 
-
+    @State private var selectedLocation: Location?
+    @State private var isLocationForumViewPresented = false
     var body: some View {
         NavigationView {
             VStack {
@@ -50,25 +50,17 @@ struct LocationlistView: View {
             }
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarBackButtonHidden(true)
-            .navigationBarItems(
-                        trailing: Button(action: {
-                            // Report button action
-                        }) {
-                            Image(systemName: "plus.circle.fill")
-                                .font(.title)
-                                .foregroundColor(.blue)
-                                .padding(.trailing, 16)
-                        }
-                    )
+            .navigationBarItems(trailing: ForumBarView(isLocationForumViewPresented: $isLocationForumViewPresented))
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
-                    NavigationLink(destination:  BarDeNavigationView(selectedTab: 3)) {
+                    //NavigationLink(destination:  BarDeNavigationView(selectedTab: 3))
+                    NavigationLink(destination:MapView()){
                                HStack {
                                    Image(systemName: "chevron.left")
                                        .foregroundColor(.blue)
                                    Text("Retour").foregroundColor(.blue)
                                }
-                           }
+                          }
          
                 }
             }
@@ -158,8 +150,8 @@ struct LocationDetailView: View {
                         Text(review.comment)
                             .font(.body)
                             .foregroundColor(.primary)
-                            .lineLimit(nil) // Allows the text to wrap to multiple lines
-                            .fixedSize(horizontal: false, vertical: true) // Allows the text view to grow vertically if needed
+                            .lineLimit(nil)
+                            .fixedSize(horizontal: false, vertical: true)
                             .padding(.bottom, 8)
                              
                          }
@@ -168,7 +160,6 @@ struct LocationDetailView: View {
                     .cornerRadius(10)
                     .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color("BorderColor"), lineWidth: 1))
                 }
-
 
 
                 // Add and Report Buttons in the Top
@@ -180,6 +171,7 @@ struct LocationDetailView: View {
                                     Text("Go to Alert Page")
                                 }
 
+                    
                 }
                 .buttonStyle(CustomButtonStyless())
                 .padding(10)
@@ -246,11 +238,34 @@ struct ReviewBarView: View {
                 isRatingForumViewPresented.toggle()
             }) {
                 Image(systemName: "pencil.circle")
-                    .font(.title) 
+                    .font(.title)
                     .foregroundColor(.blue)
             }
             .sheet(isPresented: $isRatingForumViewPresented) {
                 LocationReviewForm(rating: $rating)
+            }
+        }
+        .padding(.horizontal)
+    }
+}
+
+struct ForumBarView: View {
+    @Binding var isLocationForumViewPresented: Bool
+    @State private var rating: Int?
+
+    var body: some View {
+        HStack {
+            Spacer()
+
+            Button(action: {
+                isLocationForumViewPresented.toggle()
+            }) {
+                Image(systemName: "plus.circle.fill")
+                    .font(.title)
+                    .foregroundColor(.blue)
+            }
+            .sheet(isPresented: $isLocationForumViewPresented) {
+                AddBorneView()
             }
         }
         .padding(.horizontal)

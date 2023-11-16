@@ -17,7 +17,7 @@ struct FlotteView: View {
                     .fontWeight(.bold)
                     .multilineTextAlignment(.center)
                 
-                Image("a")
+                Image("h")
                 Spacer()
                     .frame(height: 200)
                 NavigationLink(destination: SendView()) {
