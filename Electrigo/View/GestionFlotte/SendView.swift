@@ -10,12 +10,12 @@ import SwiftUI
 
 struct SendView: View {
     @State private var Prenom = ""
-    @State private var email = ""
+    @State private var phoneNumber: String = ""
     @State private var commentaire = ""
     var body: some View {
         NavigationView{
             VStack{
-                Image("a")
+                Image("h")
                 TextField("Prenom", text: $Prenom)
                     .padding(12)
                     .frame(width: 350, height: 50)
@@ -27,16 +27,15 @@ struct SendView: View {
                     )
                     .padding(.vertical, 10)
 
-                TextField("Email*", text: $email)
-                    .padding(12)
-                    .frame(width: 350, height: 50)
-                    .background(Color.clear)
-                    .cornerRadius(15)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 15)
-                            .stroke(Color.black, lineWidth: 1)
-                    )
-                    .padding(.vertical, 10)
+                NavigationLink(destination: CountryCodesView()) {
+                
+                                }
+
+                CountryCodesView()
+                                   .padding(.vertical, 10)
+
+                              
+                            
                 
                 TextField("Saisissez votre commentaire?*", text: $commentaire)
                     .padding(12)
