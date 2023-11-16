@@ -9,6 +9,7 @@ import SwiftUI
 
 struct FlotteView: View {
     var body: some View {
+        
         NavigationView{
             VStack {
                 Text("Gérer l'entretien de ma flotte automobile")
@@ -16,11 +17,12 @@ struct FlotteView: View {
                     .fontWeight(.bold)
                     .multilineTextAlignment(.center)
                 
-                Image("a")
+                Image("h")
                 Spacer()
                     .frame(height: 200)
                 NavigationLink(destination: SendView()) {
-                Text("E-mailing") 
+                    
+                Text("E-mailing")
                 }
                 .frame(width: 201, height: 50)
                 .background(Color.blue)
@@ -43,9 +45,13 @@ struct FlotteView: View {
                     Button(action: {
                         // Your back button action here
                     }) {
-                        Image(systemName: "chevron.left")
-                            .foregroundColor(.blue)
-                        Text("Retour").foregroundColor(.blue)
+                        NavigationLink(destination:
+                                        BarDeNavigationView(selectedTab: 1) ) {
+                            Image(systemName: "arrow.left")
+                                .foregroundColor(.blue)
+                                        Text("Retour")
+                         
+                        }
                     }
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
@@ -61,7 +67,9 @@ struct FlotteView: View {
                     }
                 }
                 
-            }}.navigationBarBackButtonHidden(true)
+            }
+            
+        }.navigationBarBackButtonHidden(true)
             
     }
     
