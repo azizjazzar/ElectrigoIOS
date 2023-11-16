@@ -12,10 +12,8 @@ struct BoutiqueView: View {
     @State private var search: String = ""
     @State private var selectedIndex: Int = 1
     @State private var isMenuVisible: Bool = false
+   
 
-
-    
-    
  
     var body: some View {
         NavigationView {
@@ -25,8 +23,9 @@ struct BoutiqueView: View {
                 
                 ScrollView (showsIndicators: false) {
                     VStack (alignment: .leading) {
-                        
-                        AppBarView (isMenuVisible: $isMenuVisible)
+                     
+                        AppBarView (isMenuVisible: $isMenuVisible )
+   
                         
                         TagLineView()
                             .padding()
@@ -104,13 +103,14 @@ struct BoutiqueView_Previews: PreviewProvider {
 
 struct AppBarView: View {
     @Binding var isMenuVisible: Bool
-
+    @StateObject var cartManager = CartManager()
     var body: some View {
         HStack {
+       
             Button(action: {
                 isMenuVisible.toggle()
             }) {
-                Image("menu")
+                Image("at.badge.plus")
                     .padding()
                     .background(Color.white)
                     .cornerRadius(10.0)
@@ -123,8 +123,12 @@ struct AppBarView: View {
 
             Spacer()
 
-            Button(action: {}) {
-                // Le reste du bouton ou de l'image selon vos besoins
+           //ici je dois mettre le panier
+            NavigationLink {
+                CartView()
+                    .environmentObject(cartManager)
+            } label: {
+                CartButton(numberOfProducts: cartManager.products.count)
             }
         }
         .padding(.horizontal)
@@ -134,6 +138,7 @@ struct AppBarView: View {
 struct TagLineView: View {
     @State private var isFindVisible = false
     @State private var isProductsVisible = false
+
 
     var body: some View {
         HStack {
@@ -166,6 +171,7 @@ struct TagLineView: View {
                 }
             }
         }
+       
     }
 }
 
@@ -219,6 +225,7 @@ struct CategoryView: View {
 struct ProductCardView: View {
     let produit: Produit
     let size: CGFloat
+    @EnvironmentObject var cartManager: CartManager
     
     var body: some View {
         VStack {
@@ -229,6 +236,7 @@ struct ProductCardView: View {
             Text(produit.nom)
                 .font(.title3)
                 .fontWeight(.bold)
+                .foregroundColor(.black)
             
             HStack (spacing: 2) {
                 ForEach(0 ..< produit.rating) { item in
@@ -238,12 +246,26 @@ struct ProductCardView: View {
                 Text(String(format: "%.2f TND", produit.prix))
                     .font(.title3)
                     .fontWeight(.bold)
+                    .foregroundColor(.black)
+            }
+            Button {
+                cartManager.addToCart(product: produit)
+            } label: {
+                Image(systemName: "plus")
+                    .padding(10)
+                    .foregroundColor(.white)
+                    .background(.black)
+                    .cornerRadius(50)
+                    .padding()
             }
         }
         .frame(width: size)
         .padding()
         .background(Color.white)
         .cornerRadius(20.0)
+        
+        
+
     }
 }
 
