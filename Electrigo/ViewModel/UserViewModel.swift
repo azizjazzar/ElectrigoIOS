@@ -1,16 +1,69 @@
 import Foundation
 import CoreLocation
+import UIKit
 
 class UserViewModel: ObservableObject {
+    
+    @Published var isLoading = false // Variable d'état pour le chargement
+
     var client : [User] = []
 
   
+    func verifieMotDePasse(_ motDePasse: String, _ confirmationMotDePasse: String) -> Bool {
+        let longueurMinimum = 8
+        
+        if motDePasse.count < longueurMinimum {
+            return false
+        }
+        
+        if motDePasse != confirmationMotDePasse {
+            return false
+        }
+      
+        return true // Les mots de passe correspondent et respectent la longueur minimale
+    }
+    func verifieEmail(_ email: String) -> Bool {
+        // Expression régulière pour valider l'email
+        let emailRegex = #"^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$"#
+        
+        let predicate = NSPredicate(format: "SELF MATCHES %@", emailRegex)
+        return predicate.evaluate(with: email)
+    }
+    func verifieTelephone(_ telephone: String) -> Bool {
+        // Vérifier si le téléphone a une longueur de 8 chiffres et ne contient que des chiffres
+        let numericCharacters = CharacterSet.decimalDigits
+        let phoneWithoutFormatting = telephone.components(separatedBy: numericCharacters.inverted).joined()
+
+        return phoneWithoutFormatting.count == 8
+    }
+
+    func verifieNomPrenom(_ texte: String) -> Bool {
+        let lettreCharacterSet = CharacterSet.letters
+        let espaceCharacterSet = CharacterSet(charactersIn: " ")
+
+        // Vérifie si la chaîne n'est pas vide
+        if texte.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+            return false
+        }
+
+        for caractere in texte.unicodeScalars {
+            if !lettreCharacterSet.contains(caractere) && !espaceCharacterSet.contains(caractere) {
+                return false
+            }
+        }
+        
+        return true
+    }
+    func verifieAdresse(_ texte: String) -> Bool {
+        return !texte.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+    }
+
 
     
     func getAll()
     {
         // Create a URL
-        if let url = URL(string: "https://api.example.com/data") {
+        if let url = URL(string: "http://192.168.100.160:3000/api/auth/users") {
             // Create a URLSession object
             let session = URLSession.shared
             
@@ -37,7 +90,7 @@ class UserViewModel: ObservableObject {
                         if let dataString = String(data: data, encoding: .utf8) {
                             print("Received data: \(dataString)")
                             do{
-                              //  self.client  = try JSONDecoder().decode([user].self, from: data)
+                                let users = try JSONDecoder().decode([User].self, from: data)
                             }catch{
                                 print("Error: \(error)")
                             }
@@ -56,7 +109,64 @@ class UserViewModel: ObservableObject {
             print("Invalid URL")
         }
     }
-    
+
+      
+    func getEmail(email: String, completion: @escaping (User?) -> Void) {
+        self.isLoading = true // Début du chargement
+
+        guard let encodedEmail = email.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
+            print("Failed to encode email")
+            completion(nil)
+            self.isLoading = false // Fin du chargement en cas d'erreur
+            return
+        }
+
+        if let url = URL(string: "http://192.168.100.160:3000/api/auth/user/\(encodedEmail)") {
+            let session = URLSession.shared
+
+            let task = session.dataTask(with: url) { (data, response, error) in
+                defer {
+                    DispatchQueue.main.async {
+                        self.isLoading = false // Fin du chargement après la récupération des données
+                    }
+                }
+
+                if let error = error {
+                    print("Error: \(error)")
+                    completion(nil)
+                    return
+                }
+                
+                guard let httpResponse = response as? HTTPURLResponse else {
+                    print("No response")
+                    completion(nil)
+                    return
+                }
+
+                if (200...299).contains(httpResponse.statusCode), let data = data {
+                    do {
+                        let userResponse = try JSONDecoder().decode(UserResponse.self, from: data)
+                        let user = userResponse.user
+                        completion(user)
+                    } catch {
+                        print("Error decoding JSON: \(error)")
+                        completion(nil)
+                    }
+                } else {
+                    print("HTTP Error: \(httpResponse.statusCode)")
+                    completion(nil)
+                }
+            }
+            task.resume()
+        } else {
+            print("Invalid URL")
+            completion(nil)
+            self.isLoading = false // Fin du chargement en cas d'URL invalide
+        }
+    }
+
+
+
     func ajouterUser(_ user: User) {
         // Création d'une instance de User
        
@@ -67,7 +177,7 @@ class UserViewModel: ObservableObject {
         }
         
         // Créer une URLRequest avec l'URL de votre API
-        let url = URL(string: "http://192.168.53.92:3000/api/auth/register")! // Remplacez par votre URL
+        let url = URL(string: "http://192.168.100.160:3000/api/auth/register")! // Remplacez par votre URL
         var request = URLRequest(url: url)
         
         // Configurer la requête en tant que POST et définir le corps de la requête
@@ -96,4 +206,5 @@ class UserViewModel: ObservableObject {
         // Démarrer la requête
         task.resume()
     }
+    
 }

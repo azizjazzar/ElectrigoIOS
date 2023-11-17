@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0864433B2B06C66E00AA0853 /* sideBarLeftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0864433A2B06C66E00AA0853 /* sideBarLeftView.swift */; };
 		C73ED73A2B00FF4B000E61AD /* LocationReviewForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73ED7392B00FF4B000E61AD /* LocationReviewForm.swift */; };
 		C73ED73C2B012377000E61AD /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73ED73B2B012377000E61AD /* Review.swift */; };
 		F88733712AFD1B57009D585A /* BarDeNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88733702AFD1B57009D585A /* BarDeNavigationView.swift */; };
@@ -93,6 +94,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0864433A2B06C66E00AA0853 /* sideBarLeftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sideBarLeftView.swift; sourceTree = "<group>"; };
 		C73ED7392B00FF4B000E61AD /* LocationReviewForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationReviewForm.swift; sourceTree = "<group>"; };
 		C73ED73B2B012377000E61AD /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		F88733702AFD1B57009D585A /* BarDeNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarDeNavigationView.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 				F964F1442AFB41F2007321EB /* WelcomeView.swift */,
 				F964F1462AFB442B007321EB /* GifImage.swift */,
 				F964F14E2AFB4724007321EB /* car.gif */,
+				0864433A2B06C66E00AA0853 /* sideBarLeftView.swift */,
 			);
 			path = GestionUtlisateur;
 			sourceTree = "<group>";
@@ -538,6 +541,7 @@
 				F9B34E4F2AF6DEDA00035AAD /* User.swift in Sources */,
 				F91971FF2B03555E008E90EB /* Garage.swift in Sources */,
 				F91971FB2B0354FC008E90EB /* GarageView.swift in Sources */,
+				0864433B2B06C66E00AA0853 /* sideBarLeftView.swift in Sources */,
 				F88733712AFD1B57009D585A /* BarDeNavigationView.swift in Sources */,
 				F8CA57C42AFD7B5F0022D28C /* NewsDetailView.swift in Sources */,
 				F91E813E2AF81D9D0055AAF5 /* ChangePasswordView.swift in Sources */,

@@ -101,9 +101,9 @@ struct BoutiqueView_Previews: PreviewProvider {
     }
 }
 
-
 struct AppBarView: View {
     @Binding var isMenuVisible: Bool
+    @State private var isProfileVisible = false // Pour afficher la vue des paramètres du profil
 
     var body: some View {
         HStack {
@@ -123,13 +123,22 @@ struct AppBarView: View {
 
             Spacer()
 
-            Button(action: {}) {
-                // Le reste du bouton ou de l'image selon vos besoins
+            Button(action: {
+                isProfileVisible.toggle()
+            }) {
+                Image(systemName: "person.circle")
+                    .resizable()
+                    .frame(width: 30, height: 30)
+                    .foregroundColor(.black)
+            }
+            .sheet(isPresented: $isProfileVisible) {
+                UserSetings()
             }
         }
         .padding(.horizontal)
     }
 }
+
 
 struct TagLineView: View {
     @State private var isFindVisible = false

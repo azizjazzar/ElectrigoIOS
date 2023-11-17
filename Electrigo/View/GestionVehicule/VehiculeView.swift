@@ -115,6 +115,7 @@ struct VehiculeView: View {
                                 .padding(.leading)
                             }
                         }
+                       
                         .padding(.bottom)
                         
                         Text("Nos nouvelles voitures")
@@ -139,13 +140,16 @@ struct VehiculeView: View {
                         
                     }
                 }
+                .navigationBarBackButtonHidden(true)
                 
                 VStack {
                     Spacer()
                    
                 }
             }
-        }
+        }.navigationBarTitle("", displayMode: .inline) // Pour cacher le titre
+            .navigationBarHidden(true) // Pour masquer la barre de navigation ent
+            .navigationBarBackButtonHidden()
     }
     
 
@@ -155,6 +159,7 @@ struct VehiculeView: View {
         let userImages: [String] = ["user1", "user1", "user1", "user1", "user1", "user1", "user1", "user1"]
 
         var body: some View {
+          
             VStack {
                 Image(vehicule.image)
                     .resizable()

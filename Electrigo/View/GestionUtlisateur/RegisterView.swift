@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct RegisterView: View {
+    
     @StateObject var loginController = UserViewModel()
     @State private var selectedDate = Date() // Définir la variable pour stocker la date sélectionnée
-
+    @State private var showAlert = false
+    @State private var vpass = false
+    @State private var alertMessage = ""
     @State private var email = ""
     @State private var nom = ""
     @State private var prenom = ""
@@ -66,18 +69,20 @@ struct RegisterView: View {
                             .stroke(Color.black, lineWidth: 1))
                     
                 }
-                TextField(" Mot passe", text: $passe)
+                SecureField(" Mot passe", text: $passe)
                     .frame(width: 350, height: 50)
                     .background(Color.clear)
                     .cornerRadius(15)
                     .overlay(RoundedRectangle(cornerRadius: 10)
                         .stroke(Color.black, lineWidth: 1))
-                TextField(" Confirmer Mot passe", text: $cpasse)
+                 
+                SecureField(" Confirmer Mot passe", text: $cpasse)
                     .frame(width: 350, height: 50)
                     .background(Color.clear)
                     .cornerRadius(15)
                     .overlay(RoundedRectangle(cornerRadius: 10)
                         .stroke(Color.black, lineWidth: 1))
+                
                 DatePicker(
                     "Date de naissance",
                     selection: $date,
@@ -133,7 +138,56 @@ struct RegisterView: View {
                             type: "User",
                             picture: "default"
                         )
-                        loginController.ajouterUser(newUser)
+                    if !loginController.verifieEmail(email){
+                        alertMessage="Email invalide!!"
+                        showAlert = true
+                           }
+                    else if !loginController.verifieNomPrenom(nom)
+                    {
+                        alertMessage="Nom doit etres alphabetique et non vide !!"
+                        showAlert = true
+                        
+                    }
+                    else if !loginController.verifieNomPrenom(prenom)
+                    {
+                        alertMessage="Prenom Doit etres alphabetique et non vide "
+                        showAlert = true
+                        
+                    }
+                    else if !loginController.verifieMotDePasse(passe, cpasse)
+                    {
+                        alertMessage="Mot passe n'est identique (comporte minimum 8 caracteres) !!"
+                        showAlert = true
+                        
+                    }
+                    else if !loginController.verifieTelephone(telephone)
+                    {
+                        alertMessage="telephone 8 chiffres !!"
+                        showAlert = true
+                        
+                    }
+                    else if !loginController.verifieAdresse(adresse)
+                    {
+                        alertMessage="Adresse non vide !!"
+                        showAlert = true
+                        
+                    }
+                   
+                            else {
+                                
+                                loginController.getEmail(email: email) { user in
+                                    if let user = user {
+                                        showAlert=true
+                                        alertMessage="Email deja utilisé !!"
+                                    } else {
+                                        loginController.ajouterUser(newUser)
+                                        alertMessage="Ajout avec succes !!"
+                                        showAlert = true
+                                    }
+                                }
+                              
+
+                           }
                     
                 }) {
                     Text("Créer un compte")
@@ -147,10 +201,14 @@ struct RegisterView: View {
             .foregroundColor(.white)
             
          
+            } .alert(isPresented: $showAlert) {
+                Alert(title: Text("Erreur"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
             }
 
         }
     }
+    
+    
 }
 struct RadioButtonView: View {
     var index: Int
@@ -175,3 +233,4 @@ struct RegisterView_Previews: PreviewProvider {
     }
 
 }
+

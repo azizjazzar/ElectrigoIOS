@@ -1,6 +1,9 @@
 import Foundation
-
+struct UserResponse: Codable {
+    let user: User
+}
 struct User: Decodable, Encodable {
+    
     var nom: String
     var prenom: String
     var email: String

@@ -33,7 +33,12 @@ struct BarDeNavigationView: View {
             }
             .accentColor(.blue)
         }
-        .navigationBarTitle(" ")   }
+        .navigationBarTitle(" ")
+        .navigationBarTitle("") // Pour cacher le titre
+        .navigationBarBackButtonHidden(true)
+        .navigationBarHidden(true) // Pour masquer la barre de navigation ent
+        
+    }
 }
 
 
