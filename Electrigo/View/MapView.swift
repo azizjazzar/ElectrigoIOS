@@ -13,20 +13,21 @@ struct MapView: View {
             Map(coordinateRegion: $vm.CoordinateRegion,
                 showsUserLocation: true,
                 annotationItems: vm.locations) { location in
-                    MapMarker(coordinate: location.coordinates, tint: .red)
+                    MapMarker(coordinate: location.coordinate.coordinate, tint: .red)
                 }
                 .onTapGesture {
                     let tappedCoordinate = vm.CoordinateRegion.center
-                    if let tappedLocation = vm.locations.first(where: { tappedCoordinateIsInsideMapMarker($0.coordinates, tappedCoordinate) }) {
+                    if let tappedLocation = vm.locations.first(where: { tappedCoordinateIsInsideMapMarker($0.coordinate.coordinate, tappedCoordinate) }) {
                         self.tappedLocation = tappedLocation
                         showLocationDetails.toggle()
                     }
                 }
                 .ignoresSafeArea(.all)
 
+
             VStack(spacing: 10) {
                 VStack {
-                    Text(vm.MapLocation.name + "," + vm.MapLocation.cityName)
+                    Text(vm.MapLocation.name)
                         .font(.system(size: 25, weight: .semibold, design: .serif))
                         .frame(width: UIScreen.main.bounds.width * 0.9, height: 50, alignment: .center)
                         .background(.ultraThickMaterial)
@@ -116,7 +117,7 @@ struct LocationDetailsView: View {
 
             VStack(alignment: .leading, spacing: 8) {
                 Text("Name: \(location.name)")
-                Text("City: \(location.cityName)")
+                //Text("City: \(location.cityname)")
             }
 
             Button(action: {

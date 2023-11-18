@@ -25,9 +25,7 @@ struct ListLocationMapView: View {
                     .font(.system(size: 20, weight: .semibold, design: .serif))
                     .padding(.leading)
                 
-                Text(location.cityName)
-                    .font(.system(size: 16, weight: .regular, design: .serif))
-                    .padding(.leading)
+                
             }
         }
         .onTapGesture {

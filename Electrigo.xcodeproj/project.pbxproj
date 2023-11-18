@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		C70870452AF9012000A4DA31 /* AddBorneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70870442AF9012000A4DA31 /* AddBorneView.swift */; };
+		C733EA462B08EE4000929BA2 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = C733EA452B08EE4000929BA2 /* Review.swift */; };
+		C733EA482B08EED700929BA2 /* LocationReviewForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = C733EA472B08EED700929BA2 /* LocationReviewForm.swift */; };
+		C733EA4A2B08EF2A00929BA2 /* reviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C733EA492B08EF2A00929BA2 /* reviewViewModel.swift */; };
 		C73996492AFB88E400543A5C /* PicturePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73996482AFB88E400543A5C /* PicturePicker.swift */; };
 		C739964B2AFBA58900543A5C /* AlertPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C739964A2AFBA58900543A5C /* AlertPage.swift */; };
 		C739FABF2AF6B15000FB3660 /* ElectrigoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C739FABE2AF6B15000FB3660 /* ElectrigoApp.swift */; };
@@ -47,6 +50,9 @@
 
 /* Begin PBXFileReference section */
 		C70870442AF9012000A4DA31 /* AddBorneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBorneView.swift; sourceTree = "<group>"; };
+		C733EA452B08EE4000929BA2 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		C733EA472B08EED700929BA2 /* LocationReviewForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationReviewForm.swift; sourceTree = "<group>"; };
+		C733EA492B08EF2A00929BA2 /* reviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reviewViewModel.swift; sourceTree = "<group>"; };
 		C73996482AFB88E400543A5C /* PicturePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturePicker.swift; sourceTree = "<group>"; };
 		C739964A2AFBA58900543A5C /* AlertPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPage.swift; sourceTree = "<group>"; };
 		C739FABB2AF6B15000FB3660 /* Electrigo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Electrigo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -167,6 +173,7 @@
 				C7B0EB3E2AFA8D2500A11FA7 /* mapPinItem.swift */,
 				C73996482AFB88E400543A5C /* PicturePicker.swift */,
 				C739964A2AFBA58900543A5C /* AlertPage.swift */,
+				C733EA472B08EED700929BA2 /* LocationReviewForm.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -175,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				C739FAF02AF6B93E00FB3660 /* Location.swift */,
+				C733EA452B08EE4000929BA2 /* Review.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -183,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				C739FAF72AF6C13300FB3660 /* LocationlistViewModel.swift */,
+				C733EA492B08EF2A00929BA2 /* reviewViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -335,9 +344,12 @@
 			files = (
 				C739FACB2AF6B15100FB3660 /* Electrigo.xcdatamodeld in Sources */,
 				C739FAFA2AF7104E00FB3660 /* MapView.swift in Sources */,
+				C733EA482B08EED700929BA2 /* LocationReviewForm.swift in Sources */,
 				C7B0EB3D2AFA4D5A00A11FA7 /* ListLocationMapView.swift in Sources */,
+				C733EA4A2B08EF2A00929BA2 /* reviewViewModel.swift in Sources */,
 				C7B0EB3F2AFA8D2500A11FA7 /* mapPinItem.swift in Sources */,
 				C7AF86112AF7F199004C6830 /* LocationManager.swift in Sources */,
+				C733EA462B08EE4000929BA2 /* Review.swift in Sources */,
 				C739964B2AFBA58900543A5C /* AlertPage.swift in Sources */,
 				C739FAC82AF6B15100FB3660 /* Persistence.swift in Sources */,
 				C70870452AF9012000A4DA31 /* AddBorneView.swift in Sources */,
