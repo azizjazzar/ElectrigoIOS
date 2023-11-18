@@ -10,7 +10,7 @@ import SwiftUI
 struct LocationlistView: View {
     @EnvironmentObject var vm: locationlistViewModel
     @State private var selectedLocation: Location? 
-
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -49,6 +49,10 @@ struct LocationlistView: View {
             }
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarBackButtonHidden(true)
+            .navigationBarItems(trailing: ForumBarView(isLocationForumViewPresented: $vm.isListDisplayed))
+            .onAppear {
+                vm.getLocations()
+            }
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                 NavigationLink(destination: MapView()) {
