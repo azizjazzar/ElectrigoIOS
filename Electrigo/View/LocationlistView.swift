@@ -8,51 +8,30 @@
 import SwiftUI
 
 struct LocationlistView: View {
-    @EnvironmentObject var vm: locationlistViewModel
-    @State private var selectedLocation: Location? 
+    //@StateObject var vm = locationlistViewModel()
+    @State private var selectedLocation: Location?
+    var gridColumn: [GridItem] = [GridItem(.flexible()), GridItem(.flexible())]
+    @StateObject var vm = reviewViewModel()
     
     var body: some View {
         NavigationView {
             VStack {
-                Text("Borne de recharge")
-                    .font(.title)
-                    .padding(.top, 10)
-
-                List {
-                    Section(header: Text("Locations")) {
-                        ForEach(vm.locations) { location in
-                            VStack(alignment: .leading, spacing: 8) {
-                                Image(systemName: "location.circle")
-                                    .foregroundColor(.blue)
-                                Text(location.name)
-                                    .font(.headline)
-                                Text("City: \(location.cityname)")
-                                    .font(.subheadline)
-                                Text("Latitude: \(location.coordinate.latitude), Longitude: \(location.coordinate.longitude)")
-                                    .font(.subheadline)
-                                NavigationLink(destination: LocationDetailView(location: location)) {
-                                    Text("325km")
-                                        .foregroundColor(.green)
-                                        .background(RoundedRectangle(cornerRadius: 2).stroke(Color.green, lineWidth: 1))
-                                        .padding(.vertical, 3)
-                                }
-                                .padding(.trailing, 20)
+               
+                    ScrollView(.vertical, showsIndicators: false) {
+                        LazyVGrid(columns: gridColumn) {
+                            ForEach(vm.reviews) { item in
+                                LocationCardView(review: item)
+                                    .padding(3)
                             }
-                            .padding(26)
-                            .background(RoundedRectangle(cornerRadius: 25).stroke(Color.blue, lineWidth: 1))
-                            .padding(.vertical, 5)
                         }
                     }
-                }
-                .listStyle(PlainListStyle())
-                .background(Color.clear)
+                    .navigationTitle("Les Stations")
+                
             }
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarBackButtonHidden(true)
             .navigationBarItems(trailing: ForumBarView(isLocationForumViewPresented: $vm.isListDisplayed))
-            .onAppear {
-                vm.getLocations()
-            }
+            
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                 NavigationLink(destination: MapView()) {

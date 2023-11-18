@@ -4,11 +4,12 @@ import CoreLocation
 class LocationsDataService {
     static let locations: [Location] = [
         Location(
+            id:"12345454646",
             name: "Total Borne",
-            cityName: "Nabeul City",
-            address: "Example Address",
-            typeLocation: "hotel",
-            typeCharge: "gratuit",
+            cityname: "Nabeul City",
+            adresse: "Example Address",
+            typelocation: "hotel",
+            typecharge: "gratuit",
             picture: "borne1",
             coordinate: Location.Coordinate(
                 latitude: 37.7749,
@@ -16,11 +17,12 @@ class LocationsDataService {
             )
         ),
         Location(
+            id:"12345454646",
             name: "Shell Borne",
-            cityName: "Nabeul City",
-            address: "Example Address",
-            typeLocation: "hotel",
-            typeCharge: "gratuit",
+            cityname: "Nabeul City",
+            adresse: "Example Address",
+            typelocation: "hotel",
+            typecharge: "gratuit",
             picture: "borne1",
             coordinate: Location.Coordinate(
                 latitude: 33.892166,
@@ -28,11 +30,12 @@ class LocationsDataService {
             )
         ),
         Location(
+            id:"12345454646",
             name: "Movanpick Borne",
-            cityName: "Nabeul City",
-            address: "Example Address",
-            typeLocation: "hotel",
-            typeCharge: "gratuit",
+            cityname: "Nabeul City",
+            adresse: "Example Address",
+            typelocation: "hotel",
+            typecharge: "gratuit",
             picture: "borne1",
             coordinate: Location.Coordinate(
                 latitude: 37.268674,

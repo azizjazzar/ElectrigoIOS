@@ -165,10 +165,10 @@ struct AddBorneView: View {
 
                             let newLocation = Location(
                                 name: name,
-                                cityName: cityname,
-                                address: address,
-                                typeLocation: selectedTypeString,
-                                typeCharge: selectedChargeString,
+                                cityname: cityname,
+                                adresse: address,
+                                typelocation: selectedTypeString,
+                                typecharge: selectedChargeString,
                                 picture: picture,
                                 coordinate: Location.Coordinate(
                                         latitude: Double(latitude) ?? 0.0,

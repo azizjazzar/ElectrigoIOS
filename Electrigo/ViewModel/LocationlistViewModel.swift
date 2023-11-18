@@ -10,7 +10,7 @@ import MapKit
 import CoreLocation
 class locationlistViewModel:ObservableObject {
     @Published var locations: [Location] = []
-
+    
     @Published var CoordinateRegion = MKCoordinateRegion()
     @Published var MapLocation : Location{
         didSet{
@@ -23,10 +23,11 @@ class locationlistViewModel:ObservableObject {
     
     init(){
         self.locationManager = LocationManager()
-        let location =  LocationsDataService.locations
-        locations=location
+        //let location =  LocationsDataService.locations
+        //locations=location
         MapLocation = LocationsDataService.locations.first!
-       self.updateCoordinateRegion(location: locations.first!)
+        // self.updateCoordinateRegion(location: locations.first!)
+        getAllLocations()
         
     }
     
@@ -34,7 +35,7 @@ class locationlistViewModel:ObservableObject {
         let coordinate = location.coordinate.coordinate // Use the coordinate property
         CoordinateRegion = MKCoordinateRegion(center: coordinate, span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
     }
-
+    
     func updateListState(){
         isListDisplayed.toggle()
     }
@@ -48,7 +49,7 @@ class locationlistViewModel:ObservableObject {
         }
         
         // Create a URLRequest with your API URL
-        let url = URL(string: "http://192.168.100.160:3000/api/borne/addborne")! // Replace with your URL
+        let url = URL(string: "http://192.168.165.92:3000/api/borne/addborne")! // Replace with your URL
         var request = URLRequest(url: url)
         
         // Configure the request as a POST and set the request body
@@ -78,56 +79,44 @@ class locationlistViewModel:ObservableObject {
         task.resume()
     }
     
-    func getLocations() {
-           getLocations { [weak self] fetchedLocations in
-               if let fetchedLocations = fetchedLocations {
-                   DispatchQueue.main.async {
-                       self?.locations = fetchedLocations
-                   }
-               }
-           }
-       }
-
-       private func getLocations(completion: @escaping ([Location]?) -> Void) {
-           let url = URL(string: "http://192.168.100.160:3000/api/borne/bornes")!
-           var request = URLRequest(url: url)
-           request.httpMethod = "GET"
-
-           let task = URLSession.shared.dataTask(with: request) { data, response, error in
-               if let error = error {
-                   print("Request error: \(error.localizedDescription)")
-                   completion(nil)
-                   return
-               }
-
-               if let httpResponse = response as? HTTPURLResponse {
-                   print("HTTP Status Code: \(httpResponse.statusCode)")
-
-                   guard let responseData = data else {
-                       print("No data received")
-                       completion(nil)
-                       return
-                   }
-
-                   // Print the response string
-                   let responseString = String(data: responseData, encoding: .utf8)
-                   print("Response String: \(responseString ?? "")")
-
-                   do {
-                       let decoder = JSONDecoder()
-                       decoder.keyDecodingStrategy = .convertFromSnakeCase
-                       let locations = try decoder.decode([Location].self, from: responseData)
-                       completion(locations)
-                   } catch {
-                       print("Error decoding JSON: \(error.localizedDescription)")
-                       completion(nil)
-                   }
-               }
-           }
-
-           task.resume()
-       }
-   }
+    func getAllLocations() {
+        guard let url = URL(string: "http://192.168.100.160:3000/api/borne/bornes") else {
+            print("there is errors with url parsing")
+            return
+        }
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            guard error == nil else {
+                print("error from completion handler")
+                return
+            }
+            
+            guard let response = response as? HTTPURLResponse else {
+                print("error from response")
+                return
+            }
+            guard response.statusCode >= 200 && response.statusCode <= 300 else {
+                print ("error from status code")
+                return
+            }
+            guard let data = data?.jsonparsing(letters: "null,") else {
+                print("error with data")
+                return
+            }
+            guard let jsondata = try? JSONDecoder().decode([Location].self, from: data)
+            else{
+                print("error from decoder")
+                return
+            }
+            DispatchQueue.main.async {
+                self.locations=jsondata
+                print(self.locations)
+            }
+            
+        }.resume()
+        
+    }
+    
+}
 
 
     

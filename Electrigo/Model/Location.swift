@@ -1,53 +1,43 @@
 import Foundation
 import CoreLocation
-struct LocationListResponse : Decodable
-{
-    var locations: [Location]
-}
-struct Location: Identifiable, Decodable, Encodable {
-    var id: String
-    var name: String
-    var cityname: String
-    var adresse: String
-    var typelocation: String
-    var typecharge: String
-    var picture: String
-    var coordinate: Coordinate
 
-    struct Coordinate: Identifiable, Codable {
-            var id: UUID { UUID() }
-            var latitude: Double
-            var longitude: Double
-            var coordinate: CLLocationCoordinate2D {
-                CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-            }
+struct Location: Identifiable, Codable {
+    let _id: String?
+    let name: String
+    let cityname: String
+    let adresse: String
+    let typelocation: String
+    let typecharge: String
+    let picture: String
+    let coordinate: Coordinate
+
+    struct Coordinate: Codable {
+        let latitude: Double
+        let longitude: Double
+        
+        var coordinate: CLLocationCoordinate2D {
+            CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         }
-    enum CodingKeys: String, CodingKey {
-           case id = "_id"
-        case name, cityname, adresse, typelocation,typecharge,picture,coordinate
-       }
-    var uuid: UUID {
-            // Utilisez une validation avant de convertir en UUID
-            if let uuid = UUID(uuidString: id) {
-                return uuid
-            } else {
-                // Générez un UUID par défaut en cas d'erreur
-                return UUID()
-            }
-        }
-    init(name: String,
-         cityName: String,
-         address: String,
-         typeLocation: String,
-         typeCharge: String,
+    }
+    
+    var id: String? {
+        return _id
+    }
+
+    init( id: String? = nil,
+          name: String,
+         cityname: String,
+         adresse: String,
+         typelocation: String,
+         typecharge: String,
          picture: String,
          coordinate: Coordinate) {
-        self.id = ""
+        self._id = id
         self.name = name
-        self.cityname = cityName
-        self.adresse = address
-        self.typelocation = typeLocation
-        self.typecharge = typeCharge
+        self.cityname = cityname
+        self.adresse = adresse
+        self.typelocation = typelocation
+        self.typecharge = typecharge
         self.picture = picture
         self.coordinate = coordinate
     }
