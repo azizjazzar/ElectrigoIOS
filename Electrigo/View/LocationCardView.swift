@@ -9,28 +9,30 @@ import SwiftUI
 
 struct LocationCardView: View {
     let location : Location
+    @StateObject var vl = locationlistViewModel()
     var body: some View {
         HStack{
             VStack{
                 Text(location.name)
                     .font(.system(size: 17, weight: .medium, design: .serif))
                 Text(location.cityname)
-                    .font(.system(size: 13, weight: .semibold, design: .serif))
-                Text("Type")
-                        .font(.system(size: 20, weight: .semibold, design: .serif))
+                    .font(.footnote)
+                    .fontWeight(.medium)
+                Text(location.typelocation)
+                        .font(.system(size: 14, weight: .semibold, design: .serif))
                         .padding()
-                        .background(.blue.opacity(0.5))
+                        .background(Color(uiColor: vl.getColorFromType(type: location.typelocation)).opacity(0.8))
                         .cornerRadius(22)
             }.padding(.horizontal,10)
             Image(systemName: "location.circle")
                 .resizable()
-                .foregroundColor(.green)
+                .foregroundColor((Color(uiColor: vl.getColorFromType(type: location.typelocation)).opacity(0.8)))
                 .scaledToFill()
-                .frame(width: 40 ,height: 40, alignment: .center)
+                .frame(width: 30 ,height: 30, alignment: .center)
                 .padding(.trailing)
         }
         .padding(.vertical)
-        .background(RoundedRectangle(cornerRadius: 25).stroke(Color.blue, lineWidth: 1))
+        .background(RoundedRectangle(cornerRadius: 25).stroke(Color(uiColor: vl.getColorFromType(type: location.typelocation)).opacity(0.8), lineWidth: 1))
         .padding(.vertical, 5)
 
         .cornerRadius(12)

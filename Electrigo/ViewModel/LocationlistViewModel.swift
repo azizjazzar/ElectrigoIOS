@@ -119,6 +119,14 @@ class locationlistViewModel:ObservableObject {
         }.resume()
         
     }
+    func getColorFromType(type:String)->UIColor{
+        switch type {
+        case "Restaurant": return .systemGreen
+        case "Station": return .systemRed
+        case "Hotel": return .systemBlue
+        default: return .systemIndigo
+        }
+    }
     
 }
 
