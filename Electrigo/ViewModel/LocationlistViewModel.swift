@@ -10,15 +10,15 @@ import MapKit
 import CoreLocation
 class locationlistViewModel:ObservableObject {
     @Published var locations: [Location] = []
-    
-    @Published var CoordinateRegion = MKCoordinateRegion()
+    @Published var isListDisplayed = false
+    /**@Published var CoordinateRegion = MKCoordinateRegion()
     @Published var MapLocation : Location{
         didSet{
             updateCoordinateRegion(location:MapLocation)
         }
     }
     var locationManager: LocationManager
-    @Published var isListDisplayed = false
+    
     //@State private var mapRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 24.59, longitude: 46.70), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
     
     init(){
@@ -34,7 +34,11 @@ class locationlistViewModel:ObservableObject {
     func updateCoordinateRegion(location: Location) {
         let coordinate = location.coordinate.coordinate // Use the coordinate property
         CoordinateRegion = MKCoordinateRegion(center: coordinate, span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
+    }*/
+    init(){
+        getAllLocations()
     }
+    
     
     func updateListState(){
         isListDisplayed.toggle()
@@ -49,7 +53,7 @@ class locationlistViewModel:ObservableObject {
         }
         
         // Create a URLRequest with your API URL
-        let url = URL(string: "http://192.168.165.92:3000/api/borne/addborne")! // Replace with your URL
+        let url = URL(string: "http://192.168.100.160:3000/api/borne/addborne")! // Replace with your URL
         var request = URLRequest(url: url)
         
         // Configure the request as a POST and set the request body

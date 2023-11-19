@@ -9,21 +9,21 @@ import SwiftUI
 
 struct MainLocationListView: View {
     var gridColumn: [GridItem] = [GridItem(.flexible()), GridItem(.flexible())]
-    @StateObject var vm = reviewViewModel()
+    @StateObject var vl = locationlistViewModel()
     
     var body: some View {
         NavigationView {
             ScrollView(.vertical, showsIndicators: false) {
                 LazyVGrid(columns: gridColumn) {
-                    ForEach(vm.reviews) { item in
-                        LocationCardView(review: item)
+                    ForEach(vl.locations) { item in
+                        LocationCardView(location: item)
                             .padding(3)
                     }
                 }
             }
             .navigationTitle("Les Stations")
         }
-        .navigationBarItems(trailing: ForumBarViews(isLocationForumViewPresented: $vm.isListDisplayed))
+        .navigationBarItems(trailing: ForumBarViews(isLocationForumViewPresented: $vl.isListDisplayed))
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
                 NavigationLink(destination: MapView()) {

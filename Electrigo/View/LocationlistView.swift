@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct LocationlistView: View {
-    //@StateObject var vm = locationlistViewModel()
+    @StateObject var vl = locationlistViewModel()
     @State private var selectedLocation: Location?
     var gridColumn: [GridItem] = [GridItem(.flexible()), GridItem(.flexible())]
-    @StateObject var vm = reviewViewModel()
+    //@StateObject var vm = reviewViewModel()
     
     var body: some View {
         NavigationView {
@@ -19,8 +19,8 @@ struct LocationlistView: View {
                
                     ScrollView(.vertical, showsIndicators: false) {
                         LazyVGrid(columns: gridColumn) {
-                            ForEach(vm.reviews) { item in
-                                LocationCardView(review: item)
+                            ForEach(vl.locations) { item in
+                                LocationCardView(location: item)
                                     .padding(3)
                             }
                         }
@@ -30,7 +30,7 @@ struct LocationlistView: View {
             }
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarBackButtonHidden(true)
-            .navigationBarItems(trailing: ForumBarView(isLocationForumViewPresented: $vm.isListDisplayed))
+            .navigationBarItems(trailing: ForumBarView(isLocationForumViewPresented: $vl.isListDisplayed))
             
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {

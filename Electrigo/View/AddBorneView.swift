@@ -171,8 +171,9 @@ struct AddBorneView: View {
                                 typecharge: selectedChargeString,
                                 picture: picture,
                                 coordinate: Location.Coordinate(
-                                        latitude: Double(latitude) ?? 0.0,
-                                        longitude: Double(longitude) ?? 0.0
+                                        type: "Point", // Assuming "Point" is the correct value for your use case
+                                        coordinates: [Double(latitude) ?? 0.0, Double(longitude) ?? 0.0]
+                                       
                                     )
                             )
 

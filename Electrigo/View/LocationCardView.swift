@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct LocationCardView: View {
-    let review : Review
+    let location : Location
     var body: some View {
         HStack{
             VStack{
-                Text(review.comment)
+                Text(location.name)
                     .font(.system(size: 17, weight: .medium, design: .serif))
-                Text(review.comment)
+                Text(location.cityname)
                     .font(.system(size: 13, weight: .semibold, design: .serif))
                 Text("Type")
                         .font(.system(size: 20, weight: .semibold, design: .serif))
@@ -38,8 +38,9 @@ struct LocationCardView: View {
 }
 
 struct LocationCardView_Previews: PreviewProvider {
-    static var vm = reviewViewModel()
+    static var vl = locationlistViewModel()
     static var previews: some View {
-        LocationCardView(review: vm.reviews.first!)
+        LocationCardView(location: vl.locations.first!)
     }
 }
+

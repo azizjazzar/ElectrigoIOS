@@ -53,7 +53,7 @@ class reviewViewModel : ObservableObject{
     }
     
     func getAllReviews() {
-        guard let url = URL(string: "http://192.168.165.92:3000/api/review/reviews") else {
+        guard let url = URL(string: "http://192.168.100.160:3000/api/review/reviews") else {
             print("there is errors with url parsing")
             return
         }

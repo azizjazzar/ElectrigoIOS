@@ -7,26 +7,26 @@ struct MapView: View {
     @State private var showLocationList = false
     @State private var tappedLocation: Location? = nil
     @State private var showLocationDetails = false
+    let coordinateRegionBinding: Binding<MKCoordinateRegion> = .init(get: {
+        return MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 37.77493, longitude: -122.419415), span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
+    }, set: { newCoordinateRegion in
+        // Update the underlying coordinate region value
+    })
 
+    //$vm.CoordinateRegion,
     var body: some View {
         ZStack(alignment: .top) {
-            Map(coordinateRegion: $vm.CoordinateRegion,
-                showsUserLocation: true,
-                annotationItems: vm.locations) { location in
-                    MapMarker(coordinate: location.coordinate.coordinate, tint: .red)
-                }
-                .onTapGesture {
-                    let tappedCoordinate = vm.CoordinateRegion.center
-                    if let tappedLocation = vm.locations.first(where: { tappedCoordinateIsInsideMapMarker($0.coordinate.coordinate, tappedCoordinate) }) {
-                        self.tappedLocation = tappedLocation
-                        showLocationDetails.toggle()
-                    }
-                }
+            Map(coordinateRegion: coordinateRegionBinding,
+                            showsUserLocation: true
+                            )
+                            
+
+                
                 .ignoresSafeArea(.all)
 
 
             VStack(spacing: 10) {
-                VStack {
+                /**VStack {
                     Text(vm.MapLocation.name)
                         .font(.system(size: 25, weight: .semibold, design: .serif))
                         .frame(width: UIScreen.main.bounds.width * 0.9, height: 50, alignment: .center)
@@ -55,7 +55,7 @@ struct MapView: View {
                         .padding(.horizontal, 30)
                     }
                 }
-                .padding(.top, 20)
+                .padding(.top, 20)*/
 
                 if let tappedLocation = tappedLocation {
                     LocationDetailsView(location: tappedLocation, getDirectionsAction: {

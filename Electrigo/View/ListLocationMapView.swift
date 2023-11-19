@@ -30,7 +30,7 @@ struct ListLocationMapView: View {
         }
         .onTapGesture {
             withAnimation(.easeInOut(duration: 1)){
-                vm.updateCoordinateRegion(location: location)
+                //vm.updateCoordinateRegion(location: location)
             }
         }
     }

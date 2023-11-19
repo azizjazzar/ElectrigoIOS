@@ -3,21 +3,19 @@ import CoreLocation
 
 struct Location: Identifiable, Codable {
     let _id: String?
-    let name: String
-    let cityname: String
-    let adresse: String
-    let typelocation: String
-    let typecharge: String
-    let picture: String
-    let coordinate: Coordinate
+      let name: String
+      let cityname: String
+      let adresse: String
+      let typelocation: String
+      let typecharge: String
+      let picture: String
+      let coordinate: Coordinate
+     
 
     struct Coordinate: Codable {
-        let latitude: Double
-        let longitude: Double
+        let type: String
+        let coordinates: [Double]
         
-        var coordinate: CLLocationCoordinate2D {
-            CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-        }
     }
     
     var id: String? {
