@@ -6,7 +6,8 @@ class UserViewModel: ObservableObject {
     
     @Published var isLoading = false // Variable d'état pour le chargement
     @Published var listuser: User?
-
+    @Published private var hostname = "192.168.236.81"
+    @Published private var port = "3000"
 
   
     func verifieMotDePasse(_ motDePasse: String, _ confirmationMotDePasse: String) -> Bool {
@@ -63,7 +64,7 @@ class UserViewModel: ObservableObject {
     func getAll()
     {
         // Create a URL
-        if let url = URL(string: "http://192.168.236.81:3000/api/auth/users") {
+        if let url = URL(string: "http://\(hostname):\(port)/api/auth/users") {
             // Create a URLSession object
             let session = URLSession.shared
             
@@ -110,7 +111,7 @@ class UserViewModel: ObservableObject {
         }
     }
     func updateUser(user: User) {
-        let urlString = "http://192.168.236.81:3000/api/auth/update/\(user.email)"
+        let urlString = "http://\(hostname):\(port)/api/auth/update/\(user.email)"
 
         guard let url = URL(string: urlString) else {
             print("URL invalide")
@@ -159,7 +160,7 @@ class UserViewModel: ObservableObject {
             return
         }
 
-        if let url = URL(string: "http://192.168.236.81:3000/api/auth/user/\(encodedEmail)") {
+        if let url = URL(string: "http://\(hostname):\(port)/api/auth/user/\(encodedEmail)") {
             let session = URLSession.shared
 
             let task = session.dataTask(with: url) { (data, response, error) in
@@ -215,7 +216,7 @@ class UserViewModel: ObservableObject {
         }
         
         // Créer une URLRequest avec l'URL de votre API
-        let url = URL(string: "http://192.168.236.81:3000/api/auth/register")! // Remplacez par votre URL
+        let url = URL(string: "http://\(hostname):\(port)/api/auth/register")! // Remplacez par votre URL
         var request = URLRequest(url: url)
         
         // Configurer la requête en tant que POST et définir le corps de la requête

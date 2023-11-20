@@ -12,7 +12,7 @@ struct ElectrigoApp: App {
     let persistenceController = PersistenceController.shared
     var body: some Scene {
         WindowGroup {
-            BarDeNavigationView(selectedTab: 0)
+            LoginView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
