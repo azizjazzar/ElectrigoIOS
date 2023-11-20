@@ -7,55 +7,65 @@ struct MapView: View {
     @State private var showLocationList = false
     @State private var tappedLocation: Location? = nil
     @State private var showLocationDetails = false
-    let coordinateRegionBinding: Binding<MKCoordinateRegion> = .init(get: {
-        return MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 37.77493, longitude: -122.419415), span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
-    }, set: { newCoordinateRegion in
-        // Update the underlying coordinate region value
-    })
 
-    //$vm.CoordinateRegion,
     var body: some View {
         ZStack(alignment: .top) {
-            Map(coordinateRegion: coordinateRegionBinding,
-                            showsUserLocation: true
-                            )
-                            
+            Map(coordinateRegion: $vm.CoordinateRegion,
+                showsUserLocation: true,
+                annotationItems: vm.locations) { location in
+                MapMarker(coordinate: CLLocationCoordinate2D(latitude: location.coordinate.coordinates[1], longitude: location.coordinate.coordinates[0]), tint: .red)
 
-                
-                .ignoresSafeArea(.all)
-
-
-            VStack(spacing: 10) {
-                /**VStack {
-                    Text(vm.MapLocation.name)
-                        .font(.system(size: 25, weight: .semibold, design: .serif))
-                        .frame(width: UIScreen.main.bounds.width * 0.9, height: 50, alignment: .center)
-                        .background(.ultraThickMaterial)
-                        .cornerRadius(20)
-                        .overlay(Button(action: {
-                            withAnimation(.easeOut(duration: 0.5)) {
-                                vm.updateListState()
-                            }
-                        }, label: {
-                            Image(systemName: "arrow.down")
-                                .font(.system(size: 20, weight: .bold, design: .default))
-                                .foregroundColor(.black)
-                                .padding(.leading)
-                                .rotationEffect(Angle(degrees: vm.isListDisplayed ? 180 : 0))
-                        }), alignment: .leading)
-
-                    if vm.isListDisplayed {
-                        List {
-                            ForEach(vm.locations) { location in
-                                ListLocationMapView(location: location)
-                                    .padding(4)
-                            }
-                        }
-                        .listStyle(PlainListStyle())
-                        .padding(.horizontal, 30)
+                }
+                .onTapGesture {
+                    let tappedCoordinate = vm.CoordinateRegion.center
+                    if let tappedLocation = vm.locations.first(where: { location in
+                        let locationCoordinate = CLLocationCoordinate2D(latitude: location.coordinate.coordinates[1], longitude: location.coordinate.coordinates[0])
+                        return tappedCoordinateIsInsideMapMarker(locationCoordinate, tappedCoordinate)
+                    }) {
+                        self.tappedLocation = tappedLocation
+                        showLocationDetails.toggle()
                     }
                 }
-                .padding(.top, 20)*/
+
+
+                .ignoresSafeArea(.all)
+
+            VStack(spacing: 10) {
+                VStack {
+                    if let mapLocation = vm.MapLocation {
+                        Text(mapLocation.name + "," + mapLocation.cityname)
+                            .font(.system(size: 25, weight: .semibold, design: .serif))
+                            .frame(width: UIScreen.main.bounds.width * 0.9, height: 50, alignment: .center)
+                            .background(.ultraThickMaterial)
+                            .cornerRadius(20)
+                            .overlay(Button(action: {
+                                withAnimation(.easeOut(duration: 0.5)) {
+                                    vm.updateListState()
+                                }
+                            }, label: {
+                                Image(systemName: "arrow.down")
+                                    .font(.system(size: 20, weight: .bold, design: .default))
+                                    .foregroundColor(.black)
+                                    .padding(.leading)
+                                    .rotationEffect(Angle(degrees: vm.isListDisplayed ? 180 : 0))
+                            }), alignment: .leading)
+
+                        if vm.isListDisplayed {
+                            List {
+                                ForEach(vm.locations) { location in
+                                    ListLocationMapView(location: location)
+                                        .padding(4)
+                                }
+                            }
+                            .listStyle(PlainListStyle())
+                            .padding(.horizontal, 30)
+                        }
+                    } else {
+                        // Handle the case when MapLocation is nil
+                        Text("Default Text or Placeholder")
+                    }
+                }
+                .padding(.top, 20)
 
                 if let tappedLocation = tappedLocation {
                     LocationDetailsView(location: tappedLocation, getDirectionsAction: {
@@ -117,7 +127,7 @@ struct LocationDetailsView: View {
 
             VStack(alignment: .leading, spacing: 8) {
                 Text("Name: \(location.name)")
-                //Text("City: \(location.cityname)")
+                Text("City: \(location.cityname)")
             }
 
             Button(action: {

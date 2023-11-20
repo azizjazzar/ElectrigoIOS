@@ -10,34 +10,27 @@ import MapKit
 import CoreLocation
 class locationlistViewModel:ObservableObject {
     @Published var locations: [Location] = []
-    @Published var isListDisplayed = false
-    /**@Published var CoordinateRegion = MKCoordinateRegion()
-    @Published var MapLocation : Location{
-        didSet{
-            updateCoordinateRegion(location:MapLocation)
-        }
-    }
-    var locationManager: LocationManager
-    
-    //@State private var mapRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 24.59, longitude: 46.70), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
-    
-    init(){
-        self.locationManager = LocationManager()
-        //let location =  LocationsDataService.locations
-        //locations=location
-        MapLocation = LocationsDataService.locations.first!
-        // self.updateCoordinateRegion(location: locations.first!)
-        getAllLocations()
-        
-    }
+       @Published var isListDisplayed = false
+       @Published var CoordinateRegion = MKCoordinateRegion()
+       @Published var MapLocation: Location?
+       var locationManager: LocationManager
+       
+       private var mapRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 24.59, longitude: 46.70), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
+       
+       init() {
+           self.locationManager = LocationManager()
+           getAllLocations()
+       }
     
     func updateCoordinateRegion(location: Location) {
-        let coordinate = location.coordinate.coordinate // Use the coordinate property
-        CoordinateRegion = MKCoordinateRegion(center: coordinate, span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
-    }*/
-    init(){
-        getAllLocations()
-    }
+          guard let coordinate = location.coordinate.coordinates.first,
+                let latitude = location.coordinate.coordinates.last else {
+              return
+          }
+          let coordinate2D = CLLocationCoordinate2D(latitude: latitude, longitude: coordinate)
+          let region = MKCoordinateRegion(center: coordinate2D, span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
+          self.CoordinateRegion = region
+      }
     
     
     func updateListState(){
@@ -82,7 +75,6 @@ class locationlistViewModel:ObservableObject {
         // Start the request
         task.resume()
     }
-    
     func getAllLocations() {
         guard let url = URL(string: "http://192.168.100.160:3000/api/borne/bornes") else {
             print("there is errors with url parsing")
@@ -106,19 +98,24 @@ class locationlistViewModel:ObservableObject {
                 print("error with data")
                 return
             }
-            guard let jsondata = try? JSONDecoder().decode([Location].self, from: data)
-            else{
+            guard let jsondata = try? JSONDecoder().decode([Location].self, from: data) else {
                 print("error from decoder")
                 return
             }
             DispatchQueue.main.async {
-                self.locations=jsondata
+                self.locations = jsondata
                 print(self.locations)
+                
+                // Set MapLocation to the first location if available, otherwise set it to nil
+                self.MapLocation = jsondata.first
+                if let firstLocation = jsondata.first {
+                    self.updateCoordinateRegion(location: firstLocation)
+                }
             }
             
         }.resume()
-        
     }
+
     func getColorFromType(type:String)->UIColor{
         switch type {
         case "Restaurant": return .systemGreen

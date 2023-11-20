@@ -1,5 +1,4 @@
 import SwiftUI
-
 struct DetailViewLocation: View {
     @StateObject var vl = locationlistViewModel()
     let location : Location
