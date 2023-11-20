@@ -2,61 +2,173 @@ import SwiftUI
 
 struct DetailViewLocation: View {
     @StateObject var vl = locationlistViewModel()
-
+    let location : Location
     var body: some View {
         ZStack {
-            Color(uiColor: vl.getColorFromType(type: "Restaurant"))
-                .edgesIgnoringSafeArea(.all)
-
-            VStack(alignment: .center) {
+    
+            VStack {
                 Image("borne1")
                     .resizable()
                     .scaledToFill()
                     .frame(width: 150, height: 150)
                     .clipShape(Circle())
-                    .shadow(radius: 5)
                     .overlay(
                         Circle()
-                            .stroke(Color.black, lineWidth: 2)
+                            .stroke(Color.white, lineWidth: 4)
                     )
+                    .shadow(radius: 10)
 
-                Text("Example Borne")
-                    .font(.system(size: 30, weight: .bold, design: .serif))
-                    .padding(.horizontal)
+                // Title and Rating section
+                VStack(alignment: .center, spacing: 8) {
+                    Text("Example Borne")
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
 
+                    HStack(spacing: 4) {
+                        ForEach(0..<5) { _ in
+                            Image(systemName: "star.fill")
+                                .foregroundColor(.yellow)
+                                .font(.system(size: 20))
+                        }
+                    }
+                }
+
+                // Location Type section
                 Text("Restaurant")
-                    .font(.system(size: 25, weight: .medium, design: .serif))
-                    .padding()
-                    .background(Color(uiColor: vl.getColorFromType(type: "Restaurant")))
-                    .cornerRadius(20)
-                    .padding(.horizontal)
+                    .font(.headline)
+                                   .padding()
+                               
+                                   .cornerRadius(18)
+                                   .padding(.horizontal)
 
-                Text("This is a description of the location, including information about its services, amenities, or unique features.")
-                    .font(.system(size: 16, weight: .regular, design: .serif))
-                    .padding(.horizontal)
-
-                Button("Save to Favorites") {
-                    // Implement functionality to save the location to favorites
+                // Details section
+                VStack(alignment: .leading, spacing: 12) {
+                    DetailRow(title: "Adresse", value: location.name,fontSize: 16)
+                    DetailRow(title: "Type de borne", value: location.name,fontSize: 16)
+                    DetailRow(title: "Nombre de prises", value: "\(location.name)",fontSize: 16)
+                    
                 }
-                .buttonStyle(.borderedProminent)
-                .padding(.horizontal)
+                .foregroundColor(.black)
 
-                Button("Share Location") {
-                    // Implement functionality to share the location with others
+                Text("Avis utulisateur :")
+                    .font(.system(size: 20,weight:  .semibold, design:  .serif))
+                    .padding(12)
+                    .frame(width: UIScreen.main.bounds.width, alignment: .leading)
+             
+                VStack{
+                    Text("great place to visit")
+                        .font(.system(size: 17,weight:  .semibold, design:  .serif))
+                        .padding(6)
+                        .foregroundColor(.primary)
+                        .padding(.bottom, 8)
+                        .frame(width: UIScreen.main.bounds.width, alignment: .leading)
+                    Text("great place to visit")
+                        .font(.system(size: 17,weight:  .semibold, design:  .serif))
+                        .padding(6)
+                        .foregroundColor(.primary)
+                        .padding(.bottom, 8)
+                        .frame(width: UIScreen.main.bounds.width, alignment: .leading)
+                    Text("great place to visit")
+                        .font(.system(size: 17,weight:  .semibold, design:  .serif))
+                        .padding(6)
+                        .foregroundColor(.primary)
+                        .padding(.bottom, 8)
+                        .frame(width: UIScreen.main.bounds.width, alignment: .leading)
+                    Text("great place to visit")
+                        .font(.system(size: 17,weight:  .semibold, design:  .serif))
+                        .padding(6)
+                        .foregroundColor(.primary)
+                        .padding(.bottom, 8)
+                        .frame(width: UIScreen.main.bounds.width, alignment: .leading)
+                    Text("great place to visit")
+                        .font(.system(size: 17,weight:  .semibold, design:  .serif))
+                        .padding(6)
+                        .foregroundColor(.primary)
+                        .padding(.bottom, 8)
+                        .frame(width: UIScreen.main.bounds.width, alignment: .leading)
+                    
+                    
                 }
-                .buttonStyle(.bordered)
-                .padding(.horizontal)
+                
+                
+                HStack {
+                    Spacer()
+                    NavigationLink(destination: AlertPage()) {
+                                    Text("Go to Alert Page")
+                                }
+
+                }
+                .buttonStyle(CustomButtonStyless())
+                .padding(10)
+
+                // Call to action
+              
+             
+            .padding()
+
+                Spacer()
             }
-            .frame(width: UIScreen.main.bounds.width, alignment: .center)
-            .background(.white)
+            .frame(maxWidth: .infinity)
+            .padding(20)
+            .background(Color.white.opacity(0.95))
             .cornerRadius(20)
             .padding(.top, 30)
         }
     }
 }
 
+
+
+
+struct DetailRow: View {
+    let title: String
+    let value: String
+    let fontSize: CGFloat
+
+    var body: some View {
+        HStack {
+            Text(title)
+                .font(.system(size: fontSize, weight: .bold))
+                .foregroundColor(.secondary)
+
+            Spacer()
+
+            Text(value)
+                .font(.system(size: fontSize, weight: .regular))
+                .foregroundColor(.primary)
+        }
+        .padding(.vertical, 4)
+    }
+}
+
+
+struct ReviewBarView: View {
+    @Binding var isRatingForumViewPresented: Bool
+    @State private var rating: Int?
+
+    var body: some View {
+        HStack {
+            Spacer()
+
+            Button(action: {
+                isRatingForumViewPresented.toggle()
+            }) {
+                Image(systemName: "pencil.circle")
+                    .font(.title)
+                    .foregroundColor(.blue)
+            }
+            .sheet(isPresented: $isRatingForumViewPresented) {
+                LocationReviewForm(rating: $rating)
+            }
+        }
+        .padding(.horizontal)
+    }
+}
+
 struct DetailViewLocation_Previews: PreviewProvider {
+    static var vl = locationlistViewModel()
     static var previews: some View {
-        DetailViewLocation()
+        DetailViewLocation(location: vl.locations.first!)
     }
 }
