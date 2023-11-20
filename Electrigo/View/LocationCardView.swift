@@ -15,13 +15,18 @@ struct LocationCardView: View {
             VStack{
                 Text(location.name)
                     .font(.system(size: 17, weight: .medium, design: .serif))
+                    .fontWeight(.medium)
+                    .foregroundColor(.black)
                 Text(location.cityname)
                     .font(.footnote)
                     .fontWeight(.medium)
+                    .foregroundColor(.black)
                 Text(location.typelocation)
                         .font(.system(size: 14, weight: .semibold, design: .serif))
                         .padding()
                         .background(Color(uiColor: vl.getColorFromType(type: location.typelocation)).opacity(0.8))
+                       
+                        .foregroundColor(.black)
                         .cornerRadius(22)
             }.padding(.horizontal,10)
             Image(systemName: "location.circle")

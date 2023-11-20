@@ -4,7 +4,7 @@ struct DetailViewLocation: View {
     @StateObject var vl = locationlistViewModel()
     let location : Location
     var body: some View {
-        ZStack {
+        ScrollView {
     
             VStack {
                 Image("borne1")
