@@ -2,12 +2,17 @@ import SwiftUI;
 import CoreLocation;
 import LocalAuthentication
 
-struct LoginView: View {
-    @StateObject var loginController = UserViewModel()
-    @State private var emailFound = false // Variable pour suivre si l'email est trouvé
 
-    @State private var email = ""
-    @State private var passe = ""
+var listuser: User?
+
+
+struct LoginView: View {
+    
+    @ObservedObject public var loginController = UserViewModel()
+    
+    @State private var emailFound = false // Variable pour suivre si l'email est trouvé
+    @State public var email = ""
+    @State public var passe = ""
     @State private var showAlert = false
     @State private var alertMessage = ""
     @State private var isChecked = false
@@ -52,14 +57,10 @@ struct LoginView: View {
                             
                             authenticate { success in
                                 if success {
-                                    NavigationLink(destination: ForgetpasswordView()) {
-                                        Text("Mot passe oublier")
-                                            .underline()
-                                            .foregroundColor(.black)
-                                    }
+                                   print("autheification reussii")
                                     
                                 } else {
-                                    //Authentication Failed
+                                    print("autheification non reussii")
                                 }
                             }
                             
@@ -88,16 +89,21 @@ struct LoginView: View {
                     
                     if emailFound {
                         
-                        NavigationLink(destination: BarDeNavigationView(selectedTab: 0).presentationDetents([.large]), isActive: .constant(true)) {
+                        NavigationLink(
+                            destination: BarDeNavigationView(selectedTab: 0)
+                                .presentationDetents([.large]),
+                            isActive: .constant(true)
+                        ) {
                             EmptyView()
-                            
                         }
+
                         .navigationBarBackButtonHidden(true)
                     } else {
                         Button(action: {
+                            
                             // Action pour vérifier l'email
                             fetchUser()
-                            
+                        
                             
                         }) {
                             Text("Se connecter")
@@ -135,7 +141,8 @@ struct LoginView: View {
                                 .resizable()
                                 .frame(width: 150, height: 50)
                         }
-                        Button(action: { /* TODO: Implement action here */ }) {
+                        Button(action: {
+                            /* TODO: Implement action here */ }) {
                             Image(uiImage: UIImage(named: "Facebook")!)
                                 .resizable()
                                 .frame(width: 150, height: 50)
@@ -144,6 +151,7 @@ struct LoginView: View {
                     
                     
                     HStack {
+                        
                         Text("Pas encore inscris ? ")
                             .foregroundColor(.black)
                         NavigationLink(destination : RegisterView()) {
@@ -188,11 +196,13 @@ struct LoginView: View {
     }
 
     func fetchUser() {
+
         loginController.getEmail(email: email) { retrievedUser in
             if let user = retrievedUser {
                 if user.mot_passe == passe {
                     // Le couple email/mot de passe a été trouvé
-                    
+                    listuser=user
+                    print(listuser)
                     emailFound = true
                 } else {
                     // Le mot de passe ne correspond pas à l'email
@@ -213,7 +223,10 @@ struct LoginView: View {
 
     
 }
- 
+    struct log
+    {
+      static var test=""
+    }
     struct LoginView_Previews: PreviewProvider {
         static var previews: some View {
             LoginView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)

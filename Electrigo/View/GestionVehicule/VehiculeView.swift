@@ -1,10 +1,16 @@
 import SwiftUI
 
 struct VehiculeView: View {
+   
+        
+    
+    
+      
     @State private var selectedTab = 0 // Assurez-vous que cette variable est dans
     @State private var search: String = ""
     @State private var selectedIndex: Int = 1
     @State private var selectedLogo: String?
+
 
     let vehicules: [Véhicule] = [ // Remplacez par vos données de véhicules
         Véhicule(id: 1, marque: "audi", modele: "Ford F-150", vitesseMax: 200, capaciteBatterie: "6,3kwh", boite: "Automatique", nombreDePlaces: 5, image: "audi3 1" ,imagelogo: "fordlogo" ,priceday: "150" ,userphoto: "user1" ,descriptionV:"Le modèle Ford A4 est équipé de la toute dernière technologie de sécurité avancée, offrant une tranquillité d'esprit totale à ses conducteurs. Avec des fonctionnalités telles que le système de freinage automatique d'urgence, l'assistance au maintien de voie, et les airbags latéraux, la sécurité est une priorité absolue."),
@@ -31,6 +37,8 @@ struct VehiculeView: View {
         @Binding var selectedLogo: String?
         
         var body: some View {
+            
+
             ScrollView(.horizontal, showsIndicators: false) {
                 LazyHGrid(rows: [GridItem(.fixed(50))], spacing: 10) {
                     Button(action: {
@@ -238,8 +246,46 @@ struct VehiculeView: View {
     
     
     struct TagLineView: View {
+        @State var showSideBar = false
+           var mainView: some View{
+               Rectangle()
+                   .foregroundColor(.blue)
+                   .overlay(Text("Main View"))
+           }
+           var sideBar: some View{
+               HStack{
+                   Rectangle()
+                       .foregroundColor(.green)
+                       .overlay(Text("side bar"))
+                       .frame(width:250)
+                   Spacer()
+               }
+               
+
+           }
         var body: some View {
+            
             VStack{
+                NavigationStack{
+                         ZStack{
+                             mainView
+                             sideBar
+                                 .offset(CGSize(width: showSideBar ? 0:-250, height: 40))
+                         }
+                             .toolbar {
+                                 ToolbarItem(placement: .navigationBarLeading) {
+                                     Button {
+                                         withAnimation {
+                                             showSideBar.toggle()
+                                         }
+                                     } label: {
+                                         Image(systemName: "sidebar.left")
+                                     }
+
+                                 }
+                             }
+                     }
+                 
                 Text("  Trouvez les \nmeilleures ")
                     .font(.custom("PlayfairDisplay-Regular", size: 22))
                     .foregroundColor(Color.black.opacity(0.5))

@@ -47,7 +47,7 @@ struct UserSetings: View {
                             .offset(y: 0)
                             .padding(.bottom, 30)
                         
-                        NavigationLink(destination: BarDeNavigationView(selectedTab: 4)) {
+                        NavigationLink(destination: UserProfileView()) {
                             HStack {
                                 Text("Modifier profile")
                                 Image(systemName: "arrow.right")

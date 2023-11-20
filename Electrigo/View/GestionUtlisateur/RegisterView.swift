@@ -24,7 +24,6 @@ struct RegisterView: View {
     @State private var telephone = ""
     @State var selectedOption: Int = 1
     @State private var password = ""
-    @State private var user: User? // Déclarer une variable user optionnelle pour stocker l'instance créée
     struct RadioButtonView: View {
         var index: Int
         @Binding var selectedIndex: Int

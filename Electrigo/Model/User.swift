@@ -40,4 +40,5 @@ struct User: Decodable, Encodable {
         self.picture = picture
        
     }
+
 }

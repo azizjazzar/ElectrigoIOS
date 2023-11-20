@@ -10,10 +10,9 @@ import SwiftUI
 @main
 struct ElectrigoApp: App {
     let persistenceController = PersistenceController.shared
-
     var body: some Scene {
         WindowGroup {
-            LoginView()
+            BarDeNavigationView(selectedTab: 0)
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

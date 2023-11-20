@@ -5,8 +5,8 @@ import UIKit
 class UserViewModel: ObservableObject {
     
     @Published var isLoading = false // Variable d'état pour le chargement
+    @Published var listuser: User?
 
-    var client : [User] = []
 
   
     func verifieMotDePasse(_ motDePasse: String, _ confirmationMotDePasse: String) -> Bool {
@@ -63,7 +63,7 @@ class UserViewModel: ObservableObject {
     func getAll()
     {
         // Create a URL
-        if let url = URL(string: "http://192.168.100.160:3000/api/auth/users") {
+        if let url = URL(string: "http://192.168.236.81:3000/api/auth/users") {
             // Create a URLSession object
             let session = URLSession.shared
             
@@ -109,6 +109,44 @@ class UserViewModel: ObservableObject {
             print("Invalid URL")
         }
     }
+    func updateUser(user: User) {
+        let urlString = "http://192.168.236.81:3000/api/auth/update/\(user.email)"
+
+        guard let url = URL(string: urlString) else {
+            print("URL invalide")
+            return
+        }
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "PUT"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+
+        do {
+            let encoder = JSONEncoder()
+            let userData = try encoder.encode(user)
+            request.httpBody = userData
+        } catch {
+            print("Erreur lors de la conversion des données en JSON : \(error)")
+            return
+        }
+
+        let session = URLSession.shared
+        let task = session.dataTask(with: request) { data, response, error in
+            if let error = error {
+                print("Erreur de requête : \(error)")
+                return
+            }
+
+            if let httpResponse = response as? HTTPURLResponse {
+                print("Code de statut HTTP : \(httpResponse.statusCode)")
+                // Gérer la réponse du serveur en fonction du code de statut
+                // Traiter la réponse (data) si nécessaire
+            }
+        }
+        task.resume()
+    }
+
+
 
       
     func getEmail(email: String, completion: @escaping (User?) -> Void) {
@@ -121,7 +159,7 @@ class UserViewModel: ObservableObject {
             return
         }
 
-        if let url = URL(string: "http://192.168.100.160:3000/api/auth/user/\(encodedEmail)") {
+        if let url = URL(string: "http://192.168.236.81:3000/api/auth/user/\(encodedEmail)") {
             let session = URLSession.shared
 
             let task = session.dataTask(with: url) { (data, response, error) in
@@ -177,7 +215,7 @@ class UserViewModel: ObservableObject {
         }
         
         // Créer une URLRequest avec l'URL de votre API
-        let url = URL(string: "http://192.168.100.160:3000/api/auth/register")! // Remplacez par votre URL
+        let url = URL(string: "http://192.168.236.81:3000/api/auth/register")! // Remplacez par votre URL
         var request = URLRequest(url: url)
         
         // Configurer la requête en tant que POST et définir le corps de la requête

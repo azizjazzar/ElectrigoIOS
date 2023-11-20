@@ -2,12 +2,13 @@
 import SwiftUI
 
 struct BarDeNavigationView: View {
-    
+    @State public var listuser: User?
     @State public var selectedTab = 0 // Initialize selectedTab to 0
     @StateObject var vm = locationlistViewModel()
     init(selectedTab: Int) {
         self.selectedTab = selectedTab
     }
+  
     var body: some View {
         NavigationView {
             TabView(selection: $selectedTab) {
