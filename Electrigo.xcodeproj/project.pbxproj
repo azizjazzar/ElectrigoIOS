@@ -15,10 +15,13 @@
 		24951A332AF7E0B800DFD1BD /* ElectrigoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24951A322AF7E0B800DFD1BD /* ElectrigoTests.swift */; };
 		24951A3D2AF7E0B800DFD1BD /* ElectrigoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24951A3C2AF7E0B800DFD1BD /* ElectrigoUITests.swift */; };
 		24951A3F2AF7E0B800DFD1BD /* ElectrigoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24951A3E2AF7E0B800DFD1BD /* ElectrigoUITestsLaunchTests.swift */; };
-		24951A502AF7E1DC00DFD1BD /* Forum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24951A4F2AF7E1DC00DFD1BD /* Forum.swift */; };
-		24951A522AF7E25400DFD1BD /* ForumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24951A512AF7E25400DFD1BD /* ForumView.swift */; };
 		24951A562AF831A900DFD1BD /* PostDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24951A552AF831A900DFD1BD /* PostDetailView.swift */; };
-		24CBA7C72AFC162B0045884A /* NewsDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CBA7C62AFC162B0045884A /* NewsDetailView.swift */; };
+		C3D2AB762B0D077B0026FADE /* ForumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D2AB752B0D077B0026FADE /* ForumView.swift */; };
+		C3D4782A2B0CF329002A3CF3 /* CommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D478292B0CF329002A3CF3 /* CommentView.swift */; };
+		C3D4782C2B0CF383002A3CF3 /* AddPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D4782B2B0CF383002A3CF3 /* AddPostView.swift */; };
+		C3D4782E2B0CF51B002A3CF3 /* ForumViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D4782D2B0CF51B002A3CF3 /* ForumViewModel.swift */; };
+		C3D478302B0CF7F4002A3CF3 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D4782F2B0CF7F4002A3CF3 /* Post.swift */; };
+		C3D478342B0D0543002A3CF3 /* JsonParsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D478332B0D0543002A3CF3 /* JsonParsing.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,10 +53,13 @@
 		24951A382AF7E0B800DFD1BD /* ElectrigoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ElectrigoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		24951A3C2AF7E0B800DFD1BD /* ElectrigoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectrigoUITests.swift; sourceTree = "<group>"; };
 		24951A3E2AF7E0B800DFD1BD /* ElectrigoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectrigoUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		24951A4F2AF7E1DC00DFD1BD /* Forum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forum.swift; sourceTree = "<group>"; };
-		24951A512AF7E25400DFD1BD /* ForumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForumView.swift; sourceTree = "<group>"; };
 		24951A552AF831A900DFD1BD /* PostDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailView.swift; sourceTree = "<group>"; };
-		24CBA7C62AFC162B0045884A /* NewsDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailView.swift; sourceTree = "<group>"; };
+		C3D2AB752B0D077B0026FADE /* ForumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForumView.swift; sourceTree = "<group>"; };
+		C3D478292B0CF329002A3CF3 /* CommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentView.swift; sourceTree = "<group>"; };
+		C3D4782B2B0CF383002A3CF3 /* AddPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostView.swift; sourceTree = "<group>"; };
+		C3D4782D2B0CF51B002A3CF3 /* ForumViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForumViewModel.swift; sourceTree = "<group>"; };
+		C3D4782F2B0CF7F4002A3CF3 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		C3D478332B0D0543002A3CF3 /* JsonParsing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonParsing.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,7 +111,8 @@
 			isa = PBXGroup;
 			children = (
 				24951A1C2AF7E0B500DFD1BD /* ElectrigoApp.swift */,
-				24951A4E2AF7E0F800DFD1BD /* ViewModel */,
+				C3D478312B0D0527002A3CF3 /* Extension */,
+				C3D478282B0CF235002A3CF3 /* ViewModel */,
 				24951A4D2AF7E0E900DFD1BD /* Model */,
 				24951A4C2AF7E0E200DFD1BD /* View */,
 				24951A202AF7E0B700DFD1BD /* Assets.xcassets */,
@@ -144,9 +151,10 @@
 		24951A4C2AF7E0E200DFD1BD /* View */ = {
 			isa = PBXGroup;
 			children = (
-				24951A512AF7E25400DFD1BD /* ForumView.swift */,
 				24951A552AF831A900DFD1BD /* PostDetailView.swift */,
-				24CBA7C62AFC162B0045884A /* NewsDetailView.swift */,
+				C3D478292B0CF329002A3CF3 /* CommentView.swift */,
+				C3D4782B2B0CF383002A3CF3 /* AddPostView.swift */,
+				C3D2AB752B0D077B0026FADE /* ForumView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -154,16 +162,25 @@
 		24951A4D2AF7E0E900DFD1BD /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				24951A4F2AF7E1DC00DFD1BD /* Forum.swift */,
+				C3D4782F2B0CF7F4002A3CF3 /* Post.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		24951A4E2AF7E0F800DFD1BD /* ViewModel */ = {
+		C3D478282B0CF235002A3CF3 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				C3D4782D2B0CF51B002A3CF3 /* ForumViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C3D478312B0D0527002A3CF3 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				C3D478332B0D0543002A3CF3 /* JsonParsing.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,12 +314,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				24951A292AF7E0B700DFD1BD /* Electrigo.xcdatamodeld in Sources */,
+				C3D4782E2B0CF51B002A3CF3 /* ForumViewModel.swift in Sources */,
+				C3D2AB762B0D077B0026FADE /* ForumView.swift in Sources */,
 				24951A262AF7E0B700DFD1BD /* Persistence.swift in Sources */,
-				24951A522AF7E25400DFD1BD /* ForumView.swift in Sources */,
-				24CBA7C72AFC162B0045884A /* NewsDetailView.swift in Sources */,
+				C3D4782A2B0CF329002A3CF3 /* CommentView.swift in Sources */,
 				24951A562AF831A900DFD1BD /* PostDetailView.swift in Sources */,
+				C3D478342B0D0543002A3CF3 /* JsonParsing.swift in Sources */,
+				C3D478302B0CF7F4002A3CF3 /* Post.swift in Sources */,
 				24951A1D2AF7E0B500DFD1BD /* ElectrigoApp.swift in Sources */,
-				24951A502AF7E1DC00DFD1BD /* Forum.swift in Sources */,
+				C3D4782C2B0CF383002A3CF3 /* AddPostView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
