@@ -14,21 +14,17 @@ struct MapView: View {
                 showsUserLocation: true,
                 annotationItems: vm.locations) { location in
                 MapMarker(coordinate: CLLocationCoordinate2D(latitude: location.coordinate.coordinates[1], longitude: location.coordinate.coordinates[0]), tint: .red)
-
+            }
+            .onTapGesture {
+                let tappedCoordinate = vm.CoordinateRegion.center
+                if let tappedLocation = vm.locations.first(where: { location in
+                    let locationCoordinate = CLLocationCoordinate2D(latitude: location.coordinate.coordinates[1], longitude: location.coordinate.coordinates[0])
+                    return tappedCoordinateIsInsideMapMarker(locationCoordinate, tappedCoordinate)
+                }) {
+                    showLocationDetailsView(location: tappedLocation)
                 }
-                .onTapGesture {
-                    let tappedCoordinate = vm.CoordinateRegion.center
-                    if let tappedLocation = vm.locations.first(where: { location in
-                        let locationCoordinate = CLLocationCoordinate2D(latitude: location.coordinate.coordinates[1], longitude: location.coordinate.coordinates[0])
-                        return tappedCoordinateIsInsideMapMarker(locationCoordinate, tappedCoordinate)
-                    }) {
-                        self.tappedLocation = tappedLocation
-                        showLocationDetails.toggle()
-                    }
-                }
-
-
-                .ignoresSafeArea(.all)
+            }
+            .ignoresSafeArea(.all)
 
             VStack(spacing: 10) {
                 VStack {
@@ -66,18 +62,27 @@ struct MapView: View {
                     }
                 }
                 .padding(.top, 20)
+                .animation(.easeInOut)
 
                 if let tappedLocation = tappedLocation {
-                    LocationDetailsView(location: tappedLocation, getDirectionsAction: {
-                        // Implement your logic to show directions
-                        print("Get Directions tapped for \(tappedLocation.name)")
-                    })
-                    .offset(y: showLocationDetails ? 0 : UIScreen.main.bounds.height)
-                    .animation(.spring())
-                    .onTapGesture {
-                        showLocationDetails.toggle()
-                    }
-                }
+                            LocationDetailsView(
+                                location: tappedLocation,
+                                getDirectionsAction: {
+                                    // Implement your logic to show directions
+                                    print("Get Directions tapped for \(tappedLocation.name)")
+                                },
+                                openMapsAppForDirections: {
+                                    openMapsAppForDirections(location: tappedLocation)
+                                },
+                                showLocationDetails: $showLocationDetails
+                            )
+                            .offset(y: showLocationDetails ? 0 : UIScreen.main.bounds.height)
+                            .animation(.spring())
+                            .onTapGesture {
+                                showLocationDetails.toggle()
+                            }
+                        }
+
 
                 Spacer()
 
@@ -106,6 +111,11 @@ struct MapView: View {
         .navigationBarBackButtonHidden(true)
     }
 
+    func showLocationDetailsView(location: Location) {
+        self.tappedLocation = location
+        showLocationDetails.toggle()
+    }
+
     func tappedCoordinateIsInsideMapMarker(_ markerCoordinate: CLLocationCoordinate2D, _ tappedCoordinate: CLLocationCoordinate2D) -> Bool {
         let markerRadius: CLLocationDistance = 5000 // Adjust as needed
         let markerLocation = CLLocation(latitude: markerCoordinate.latitude, longitude: markerCoordinate.longitude)
@@ -118,6 +128,8 @@ struct MapView: View {
 struct LocationDetailsView: View {
     var location: Location
     var getDirectionsAction: () -> Void
+    var openMapsAppForDirections: () -> Void
+    @Binding var showLocationDetails: Bool // Add binding for the showLocationDetails state
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -131,7 +143,7 @@ struct LocationDetailsView: View {
             }
 
             Button(action: {
-                getDirectionsAction()
+                openMapsAppForDirections()
             }) {
                 Text("Get Directions")
                     .font(.custom("Jost", size: 14))
@@ -147,6 +159,48 @@ struct LocationDetailsView: View {
         .background(Color.white)
         .cornerRadius(10)
         .foregroundColor(.black)
+        .onTapGesture {
+            // Close the details view when tapped
+            withAnimation {
+                showLocationDetails.toggle()
+            }
+        }
+    }
+}
+
+
+private func openMapsAppForDirections(location: Location) {
+    // Ensure there is a valid coordinate
+    guard location.coordinate.coordinates.count == 2 else {
+        return
+    }
+
+    // Access the coordinates directly, since they are not optional
+    let destinationCoordinate = location.coordinate
+
+    let destinationPlacemark = MKPlacemark(coordinate: CLLocationCoordinate2D(
+        latitude: destinationCoordinate.coordinates[1],
+        longitude: destinationCoordinate.coordinates[0]
+    ))
+    let destinationMapItem = MKMapItem(placemark: destinationPlacemark)
+
+    destinationMapItem.name = location.name
+
+    let sourceMapItem = MKMapItem.forCurrentLocation()
+
+    MKMapItem.openMaps(
+        with: [sourceMapItem, destinationMapItem],
+        launchOptions: [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
+    )
+}
+
+
+struct CustomAnnotationView: View {
+    var body: some View {
+        Image(systemName: "mappin.circle.fill")
+            .resizable()
+            .frame(width: 30, height: 30)
+            .foregroundColor(.red)
     }
 }
 

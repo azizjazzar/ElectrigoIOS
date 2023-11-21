@@ -118,6 +118,7 @@
 		C739FAB22AF6B15000FB3660 = {
 			isa = PBXGroup;
 			children = (
+				C739FABE2AF6B15000FB3660 /* ElectrigoApp.swift */,
 				C739FABD2AF6B15000FB3660 /* Electrigo */,
 				C739FAD32AF6B15100FB3660 /* ElectrigoTests */,
 				C739FADD2AF6B15100FB3660 /* ElectrigoUITests */,
@@ -138,7 +139,6 @@
 		C739FABD2AF6B15000FB3660 /* Electrigo */ = {
 			isa = PBXGroup;
 			children = (
-				C739FABE2AF6B15000FB3660 /* ElectrigoApp.swift */,
 				C733EA4F2B091D6800929BA2 /* extension */,
 				C7AF860F2AF7F184004C6830 /* Managers */,
 				C739FAF22AF6BB1D00FB3660 /* Data */,
