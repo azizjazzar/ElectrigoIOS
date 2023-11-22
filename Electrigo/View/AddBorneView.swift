@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct AddBorneView: View {
+    
     @StateObject var vm = locationlistViewModel()
     @State private var name: String = ""
     @State private var cityname: String = ""
@@ -19,6 +20,7 @@ struct AddBorneView: View {
     @State private var picture: String = ""
     @State private var selectedTypelocation: Int = 0
     @State private var selectedTypeParking: Int = 0
+   
 
     var body: some View {
         NavigationView {
