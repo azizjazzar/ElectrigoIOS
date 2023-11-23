@@ -7,20 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F8038C422B04FA4500C74BC6 /* CartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8038C412B04FA4500C74BC6 /* CartButton.swift */; };
-		C73ED73A2B00FF4B000E61AD /* LocationReviewForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73ED7392B00FF4B000E61AD /* LocationReviewForm.swift */; };
-		C73ED73C2B012377000E61AD /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73ED73B2B012377000E61AD /* Review.swift */; };
+		C3B885152B0E2DF100AB4560 /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B885122B0E2DF100AB4560 /* CartView.swift */; };
+		C3B885162B0E2DF100AB4560 /* PaymentButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B885132B0E2DF100AB4560 /* PaymentButton.swift */; };
+		C3B885172B0E2DF100AB4560 /* ProductRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B885142B0E2DF100AB4560 /* ProductRow.swift */; };
+		C3B885192B0E2ED300AB4560 /* CartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B885182B0E2ED300AB4560 /* CartButton.swift */; };
+		C3B8851B2B0E2EEE00AB4560 /* CartManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B8851A2B0E2EEE00AB4560 /* CartManager.swift */; };
+		C3B8851D2B0E2F3C00AB4560 /* PaymentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B8851C2B0E2F3C00AB4560 /* PaymentHandler.swift */; };
+		C3FAF56E2B0E55E500B18846 /* CategorieProduitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FAF56D2B0E55E500B18846 /* CategorieProduitViewModel.swift */; };
+		F813372D2B066A2100D86240 /* ProduitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F813372C2B066A2100D86240 /* ProduitViewModel.swift */; };
 		F88733712AFD1B57009D585A /* BarDeNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88733702AFD1B57009D585A /* BarDeNavigationView.swift */; };
 		F88733762AFD254F009D585A /* DetailProduit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88733722AFD254F009D585A /* DetailProduit.swift */; };
 		F88733772AFD254F009D585A /* RemercimentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88733732AFD254F009D585A /* RemercimentView.swift */; };
 		F88733792AFD254F009D585A /* ProduitFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88733752AFD254F009D585A /* ProduitFormView.swift */; };
 		F887337C2AFD256F009D585A /* Categorie.swift in Sources */ = {isa = PBXBuildFile; fileRef = F887337A2AFD256F009D585A /* Categorie.swift */; };
 		F887337D2AFD256F009D585A /* Produit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F887337B2AFD256F009D585A /* Produit.swift */; };
-		F893C2F22B055C80004095EB /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F893C2EE2B055C7F004095EB /* CartView.swift */; };
-		F893C2F32B055C80004095EB /* PaymentButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F893C2EF2B055C7F004095EB /* PaymentButton.swift */; };
-		F893C2F42B055C80004095EB /* CartManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F893C2F02B055C7F004095EB /* CartManager.swift */; };
-		F893C2F52B055C80004095EB /* ProductRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F893C2F12B055C80004095EB /* ProductRow.swift */; };
-		F893C2F72B055CD7004095EB /* PaymentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F893C2F62B055CD7004095EB /* PaymentHandler.swift */; };
 		F8CA49362AFD9B2200E3D9DE /* ArrivedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CA49302AFD9B1E00E3D9DE /* ArrivedView.swift */; };
 		F8CA49372AFD9B2200E3D9DE /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CA49312AFD9B1F00E3D9DE /* ChatView.swift */; };
 		F8CA49382AFD9B2200E3D9DE /* MapflotteViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CA49322AFD9B1F00E3D9DE /* MapflotteViewRepresentable.swift */; };
@@ -41,11 +41,6 @@
 		F8CA57C42AFD7B5F0022D28C /* NewsDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CA57C32AFD7B5F0022D28C /* NewsDetailView.swift */; };
 		F8CA57C82AFD7D1C0022D28C /* ForumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CA57C72AFD7D1C0022D28C /* ForumView.swift */; };
 		F8E64EC32AFF9DF700795129 /* BoutiqueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E64EC22AFF9DF700795129 /* BoutiqueView.swift */; };
-		F91971F72B0354D4008E90EB /* RatingflotteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91971F62B0354D4008E90EB /* RatingflotteView.swift */; };
-		F91971FA2B0354FC008E90EB /* GarageFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91971F82B0354FC008E90EB /* GarageFormView.swift */; };
-		F91971FB2B0354FC008E90EB /* GarageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91971F92B0354FC008E90EB /* GarageView.swift */; };
-		F91971FD2B035520008E90EB /* CountryCodesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91971FC2B035520008E90EB /* CountryCodesView.swift */; };
-		F91971FF2B03555E008E90EB /* Garage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91971FE2B03555E008E90EB /* Garage.swift */; };
 		F91E813A2AF81ABC0055AAF5 /* ForgetpasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91E81392AF81ABC0055AAF5 /* ForgetpasswordView.swift */; };
 		F91E813C2AF81CA20055AAF5 /* OtpValidationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91E813B2AF81CA20055AAF5 /* OtpValidationView.swift */; };
 		F91E813E2AF81D9D0055AAF5 /* ChangePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91E813D2AF81D9D0055AAF5 /* ChangePasswordView.swift */; };
@@ -99,20 +94,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		F8038C412B04FA4500C74BC6 /* CartButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartButton.swift; sourceTree = "<group>"; };
-		C73ED7392B00FF4B000E61AD /* LocationReviewForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationReviewForm.swift; sourceTree = "<group>"; };
-		C73ED73B2B012377000E61AD /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		C3B885122B0E2DF100AB4560 /* CartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
+		C3B885132B0E2DF100AB4560 /* PaymentButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentButton.swift; sourceTree = "<group>"; };
+		C3B885142B0E2DF100AB4560 /* ProductRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductRow.swift; sourceTree = "<group>"; };
+		C3B885182B0E2ED300AB4560 /* CartButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartButton.swift; sourceTree = "<group>"; };
+		C3B8851A2B0E2EEE00AB4560 /* CartManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartManager.swift; sourceTree = "<group>"; };
+		C3B8851C2B0E2F3C00AB4560 /* PaymentHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentHandler.swift; sourceTree = "<group>"; };
+		C3FAF56D2B0E55E500B18846 /* CategorieProduitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorieProduitViewModel.swift; sourceTree = "<group>"; };
+		F813372C2B066A2100D86240 /* ProduitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProduitViewModel.swift; sourceTree = "<group>"; };
+		F81337322B069DF500D86240 /* Electrigo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Electrigo.entitlements; sourceTree = "<group>"; };
 		F88733702AFD1B57009D585A /* BarDeNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarDeNavigationView.swift; sourceTree = "<group>"; };
 		F88733722AFD254F009D585A /* DetailProduit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailProduit.swift; sourceTree = "<group>"; };
 		F88733732AFD254F009D585A /* RemercimentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemercimentView.swift; sourceTree = "<group>"; };
 		F88733752AFD254F009D585A /* ProduitFormView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProduitFormView.swift; sourceTree = "<group>"; };
 		F887337A2AFD256F009D585A /* Categorie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Categorie.swift; sourceTree = "<group>"; };
 		F887337B2AFD256F009D585A /* Produit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Produit.swift; sourceTree = "<group>"; };
-		F893C2EE2B055C7F004095EB /* CartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
-		F893C2EF2B055C7F004095EB /* PaymentButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentButton.swift; sourceTree = "<group>"; };
-		F893C2F02B055C7F004095EB /* CartManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartManager.swift; sourceTree = "<group>"; };
-		F893C2F12B055C80004095EB /* ProductRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductRow.swift; sourceTree = "<group>"; };
-		F893C2F62B055CD7004095EB /* PaymentHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentHandler.swift; sourceTree = "<group>"; };
 		F8CA49302AFD9B1E00E3D9DE /* ArrivedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrivedView.swift; sourceTree = "<group>"; };
 		F8CA49312AFD9B1F00E3D9DE /* ChatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		F8CA49322AFD9B1F00E3D9DE /* MapflotteViewRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapflotteViewRepresentable.swift; sourceTree = "<group>"; };
@@ -133,11 +129,6 @@
 		F8CA57C32AFD7B5F0022D28C /* NewsDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsDetailView.swift; sourceTree = "<group>"; };
 		F8CA57C72AFD7D1C0022D28C /* ForumView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForumView.swift; sourceTree = "<group>"; };
 		F8E64EC22AFF9DF700795129 /* BoutiqueView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoutiqueView.swift; sourceTree = "<group>"; };
-		F91971F62B0354D4008E90EB /* RatingflotteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingflotteView.swift; sourceTree = "<group>"; };
-		F91971F82B0354FC008E90EB /* GarageFormView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GarageFormView.swift; sourceTree = "<group>"; };
-		F91971F92B0354FC008E90EB /* GarageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GarageView.swift; sourceTree = "<group>"; };
-		F91971FC2B035520008E90EB /* CountryCodesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryCodesView.swift; sourceTree = "<group>"; };
-		F91971FE2B03555E008E90EB /* Garage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Garage.swift; sourceTree = "<group>"; };
 		F91E81392AF81ABC0055AAF5 /* ForgetpasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetpasswordView.swift; sourceTree = "<group>"; };
 		F91E813B2AF81CA20055AAF5 /* OtpValidationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtpValidationView.swift; sourceTree = "<group>"; };
 		F91E813D2AF81D9D0055AAF5 /* ChangePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordView.swift; sourceTree = "<group>"; };
@@ -155,7 +146,6 @@
 		F93053A92AF6B1150066CF9E /* ElectrigoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ElectrigoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F93053AD2AF6B1150066CF9E /* ElectrigoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectrigoUITests.swift; sourceTree = "<group>"; };
 		F93053AF2AF6B1150066CF9E /* ElectrigoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectrigoUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		F93450B42B0369970047FBE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F964F1442AFB41F2007321EB /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		F964F1462AFB442B007321EB /* GifImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifImage.swift; sourceTree = "<group>"; };
 		F964F14E2AFB4724007321EB /* car.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = car.gif; sourceTree = "<group>"; };
@@ -223,10 +213,6 @@
 		F8C0F47F2AFF99CC00482452 /* GestionFlotte */ = {
 			isa = PBXGroup;
 			children = (
-				F91971FC2B035520008E90EB /* CountryCodesView.swift */,
-				F91971F82B0354FC008E90EB /* GarageFormView.swift */,
-				F91971F92B0354FC008E90EB /* GarageView.swift */,
-				F91971F62B0354D4008E90EB /* RatingflotteView.swift */,
 				F8CA49442AFD9DB800E3D9DE /* FlotteView.swift */,
 				F8CA49302AFD9B1E00E3D9DE /* ArrivedView.swift */,
 				F8CA49312AFD9B1F00E3D9DE /* ChatView.swift */,
@@ -261,7 +247,6 @@
 				F9A729682AFDC03F0051B027 /* MapView.swift */,
 				F9A7296D2AFDC03F0051B027 /* MapViewRepresentable.swift */,
 				F9A7296A2AFDC03F0051B027 /* PicturePicker.swift */,
-				C73ED7392B00FF4B000E61AD /* LocationReviewForm.swift */,
 			);
 			path = GestionBone;
 			sourceTree = "<group>";
@@ -279,11 +264,12 @@
 		F8C0F4832AFF9C3000482452 /* GestionBoutiqu */ = {
 			isa = PBXGroup;
 			children = (
-				F893C2F02B055C7F004095EB /* CartManager.swift */,
-				F893C2EE2B055C7F004095EB /* CartView.swift */,
-				F893C2EF2B055C7F004095EB /* PaymentButton.swift */,
-				F893C2F12B055C80004095EB /* ProductRow.swift */,
-				F8038C412B04FA4500C74BC6 /* CartButton.swift */,
+				C3B885182B0E2ED300AB4560 /* CartButton.swift */,
+				C3B885122B0E2DF100AB4560 /* CartView.swift */,
+				C3B8851A2B0E2EEE00AB4560 /* CartManager.swift */,
+				C3B885132B0E2DF100AB4560 /* PaymentButton.swift */,
+				C3B8851C2B0E2F3C00AB4560 /* PaymentHandler.swift */,
+				C3B885142B0E2DF100AB4560 /* ProductRow.swift */,
 				F8E64EC22AFF9DF700795129 /* BoutiqueView.swift */,
 				F88733722AFD254F009D585A /* DetailProduit.swift */,
 				F88733752AFD254F009D585A /* ProduitFormView.swift */,
@@ -316,12 +302,12 @@
 		F930538C2AF6B1140066CF9E /* Electrigo */ = {
 			isa = PBXGroup;
 			children = (
-				F93450B42B0369970047FBE5 /* Info.plist */,
-				F930538D2AF6B1140066CF9E /* ElectrigoApp.swift */,
+				F81337322B069DF500D86240 /* Electrigo.entitlements */,
 				F9A7297F2AFDC18A0051B027 /* Data */,
 				F8CA49422AFD9CC400E3D9DE /* LocationManager.swift */,
 				F9A7297D2AFDC16C0051B027 /* LocationDataService.swift */,
 				F8CA493E2AFD9C3800E3D9DE /* Managers */,
+				F930538D2AF6B1140066CF9E /* ElectrigoApp.swift */,
 				F9B34E4B2AF6DE3500035AAD /* ViewModel */,
 				F9B34E4A2AF6DE2700035AAD /* View */,
 				F9B34E492AF6DE1900035AAD /* Model */,
@@ -361,14 +347,12 @@
 		F9B34E492AF6DE1900035AAD /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				F91971FE2B03555E008E90EB /* Garage.swift */,
 				F9A729792AFDC1060051B027 /* Location.swift */,
 				F8CA57BD2AFD72BA0022D28C /* Forum.swift */,
 				F8CA57B12AFD4E9D0022D28C /* Vehicule.swift */,
 				F887337A2AFD256F009D585A /* Categorie.swift */,
 				F887337B2AFD256F009D585A /* Produit.swift */,
 				F9B34E4E2AF6DEDA00035AAD /* User.swift */,
-				C73ED73B2B012377000E61AD /* Review.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -389,9 +373,10 @@
 		F9B34E4B2AF6DE3500035AAD /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				F893C2F62B055CD7004095EB /* PaymentHandler.swift */,
 				F9A729772AFDC0B60051B027 /* LocationlistViewModel.swift */,
 				F9B34E4C2AF6DEB700035AAD /* UserViewModel.swift */,
+				F813372C2B066A2100D86240 /* ProduitViewModel.swift */,
+				C3FAF56D2B0E55E500B18846 /* CategorieProduitViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -529,12 +514,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F893C2F32B055C80004095EB /* PaymentButton.swift in Sources */,
 				F92272CF2AFB273F00140BEA /* CompteBloquer.swift in Sources */,
 				F8CA49392AFD9B2200E3D9DE /* SendView.swift in Sources */,
 				F91E813A2AF81ABC0055AAF5 /* ForgetpasswordView.swift in Sources */,
-				F893C2F52B055C80004095EB /* ProductRow.swift in Sources */,
 				F9A729732AFDC03F0051B027 /* PicturePicker.swift in Sources */,
+				C3B885172B0E2DF100AB4560 /* ProductRow.swift in Sources */,
 				F9A729702AFDC03F0051B027 /* AlertPage.swift in Sources */,
 				F8CA57C02AFD72BA0022D28C /* PostDetailView.swift in Sources */,
 				F91E813C2AF81CA20055AAF5 /* OtpValidationView.swift in Sources */,
@@ -547,49 +531,45 @@
 				F887337C2AFD256F009D585A /* Categorie.swift in Sources */,
 				F9B34E532AF6DF5700035AAD /* LoginView.swift in Sources */,
 				F93053972AF6B1150066CF9E /* Persistence.swift in Sources */,
+				F813372D2B066A2100D86240 /* ProduitViewModel.swift in Sources */,
 				F9A7297E2AFDC16C0051B027 /* LocationDataService.swift in Sources */,
 				F8CA493B2AFD9B2200E3D9DE /* PaimentflotteView.swift in Sources */,
 				F8CA49372AFD9B2200E3D9DE /* ChatView.swift in Sources */,
-				F91971FD2B035520008E90EB /* CountryCodesView.swift in Sources */,
 				F9B34E552AF7095C00035AAD /* RegisterView.swift in Sources */,
 				F8CA57B42AFD52ED0022D28C /* DetailScreen.swift in Sources */,
 				F964F1452AFB41F2007321EB /* WelcomeView.swift in Sources */,
 				F8CA49382AFD9B2200E3D9DE /* MapflotteViewRepresentable.swift in Sources */,
+				C3B885162B0E2DF100AB4560 /* PaymentButton.swift in Sources */,
 				F9B34E4F2AF6DEDA00035AAD /* User.swift in Sources */,
-				F893C2F42B055C80004095EB /* CartManager.swift in Sources */,
-				F91971FF2B03555E008E90EB /* Garage.swift in Sources */,
-				F91971FB2B0354FC008E90EB /* GarageView.swift in Sources */,
 				F88733712AFD1B57009D585A /* BarDeNavigationView.swift in Sources */,
-				F893C2F72B055CD7004095EB /* PaymentHandler.swift in Sources */,
 				F8CA57C42AFD7B5F0022D28C /* NewsDetailView.swift in Sources */,
+				C3B8851D2B0E2F3C00AB4560 /* PaymentHandler.swift in Sources */,
 				F91E813E2AF81D9D0055AAF5 /* ChangePasswordView.swift in Sources */,
 				F8CA57AE2AFD4E840022D28C /* ConfirmtionpaimentView.swift in Sources */,
 				F9A729712AFDC03F0051B027 /* MapView.swift in Sources */,
 				F92D577F2AFC2B930090D1E5 /* UserProfileView.swift in Sources */,
+				C3B885192B0E2ED300AB4560 /* CartButton.swift in Sources */,
+				C3B8851B2B0E2EEE00AB4560 /* CartManager.swift in Sources */,
 				F9A729782AFDC0B60051B027 /* LocationlistViewModel.swift in Sources */,
 				F8CA49362AFD9B2200E3D9DE /* ArrivedView.swift in Sources */,
 				F9A7297A2AFDC1060051B027 /* Location.swift in Sources */,
-				F91971F72B0354D4008E90EB /* RatingflotteView.swift in Sources */,
+				C3FAF56E2B0E55E500B18846 /* CategorieProduitViewModel.swift in Sources */,
 				F8E64EC32AFF9DF700795129 /* BoutiqueView.swift in Sources */,
 				F88733792AFD254F009D585A /* ProduitFormView.swift in Sources */,
+				C3B885152B0E2DF100AB4560 /* CartView.swift in Sources */,
 				F964F1472AFB442B007321EB /* GifImage.swift in Sources */,
-				F893C2F22B055C80004095EB /* CartView.swift in Sources */,
 				F8CA49452AFD9DB800E3D9DE /* FlotteView.swift in Sources */,
 				F9A729742AFDC03F0051B027 /* mapPinItem.swift in Sources */,
 				F9A7296E2AFDC03F0051B027 /* LocationlistView.swift in Sources */,
 				F9B34E4D2AF6DEB700035AAD /* UserViewModel.swift in Sources */,
 				F8CA57B02AFD4E840022D28C /* ReservtionFormView.swift in Sources */,
-				F8038C422B04FA4500C74BC6 /* CartButton.swift in Sources */,
 				F8CA57AF2AFD4E840022D28C /* VehiculeView.swift in Sources */,
 				F9A7296F2AFDC03F0051B027 /* AddBorneView.swift in Sources */,
-				F91971FA2B0354FC008E90EB /* GarageFormView.swift in Sources */,
 				F8CA57B22AFD4E9D0022D28C /* Vehicule.swift in Sources */,
 				F91E81402AF83AB80055AAF5 /* UserSetingsView.swift in Sources */,
 				F88733772AFD254F009D585A /* RemercimentView.swift in Sources */,
-				C73ED73A2B00FF4B000E61AD /* LocationReviewForm.swift in Sources */,
 				F930538E2AF6B1140066CF9E /* ElectrigoApp.swift in Sources */,
 				F8CA493A2AFD9B2200E3D9DE /* MapflotteView.swift in Sources */,
-				C73ED73C2B012377000E61AD /* Review.swift in Sources */,
 				F8CA57C82AFD7D1C0022D28C /* ForumView.swift in Sources */,
 				F8CA57C12AFD72BA0022D28C /* Forum.swift in Sources */,
 				F8CA49432AFD9CC400E3D9DE /* LocationManager.swift in Sources */,
@@ -748,13 +728,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Electrigo/Electrigo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Electrigo/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Electrigo/Info.plist;
-				INFOPLIST_KEY_NSFaceIDUsageDescription = "We need to unlock your data.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -778,13 +757,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Electrigo/Electrigo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Electrigo/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Electrigo/Info.plist;
-				INFOPLIST_KEY_NSFaceIDUsageDescription = "We need to unlock your data.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

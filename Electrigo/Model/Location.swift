@@ -9,17 +9,21 @@ import Foundation
 import MapKit
 
 
-
-struct Location: Identifiable {
-    var id = UUID()
-    var name: String
-    var cityName: String
+struct Location:Identifiable
+{
+    var name : String
+    var cityName : String
     var coordinates: CLLocationCoordinate2D
-    var description: String
-    var imageNames: [String]
-    var reviews: [Review]
-}
+    var description : String
+    var imageNames : [String]
+    var id :String{
+        return name+cityName
+        
+    }
     
-   
+   // struct Coordinates {
+       // var latitude: Double
+       // var longitude: Double
+   // }
 
-
+}

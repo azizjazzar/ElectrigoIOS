@@ -1,4 +1,5 @@
 import SwiftUI
+import PhotosUI
 
 /*struct ImagePicker: View {
     @Binding var image: Image?
@@ -71,11 +72,14 @@ struct ImagePickerView: UIViewControllerRepresentable {
 }
 */
 struct ProduitFormView: View {
-    @State private var productName = ""
-    @State private var productAddress = ""
-    @State private var productCategory = ""
-    @State private var productImage: Image?
-    @State private var selectedType = ""
+    @ObservedObject var produitViewModel = ProduitViewModel()
+      @State private var nom: String = ""
+      @State private var description: String = ""
+      @State private var prix: Float = 0.0
+      @State private var rating: Int = 0
+    @State private var selectedItem: PhotosPickerItem? = nil
+    @State private var selectedImageData: Data? = nil
+    
 
     var body: some View {
         NavigationView
@@ -106,7 +110,7 @@ struct ProduitFormView: View {
                         .tracking(1.61)
                         .foregroundColor(Color(red: 0.27, green: 0.27, blue: 0.27))
 
-                    TextField("Nom du Produit", text: $productName)
+                    TextField("Nom du Produit", text: $nom)
                         .font(.custom("Poppins", size: 14))
                         .fontWeight(.bold)
                         .tracking(1.61)
@@ -117,30 +121,13 @@ struct ProduitFormView: View {
                 }
 
                 VStack(alignment: .leading, spacing: 10) {
-                    Text("Adresse du Produit")
+                    Text("Desciption du produit")
                         .font(.custom("Poppins", size: 14))
                         .fontWeight(.bold)
                         .tracking(1.61)
                         .foregroundColor(Color(red: 0.27, green: 0.27, blue: 0.27))
 
-                    TextField("Adresse du Produit", text: $productAddress)
-                        .font(.custom("Poppins", size: 14))
-                        .fontWeight(.bold)
-                        .tracking(1.61)
-                        .foregroundColor(Color(red: 0.68, green: 0.68, blue: 0.68))
-                        .padding()
-                        .background(Color(red: 0.93, green: 0.93, blue: 0.94))
-                        .cornerRadius(10)
-                }
-
-                VStack(alignment: .leading, spacing: 10) {
-                    Text("Catégorie")
-                        .font(.custom("Poppins", size: 14))
-                        .fontWeight(.bold)
-                        .italic()
-                        .foregroundColor(Color(red: 0.27, green: 0.27, blue: 0.27))
-
-                    TextField("Catégorie du Produit", text: $productCategory)
+                    TextField("Desciption du produit", text: $description)
                         .font(.custom("Poppins", size: 14))
                         .fontWeight(.bold)
                         .tracking(1.61)
@@ -149,25 +136,74 @@ struct ProduitFormView: View {
                         .background(Color(red: 0.93, green: 0.93, blue: 0.94))
                         .cornerRadius(10)
                 }
-
-                ImagePicker(image: $productImage)
-                    .padding(.top, 10)
-
+                
+                
+                // image de produit
+                
                 VStack(alignment: .leading, spacing: 10) {
-                    Text("Type")
-                        .font(.custom("Poppins", size: 14))
-                        .fontWeight(.bold)
-                        .italic()
-                        .foregroundColor(Color(red: 0.27, green: 0.27, blue: 0.27))
+                    if let selectedImageData,
+                       let uiImage = UIImage(data: selectedImageData) {
+        
+                        
+                /*        // Sauvegarder l'image dans le dossier Documents
+                        if  let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+                            let fileURL = documentsDirectory.appendingPathComponent("dynamicImage.png")
+                            do {
+                                try uiImage.pngData()?.write(to: fileURL)
+                                print("Image sauvegardée avec succès à \(fileURL.absoluteString)")
+                            } catch {
+                                print("Erreur lors de la sauvegarde de l'image: \(error)")
+                            }
+                        }*/
+                       
 
-                    Picker("Type", selection: $selectedType) {
-                        Text("Payant").tag("Payant")
-                        Text("Gratuit").tag("Gratuit")
-                        Text("Autre").tag("Autre")
+                        
+                        // Afficher l'image sauvegardée
+                        Image(uiImage: uiImage)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 250, height: 250)
                     }
-                    .pickerStyle(SegmentedPickerStyle())
+                
+
                 }
+                
+             
+                
+                
+                // fin de l'image de produit
+                
+                
+                
+                
+
+                VStack(alignment: .leading, spacing: 10) {
+                    Text("Prix")
+                        .font(.custom("Poppins", size: 14))
+                        .fontWeight(.bold)
+                        .italic()
+                        .foregroundColor(Color(red: 0.27, green: 0.27, blue: 0.27))
+
+                    TextField("prix du produit", text: Binding<String>(
+                        get: { String(prix) },
+                        set: {
+                            if let value = Float($0) {
+                                prix = value
+                            }
+                        }
+                    ))
+                        .font(.custom("Poppins", size: 14))
+                        .fontWeight(.bold)
+                        .tracking(1.61)
+                        .foregroundColor(Color(red: 0.68, green: 0.68, blue: 0.68))
+                        .padding()
+                        .background(Color(red: 0.93, green: 0.93, blue: 0.94))
+                        .cornerRadius(10)
+                }
+
+              
             }
+            
             .padding(.horizontal, 20)
 
             Group {
@@ -185,6 +221,9 @@ struct ProduitFormView: View {
                     }
                     Button(action: {
                         // Logique de validation
+                        let nouveauProduit = Produit(nom: nom, description: description, prix: prix, rating: rating)
+                        produitViewModel.ajouterProduit(nouveauProduit)
+
                     }) {
                         Text("Valider")
                             .font(.custom("Jost", size: 14))
@@ -209,8 +248,20 @@ struct ProduitFormView: View {
      
     }
 }
+func saveImage(image: UIImage, toFile filename: String) {
+    let data = image.pngData()
 
+    if let data = data {
+        let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        let fileURL = url.appendingPathComponent(filename)
 
+        do {
+            try data.write(to: fileURL)
+        } catch {
+            print("Erreur lors de l'enregistrement de l'image : \(error)")
+        }
+    }
+}
 struct PorduitFormView_Previews: PreviewProvider {
     static var previews: some View {
         ProduitFormView()

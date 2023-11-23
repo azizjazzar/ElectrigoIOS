@@ -9,7 +9,6 @@ import Foundation
 import MapKit
 
 class LocationsDataService {
-
     static let locations: [Location] = [
         Location(
             name: "Total",
@@ -20,11 +19,7 @@ class LocationsDataService {
                 "borne1",
                 "borne1",
                 "borne3",
-            ],
-            reviews: [
-                           Review(rating: 5, comment: "Great location!"),
-                           Review(rating: 4, comment: "Nice atmosphere."),
-                       ]
+            ]
         ),
         Location(
             name: "Movenpick",
@@ -35,11 +30,7 @@ class LocationsDataService {
                 "borne1",
                 "borne1",
                 "borne1",
-            ],
-            reviews: [
-                           Review(rating: 5, comment: "Great location!"),
-                           Review(rating: 4, comment: "Nice atmosphere."),
-                       ]
+            ]
         ),
         Location(
             name: "Terminal Audi",
@@ -50,11 +41,7 @@ class LocationsDataService {
                 "borne1",
                 "borne2",
                 "borne3",
-            ],
-            reviews: [
-                           Review(rating: 5, comment: "Great location!"),
-                           Review(rating: 4, comment: "Nice atmosphere."),
-                       ]
+            ]
         ),
         Location(
             name: "Total energie",
@@ -65,11 +52,7 @@ class LocationsDataService {
                 "borne1",
                 "borne2",
                 
-            ],
-            reviews: [
-                           Review(rating: 5, comment: "Great location!"),
-                           Review(rating: 4, comment: "Nice atmosphere."),
-                       ]
+            ]
         )
     ]
 }

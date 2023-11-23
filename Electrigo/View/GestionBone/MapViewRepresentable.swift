@@ -23,7 +23,7 @@ struct MapViewRepresentable : UIViewRepresentable {
         return mapView
         
     }
-     // lena bch n7athro les modification mtaa l map si l user ybader l place w ila yheb yarja3 l blasto
+     // lena bch n7athro les modification mtaa l map si l user ybader l place w ila yheb yarja3 l blasto 
     func updateUIView(_ uiView: UIViewType, context: Context) {
         
     }

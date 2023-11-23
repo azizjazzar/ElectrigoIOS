@@ -20,12 +20,15 @@ struct BarDeNavigationView: View {
 
               
 
-              
+                ContentView().tabItem {
+                    Image(systemName: "house")
+                }.tag(2)
 
+              //
                 BoutiqueView().tabItem {
                     Image(systemName: "cart.fill")
-                }.tag(3)
-                GarageView().tabItem {
+                }.tag(3).environmentObject(CartManager())  // Ajoutez cette ligne
+                FlotteView().tabItem {
                     Image(systemName: "sos.circle")
                 }.tag(4)
 

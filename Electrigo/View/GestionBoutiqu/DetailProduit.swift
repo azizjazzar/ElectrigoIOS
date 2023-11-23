@@ -151,9 +151,9 @@ struct DescriptionProduitView: View {
                         .font(.system(size: 16))
                         .fontWeight(.semibold)
                         .foregroundColor(.black)
-                    Text(produit.boutiue)
+                  /*  Text(produit.boutiue)
                         .opacity(0.6)
-                        .foregroundColor(.black)
+                        .foregroundColor(.black)*/
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
             }
