@@ -6,6 +6,7 @@ struct VehiculeView: View {
     @State private var selectedIndex: Int = 1
     @State private var selectedLogo: String?
 
+
     let vehicules: [Véhicule] = [ // Remplacez par vos données de véhicules
         Véhicule(id: 1, marque: "audi", modele: "Ford F-150", vitesseMax: 200, capaciteBatterie: "6,3kwh", boite: "Automatique", nombreDePlaces: 5, image: "audi3 1" ,imagelogo: "fordlogo" ,priceday: "150" ,userphoto: "user1" ,descriptionV:"Le modèle Ford A4 est équipé de la toute dernière technologie de sécurité avancée, offrant une tranquillité d'esprit totale à ses conducteurs. Avec des fonctionnalités telles que le système de freinage automatique d'urgence, l'assistance au maintien de voie, et les airbags latéraux, la sécurité est une priorité absolue."),
         Véhicule(id: 2, marque: "cupra", modele: "A4", vitesseMax: 200, capaciteBatterie: "6,3kwh", boite: "Automatique", nombreDePlaces: 5, image: "cupra" ,imagelogo: "fordlogo" ,priceday: "160" ,userphoto: "user1",descriptionV:"adem"),
@@ -115,6 +116,7 @@ struct VehiculeView: View {
                                 .padding(.leading)
                             }
                         }
+                       
                         .padding(.bottom)
                         
                         Text("Nos nouvelles voitures")
@@ -139,13 +141,16 @@ struct VehiculeView: View {
                         
                     }
                 }
+                .navigationBarBackButtonHidden(true)
                 
                 VStack {
                     Spacer()
                    
                 }
             }
-        }
+        }.navigationBarTitle("", displayMode: .inline) // Pour cacher le titre
+            .navigationBarHidden(true) // Pour masquer la barre de navigation ent
+            .navigationBarBackButtonHidden()
     }
     
 
@@ -155,6 +160,7 @@ struct VehiculeView: View {
         let userImages: [String] = ["user1", "user1", "user1", "user1", "user1", "user1", "user1", "user1"]
 
         var body: some View {
+          
             VStack {
                 Image(vehicule.image)
                     .resizable()

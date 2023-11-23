@@ -9,6 +9,7 @@ import SwiftUI
 
 
 struct UserSetings: View {
+    
     @State private var selectedTab = 0
     @State private var selectedItem: String? = nil
     @State private var showingOptions = false
@@ -17,6 +18,10 @@ struct UserSetings: View {
     @State private var actualiteonoff: Bool = false
     @State private var point: String = ""
     @State private var type: String = ""
+    @State private var isPresentingLoginView = false
+    @ObservedObject public var loginController = UserViewModel()
+    @State private var showAlert = false
+
 
     var body: some View {
        
@@ -47,7 +52,7 @@ struct UserSetings: View {
                             .offset(y: 0)
                             .padding(.bottom, 30)
                         
-                        NavigationLink(destination: BarDeNavigationView(selectedTab: 4)) {
+                        NavigationLink(destination: UserProfileView()) {
                             HStack {
                                 Text("Modifier profile")
                                 Image(systemName: "arrow.right")
@@ -163,16 +168,74 @@ struct UserSetings: View {
                     .offset(x: -110)
                     .padding(.bottom, 30)
                 }.padding(.top, 70)
+                
                 Button(action: {
-                    // Implement login logic here
-                }) {
-                    Text("Déconnexion")
-                }
+                                   // Set the flag to true to present the LoginView
+                    isPresentingLoginView = true
+
+                               }) {
+                                   Text("Déconnexion")
+                                       .padding()
+                                       .frame(width: 320, height: 40)
+                                       .background(Color.red)
+                                       .cornerRadius(15)
+                                       .foregroundColor(.white)
+                               }
+                               .navigationBarBackButtonHidden(true)
+                               .fullScreenCover(isPresented: $isPresentingLoginView) {
+                                           // Use fullScreenCover to present the LoginView
+                                           LoginView()
+                                       }
+                           
+                
                 .padding(.vertical, 10)
                 .frame(width: 320, height: 40)
                 .opacity(0.7)
                 .cornerRadius(15)
-                .foregroundColor(.red)
+                Button(action: {
+                               showAlert = true
+                           }) {
+                               Text("Supprimer mon compte")
+                                   .padding()
+                                   .frame(width: 320, height: 40)
+                                   .background(Color.red)
+                                   .cornerRadius(15)
+                                   .foregroundColor(.white)
+                           }
+                           .navigationBarBackButtonHidden(true)
+                           .fullScreenCover(isPresented: $isPresentingLoginView) {
+                               // Use fullScreenCover to present the LoginView
+                               LoginView()
+                           }
+                           .alert(isPresented: $showAlert) {
+                               Alert(
+                                   title: Text("Confirmation"),
+                                   message: Text("Êtes-vous sûr de vouloir supprimer votre compte ? Cette action est irréversible."),
+                                   primaryButton: .default(Text("Annuler")),
+                                   secondaryButton: .destructive(Text("Supprimer"), action: {
+                                       loginController.deleteUser(email: listuser?.email ?? "" ){
+                                           success, error in
+                                              if success {
+                                                  print("User deleted successfully.")
+                                                  isPresentingLoginView = true
+
+                                              } else {
+                                                  print("Error deleting user:", error ?? "Unknown error")
+                                              }
+                                       }
+                                   })
+                               )
+                           }
+                           .fullScreenCover(isPresented: $isPresentingLoginView) {
+                               // Use fullScreenCover to present the LoginView
+                               LoginView()
+                           }
+                           
+                
+                .padding(.vertical, 10)
+                .frame(width: 320, height: 40)
+                .opacity(0.7)
+                .cornerRadius(15)
             }
         }.navigationBarBackButtonHidden(true)
     }
@@ -186,6 +249,8 @@ struct UserSetings: View {
     
     
 struct UserSetingsView_Previews: PreviewProvider {
+    @Binding var isLoggedOut: Bool
+
     static var previews: some View {
         UserSetings()
     }

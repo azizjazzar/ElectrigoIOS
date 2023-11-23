@@ -9,11 +9,13 @@ import SwiftUI
 struct OtpValidationView: View {
     @State private var otp: [String] = Array(repeating: "", count: 4)
     @State private var isCodeSent: Bool = false
+    @State private var showAlert = false
+    @State private var hasRetried = false
+    @ObservedObject public var loginController = UserViewModel()
 
     var body: some View {
         NavigationView {
             VStack(spacing: 30) {
-                
                 // Title
                 Text("Mot de passe oublié")
                     .font(.title)
@@ -33,7 +35,6 @@ struct OtpValidationView: View {
                                 RoundedRectangle(cornerRadius: 10)
                                     .stroke(Color.black, lineWidth: 1)
                             )
-                            
                             .onChange(of: otp[index]) { newText in
                                 // Update the otp property
                                 if newText.count == 1 {
@@ -44,40 +45,60 @@ struct OtpValidationView: View {
                             }
                     }
                 }
-
                 .padding(.top, 20)
                 .padding(.horizontal, 20)
-
-                // Error message
-                if otp.count != 4 {
-                    Text("Code incorrect")
-                        .foregroundColor(.red)
-                        .padding(.top, 20)
-                        .padding(.horizontal, 20)
+                
+                Button(action: {
+                    // Additional actions for retrying if needed
+                    isCodeSent = false // Reset isCodeSent when retrying
+                    showAlert = false
+                    loginController.sendEmail(email: listuser?.email ??  "" )
+                }) {
+                    Text("Code non envoyé ? Réessayer")
                 }
-                // "Code non envoyé ? Réessayer" button
-                                Button(action: {
-                                    isCodeSent = false
-                                    otp = Array(repeating: "", count: 4)
-                                }) {
-                                    Text("Code non envoyé ? Réessayer")
-                                }
+                // Retry button
+                Button(action: {
+                    if isOtpValid() {
+                        isCodeSent = true
+                    } else {
+                        showAlert = true
+                        hasRetried = true
+                    }
+                }) {
+                    Text("Changer le mot de passe")
+                        .padding(.vertical, 10)
+                        .frame(width: 350, height: 50)
+                        .background(Color.blue)
+                        .cornerRadius(15)
+                        .foregroundColor(.white)
+                        .padding(.vertical, 10)
+                }
+                .padding(.bottom, 20)
 
-                // Send button
-                NavigationLink(destination: ChangePasswordView()) {
-                                   Text("Changer le mot de passe")
-                               }
-                .padding(.vertical, 10)
-                .frame(width: 350, height: 50)
-                .background(Color.blue)
-                .cornerRadius(15)
-                .foregroundColor(.white)
-                .padding(.vertical, 70)
+                // "Code non envoyé ? Réessayer" button
+                
             }
             .padding(.bottom, 20)
+            .alert(isPresented: $showAlert) {
+                Alert(title: Text("Erreur"), message: Text("Code incorrect"), dismissButton: .default(Text("OK")))
+            }
+            .background(
+                NavigationLink(destination: ChangePasswordView(), isActive: $isCodeSent) {
+                    EmptyView()
+                }
+                .navigationBarBackButtonHidden(true)
+            )
         }
     }
+
+    // Function to check if OTP is valid
+    private func isOtpValid() -> Bool {
+        let enteredOtp = otp.joined()
+        return enteredOtp == optNumber
+    }
 }
+
+
 
 
 struct OtpValidationView_Previews: PreviewProvider {

@@ -6,8 +6,16 @@
 //
 
 import SwiftUI
+var optNumber :String = ""
 
 struct ForgetpasswordView: View {
+    @ObservedObject public var loginController = UserViewModel()
+    @State private var showAlert = false
+    @State private var alertMessage = ""
+    @State private var emailFound = false // Variable pour suivre si l'email est trouvé
+
+    @State private var isChecked = false
+
     @State private var email = ""
 
     var body: some View {
@@ -22,16 +30,42 @@ struct ForgetpasswordView: View {
                 .background(Color.clear)
                 .cornerRadius(15)
                 .overlay(RoundedRectangle(cornerRadius: 10)
-                    .stroke(Color.black, lineWidth: 1))
-            NavigationLink(destination: OtpValidationView()) {
-                               Text("Mot passe oublier")
-                    .padding(.vertical, 10)
-                    .frame(width: 350, height: 50)
-                    .background(Color.blue)
-                    .cornerRadius(15)
-                    .foregroundColor(.white)
-                    .padding(.vertical, 30)
-                           }
+                .stroke(Color.black, lineWidth: 1))
+            //++++
+            if emailFound {
+
+                NavigationLink(
+                    destination: OtpValidationView(),
+                    isActive: .constant(true)
+                ) {
+              
+                    EmptyView()
+                }
+                .navigationBarBackButtonHidden(true)
+            } else {
+                Button(action: {
+                    fetchUser()
+                  
+                    // Additional actions if needed
+                }) {
+                    Text("Envoyer")
+                        .navigationBarBackButtonHidden(true)
+                        .padding(.vertical, 10)
+                        .frame(width: 350, height: 50)
+                        .background(Color.blue)
+                        .cornerRadius(15)
+                        .foregroundColor(.white)
+                }
+                .sheet(isPresented: $isChecked) {
+                    UserSetings()
+                }
+                .alert(isPresented: $showAlert) {
+                    Alert(title: Text("Erreur"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
+                }
+            }
+
+            //++++
+          
           
             
         
@@ -68,6 +102,29 @@ struct ForgetpasswordView: View {
 
     }
     }
+    func fetchUser() {
+        
+        loginController.getEmail(email: email) { retrievedUser in
+            if let user = retrievedUser {
+                optNumber=""
+                listuser=user
+                emailFound = true
+                //mail
+                loginController.sendEmail(email: email)
+                showAlert = true
+                alertMessage = "Verifier votre boite Mail !"
+             
+                
+            } else {
+                // Aucun utilisateur trouvé pour cet email
+                emailFound = false
+                showAlert = true
+                alertMessage = "Email incorrect !"
+            }
+        }
+        
+    }
+
 }
 
 struct ForgetpasswordView_Previews: PreviewProvider {

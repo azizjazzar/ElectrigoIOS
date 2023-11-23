@@ -9,7 +9,6 @@ import SwiftUI
 
 struct DetailProduit: View {
    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-
     let produit: Produit
     init(produit: Produit) {
         self.produit = produit
