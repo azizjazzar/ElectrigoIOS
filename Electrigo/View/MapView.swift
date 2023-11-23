@@ -13,7 +13,11 @@ struct MapView: View {
             Map(coordinateRegion: $vm.CoordinateRegion,
                 showsUserLocation: true,
                 annotationItems: vm.locations) { location in
-                MapMarker(coordinate: CLLocationCoordinate2D(latitude: location.coordinate.coordinates[1], longitude: location.coordinate.coordinates[0]), tint: .red)
+                MapMarker(coordinate: CLLocationCoordinate2D(latitude: location.coordinate.coordinates[1], longitude: location.coordinate.coordinates[0]), tint: .red
+                
+                )
+                
+                
             }
             .onTapGesture {
                 let tappedCoordinate = vm.CoordinateRegion.center
@@ -129,44 +133,59 @@ struct LocationDetailsView: View {
     var location: Location
     var getDirectionsAction: () -> Void
     var openMapsAppForDirections: () -> Void
-    @Binding var showLocationDetails: Bool // Add binding for the showLocationDetails state
+    @Binding var showLocationDetails: Bool
 
     var body: some View {
         VStack(alignment: .leading) {
-            Text("Location Details:")
-                .font(.title)
+            Text("Détails de l'emplacement :")
+                .font(.title2)
                 .padding(.bottom, 10)
 
             VStack(alignment: .leading, spacing: 8) {
-                Text("Name: \(location.name)")
-                Text("City: \(location.cityname)")
+                HStack {
+                    Image(systemName: "mappin")
+                    Text("Nom: \(location.name)")
+                        .font(.custom("Jost", size: 16))
+                        .fontWeight(.medium)
+                }
+                HStack {
+                    Image(systemName: "building")
+                    Text("Ville: \(location.cityname)")
+                        .font(.custom("Jost", size: 16))
+                        .fontWeight(.medium)
+                }
+                
+                HStack {
+                    Image(systemName: "tag.fill")
+                    Text("Type: \(location.typelocation)")
+                        .font(.custom("Jost", size: 16))
+                        .fontWeight(.medium)
+                }
             }
 
             Button(action: {
                 openMapsAppForDirections()
             }) {
-                Text("Get Directions")
+                Text("Obtenir des directions")
                     .font(.custom("Jost", size: 14))
                     .fontWeight(.bold)
                     .foregroundColor(.white)
                     .padding()
+                    .frame(width: 300, height: 40)
                     .background(Color(red: 0.05, green: 0.60, blue: 1))
                     .cornerRadius(12)
             }
             .padding(.top, 20)
+
+   
         }
         .padding()
-        .background(Color.white)
+        .background(LinearGradient(gradient: Gradient(colors: [Color.white, Color.gray.opacity(0.8)]), startPoint: .top, endPoint: .bottom))
         .cornerRadius(10)
         .foregroundColor(.black)
-        .onTapGesture {
-            // Close the details view when tapped
-            withAnimation {
-                showLocationDetails.toggle()
-            }
-        }
     }
 }
+
 
 
 private func openMapsAppForDirections(location: Location) {

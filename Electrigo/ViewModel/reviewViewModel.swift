@@ -9,9 +9,7 @@ import Foundation
 class reviewViewModel : ObservableObject{
     @Published var reviews: [Review] = []
     @Published var isListDisplayed = false
-    init(){
-        getAllReviews()
-    }
+    
     func addLocation(_ review: Review) {
         // Create an instance of JSONEncoder
         let encoder = JSONEncoder()
@@ -22,7 +20,7 @@ class reviewViewModel : ObservableObject{
         }
         
         // Create a URLRequest with your API URL
-        let url = URL(string: "http://192.168.100.160:3000/api/review/addreview")! 
+        let url = URL(string: "http://192.168.240.92:3000/api/review/addreview")!
         var request = URLRequest(url: url)
         
         // Configure the request as a POST and set the request body
@@ -52,8 +50,8 @@ class reviewViewModel : ObservableObject{
         task.resume()
     }
     
-    func getAllReviews() {
-        guard let url = URL(string: "http://192.168.100.160:3000/api/review/reviews") else {
+    func getAllReviews(for borneId: String) {
+        guard let url = URL(string: "http://192.168.240.92/api/review/\(borneId)/reviews") else {
             print("there is errors with url parsing")
             return
         }

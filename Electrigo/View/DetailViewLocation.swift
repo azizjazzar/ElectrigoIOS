@@ -19,10 +19,10 @@ struct DetailViewLocation: View {
 
                 // Title and Rating section
                 VStack(alignment: .center, spacing: 8) {
-                    Text("Example Borne")
+                    Text(location.name)
                         .font(.title)
                         .fontWeight(.bold)
-                        .foregroundColor(.white)
+                        .foregroundColor(.black)
 
                     HStack(spacing: 4) {
                         ForEach(0..<5) { _ in
@@ -43,9 +43,9 @@ struct DetailViewLocation: View {
 
                 // Details section
                 VStack(alignment: .leading, spacing: 12) {
-                    DetailRow(title: "Adresse", value: location.name,fontSize: 16)
-                    DetailRow(title: "Type de borne", value: location.name,fontSize: 16)
-                    DetailRow(title: "Nombre de prises", value: "\(location.name)",fontSize: 16)
+                    DetailRow(title: "City Name", value: location.cityname,fontSize: 16)
+                    DetailRow(title: "Adresse", value: location.adresse,fontSize: 16)
+                    DetailRow(title: "Type de charge", value: "\(location.typecharge)",fontSize: 16)
                     
                 }
                 .foregroundColor(.black)
@@ -54,43 +54,7 @@ struct DetailViewLocation: View {
                     .font(.system(size: 20,weight:  .semibold, design:  .serif))
                     .padding(12)
                     .frame(width: UIScreen.main.bounds.width, alignment: .leading)
-             
-                VStack{
-                    Text("great place to visit")
-                        .font(.system(size: 17,weight:  .semibold, design:  .serif))
-                        .padding(6)
-                        .foregroundColor(.primary)
-                        .padding(.bottom, 8)
-                        .frame(width: UIScreen.main.bounds.width, alignment: .leading)
-                    Text("great place to visit")
-                        .font(.system(size: 17,weight:  .semibold, design:  .serif))
-                        .padding(6)
-                        .foregroundColor(.primary)
-                        .padding(.bottom, 8)
-                        .frame(width: UIScreen.main.bounds.width, alignment: .leading)
-                    Text("great place to visit")
-                        .font(.system(size: 17,weight:  .semibold, design:  .serif))
-                        .padding(6)
-                        .foregroundColor(.primary)
-                        .padding(.bottom, 8)
-                        .frame(width: UIScreen.main.bounds.width, alignment: .leading)
-                    Text("great place to visit")
-                        .font(.system(size: 17,weight:  .semibold, design:  .serif))
-                        .padding(6)
-                        .foregroundColor(.primary)
-                        .padding(.bottom, 8)
-                        .frame(width: UIScreen.main.bounds.width, alignment: .leading)
-                    Text("great place to visit")
-                        .font(.system(size: 17,weight:  .semibold, design:  .serif))
-                        .padding(6)
-                        .foregroundColor(.primary)
-                        .padding(.bottom, 8)
-                        .frame(width: UIScreen.main.bounds.width, alignment: .leading)
-                    
-                    
-                }
-                
-                
+    
                 HStack {
                     Spacer()
                     NavigationLink(destination: AlertPage()) {

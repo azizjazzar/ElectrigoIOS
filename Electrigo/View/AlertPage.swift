@@ -27,10 +27,20 @@ struct AlertPage: View {
                 .listStyle(PlainListStyle())
                 .padding(.horizontal, 30)
 
-                NavigationLink(destination: CommentPage(selectedProblemType: selectedProblemType, comment: $comment, showAlert: $showAlert)) {
-                    Text("Next")
+                HStack(spacing: 20) {
+                    Button(action: {
+                       
+                    }) {
+                        Text("Envoyer Votre Reclamation")
+                            .foregroundColor(.white)
+                            .padding()
+                            .frame(maxWidth: .infinity)
+                            .background(Color.green)
+                            .cornerRadius(8)
+                    }
                 }
                 .buttonStyle(CustomButtonStyless())
+            
             }
             .navigationTitle("Report Charging Station Problem")
             .navigationBarTitleDisplayMode(.inline)

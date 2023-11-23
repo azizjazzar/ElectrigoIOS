@@ -46,7 +46,7 @@ class locationlistViewModel:ObservableObject {
         }
         
         // Create a URLRequest with your API URL
-        let url = URL(string: "http://192.168.100.160:3000/api/borne/addborne")! // Replace with your URL
+        let url = URL(string: "http://192.168.240.92:3000/api/borne/addborne")! // Replace with your URL
         var request = URLRequest(url: url)
         
         // Configure the request as a POST and set the request body
@@ -76,7 +76,7 @@ class locationlistViewModel:ObservableObject {
         task.resume()
     }
     func getAllLocations() {
-        guard let url = URL(string: "http://192.168.100.160:3000/api/borne/bornes") else {
+        guard let url = URL(string: "http://192.168.240.92:3000/api/borne/bornes") else {
             print("there is errors with url parsing")
             return
         }

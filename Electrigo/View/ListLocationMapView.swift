@@ -14,23 +14,24 @@ struct ListLocationMapView: View {
     
     
     var body: some View {
-        HStack{
-            Image(systemName: "location.circle")
-                .resizable()
-                .foregroundColor(.blue)
-                .frame(width: 40,height: 40,alignment: .center)
-                .cornerRadius(20)
-            VStack{
-                Text(location.name)
-                    .font(.system(size: 20, weight: .semibold, design: .serif))
-                    .padding(.leading)
-                
-                
+        ScrollView{
+            HStack{
+                Image(systemName: "location.circle")
+                    .resizable()
+                    .foregroundColor(.blue)
+                    .frame(width: 40,height: 40,alignment: .center)
+                    .cornerRadius(20)
+                VStack{
+                    Text(location.name)
+                        .font(.system(size: 20, weight: .semibold, design: .serif))
+                        .padding(.leading)
+                    
+                }
             }
-        }
-        .onTapGesture {
-            withAnimation(.easeInOut(duration: 1)){
-                //vm.updateCoordinateRegion(location: location)
+            .onTapGesture {
+                withAnimation(.easeInOut(duration: 1)){
+                    vm.updateCoordinateRegion(location: location)
+                }
             }
         }
     }

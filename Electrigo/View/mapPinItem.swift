@@ -14,7 +14,7 @@ struct MapPinItem: View {
                 .resizable()
                 .foregroundColor(.blue)
                 .frame(width: 40, height: 40)
-                .padding(.bottom, 5) // Adjust as needed
+                .padding(.bottom, 5) 
             
         }
     }

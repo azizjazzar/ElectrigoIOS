@@ -19,6 +19,7 @@ struct LocationlistView: View {
             VStack {
                
                     ScrollView(.vertical, showsIndicators: false) {
+                        
                         LazyVGrid(columns: gridColumn) {
                             ForEach(vl.locations) { item in
                                                         if filterByType != "" {

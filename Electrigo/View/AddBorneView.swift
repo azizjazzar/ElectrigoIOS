@@ -20,7 +20,7 @@ struct AddBorneView: View {
     @State private var picture: String = ""
     @State private var selectedTypelocation: Int = 0
     @State private var selectedTypeParking: Int = 0
-   
+    @State private var poolPosition: Int = 0
 
     var body: some View {
         NavigationView {
@@ -155,6 +155,7 @@ struct AddBorneView: View {
                         .background(Color.clear)
                         .foregroundColor(.black)
                 }
+               
 
                 Section {
                     HStack(spacing: 20) {
@@ -173,7 +174,7 @@ struct AddBorneView: View {
                                 typecharge: selectedChargeString,
                                 picture: picture,
                                 coordinate: Location.Coordinate(
-                                        type: "Point", // Assuming "Point" is the correct value for your use case
+                                        type: "Point",
                                         coordinates: [Double(latitude) ?? 0.0, Double(longitude) ?? 0.0]
                                        
                                     )
