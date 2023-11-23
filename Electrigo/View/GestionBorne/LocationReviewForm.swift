@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct LocationReviewForm: View {
+    @StateObject var vr = reviewViewModel()
     @Binding var rating: Int?
-    @State private var comment: String = ""
+    @State private var comment: String = "zazea"
 
     private func starType(index: Int) -> String {
         if let rating = self.rating {
@@ -18,6 +19,7 @@ struct LocationReviewForm: View {
             return "star"
         }
     }
+    
 
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
@@ -69,16 +71,15 @@ struct LocationReviewForm: View {
     }
 
     private func submitReview() {
-        // Handle the review submission, for example, send it to a server
-        if let rating = rating {
-            print("Rating: \(rating), Comment: \(comment)")
-            // You can add further logic like sending data to a server, updating UI, etc.
-        } else {
-            // Handle the case where the user hasn't selected a rating
-            print("Please select a rating.")
-        }
-    }
-}
+           // Handle the review submission, for example, send it to a server
+           if let rating = rating {
+               let review = Review(rating: rating, comment: comment, borne: "")
+               vr.addLocation(review)
+           } else {
+               // Handle the case where the user hasn't selected a rating
+               print("Please select a rating.")
+           }
+       }}
 
 struct LocationReviewForm_Previews: PreviewProvider {
     static var previews: some View {

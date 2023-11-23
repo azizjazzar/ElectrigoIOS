@@ -4,7 +4,7 @@ import UIKit
 
 class UserViewModel: ObservableObject {
     
-    @Published var host: String = "192.168.236.41"
+    @Published var host: String = "192.168.240.41"
     @Published var port: String = "3000"
 
     @Published var isLoading = false // Variable d'état pour le chargement

@@ -1,25 +1,42 @@
-//
-//  Location.swift
-//  Electrigo
-//
-//  Created by Aissa Dhia on 4/11/2023.
-//
-
 import Foundation
-import MapKit
+import CoreLocation
 
+struct Location: Identifiable, Codable {
+    let _id: String?
+      let name: String
+      let cityname: String
+      let adresse: String
+      let typelocation: String
+      let typecharge: String
+      let picture: String
+      let coordinate: Coordinate
+     
 
-
-struct Location: Identifiable {
-    var id = UUID()
-    var name: String
-    var cityName: String
-    var coordinates: CLLocationCoordinate2D
-    var description: String
-    var imageNames: [String]
-    var reviews: [Review]
-}
+    struct Coordinate: Codable {
+        let type: String
+        let coordinates: [Double]
+        
+    }
     
-   
+    var id: String? {
+        return _id
+    }
 
-
+    init( id: String? = nil,
+          name: String,
+         cityname: String,
+         adresse: String,
+         typelocation: String,
+         typecharge: String,
+         picture: String,
+         coordinate: Coordinate) {
+        self._id = id
+        self.name = name
+        self.cityname = cityname
+        self.adresse = adresse
+        self.typelocation = typelocation
+        self.typecharge = typecharge
+        self.picture = picture
+        self.coordinate = coordinate
+    }
+}
