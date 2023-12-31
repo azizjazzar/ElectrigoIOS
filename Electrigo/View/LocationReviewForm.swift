@@ -73,7 +73,7 @@ struct LocationReviewForm: View {
     private func submitReview() {
            // Handle the review submission, for example, send it to a server
            if let rating = rating {
-               let review = Review(rating: rating, comment: comment, borne: "")
+               let review = Review(rating: rating, comment: comment, borne: "655c82740c5e425be8a76e34")
                vr.addLocation(review)
            } else {
                // Handle the case where the user hasn't selected a rating

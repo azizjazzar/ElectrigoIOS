@@ -1,6 +1,7 @@
 import SwiftUI
 struct DetailViewLocation: View {
     @StateObject var vl = locationlistViewModel()
+    @State private var isRatingForumViewPresented = false
     let location : Location
     var body: some View {
         ScrollView {
@@ -77,7 +78,7 @@ struct DetailViewLocation: View {
             .background(Color.white.opacity(0.95))
             .cornerRadius(20)
             .padding(.top, 30)
-        }
+        } .navigationBarItems(trailing: ReviewBarView(isRatingForumViewPresented: $isRatingForumViewPresented))
     }
 }
 
